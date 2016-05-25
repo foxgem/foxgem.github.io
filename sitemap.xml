@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2016/05/25/rich-and-poor/</loc>
+    
+    <lastmod>2016-05-25T13:10:17.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2016/05/24/git-commit-message/</loc>
     
     <lastmod>2016-05-24T12:29:41.000Z</lastmod>
