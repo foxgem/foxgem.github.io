@@ -3,42 +3,24 @@
 <head>
   <meta charset="utf-8">
   
-  <title>那些恶意的相似域名（Domain Name Typosquatting） | 老胡随手记</title>
+  <title>Vert.x技巧：使用EventBus Interceptor拦截消息 | 老胡随手记</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="原文：The landscape of domain name typosquatting: techniques and countermeasures
-人不是机器，总会犯错，这就给恶意相似域名提供了生存空间。文中提到的实验和数据充分证明了这些域名的“价值”。原本觉得这里面其实也就是钓鱼网站用得比较多，可看了这篇文章之后才知道还有那么多的道道：
-
-广告点击
-勒索
-将用户导向竞争对手
-……
-
-文中">
+  <meta name="description" content="Vert.x用久了肯定有这样的想法：拦截EventBus上发送的所有消息。这个需求用Vertx EventBus Interceptor可以非常简单的实现，可惜的是，Vert.x文档却并没有明确的指出来。
+其实它的使用很简单，直接看代码吧（Groovy代码）：
+123456vertx.eventBus().addInterceptor &amp;#123; sendContext -&amp;gt;    Mes">
 <meta property="og:type" content="article">
-<meta property="og:title" content="那些恶意的相似域名（Domain Name Typosquatting）">
-<meta property="og:url" content="http://foxgem.github.io/2016/05/22/domain-typosquatting/index.html">
+<meta property="og:title" content="Vert.x技巧：使用EventBus Interceptor拦截消息">
+<meta property="og:url" content="http://foxgem.github.io/2016/05/26/vertx-eventbus-interceptor/index.html">
 <meta property="og:site_name" content="老胡随手记">
-<meta property="og:description" content="原文：The landscape of domain name typosquatting: techniques and countermeasures
-人不是机器，总会犯错，这就给恶意相似域名提供了生存空间。文中提到的实验和数据充分证明了这些域名的“价值”。原本觉得这里面其实也就是钓鱼网站用得比较多，可看了这篇文章之后才知道还有那么多的道道：
-
-广告点击
-勒索
-将用户导向竞争对手
-……
-
-文中">
-<meta property="og:updated_time" content="2016-05-22T09:55:07.000Z">
+<meta property="og:description" content="Vert.x用久了肯定有这样的想法：拦截EventBus上发送的所有消息。这个需求用Vertx EventBus Interceptor可以非常简单的实现，可惜的是，Vert.x文档却并没有明确的指出来。
+其实它的使用很简单，直接看代码吧（Groovy代码）：
+123456vertx.eventBus().addInterceptor &amp;#123; sendContext -&amp;gt;    Mes">
+<meta property="og:updated_time" content="2016-05-26T11:17:12.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="那些恶意的相似域名（Domain Name Typosquatting）">
-<meta name="twitter:description" content="原文：The landscape of domain name typosquatting: techniques and countermeasures
-人不是机器，总会犯错，这就给恶意相似域名提供了生存空间。文中提到的实验和数据充分证明了这些域名的“价值”。原本觉得这里面其实也就是钓鱼网站用得比较多，可看了这篇文章之后才知道还有那么多的道道：
-
-广告点击
-勒索
-将用户导向竞争对手
-……
-
-文中">
+<meta name="twitter:title" content="Vert.x技巧：使用EventBus Interceptor拦截消息">
+<meta name="twitter:description" content="Vert.x用久了肯定有这样的想法：拦截EventBus上发送的所有消息。这个需求用Vertx EventBus Interceptor可以非常简单的实现，可惜的是，Vert.x文档却并没有明确的指出来。
+其实它的使用很简单，直接看代码吧（Groovy代码）：
+123456vertx.eventBus().addInterceptor &amp;#123; sendContext -&amp;gt;    Mes">
   
     <link rel="alternate" href="/atom.xml" title="老胡随手记" type="application/atom+xml">
   
@@ -87,10 +69,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-domain-typosquatting" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-vertx-eventbus-interceptor" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2016/05/22/domain-typosquatting/" class="article-date">
-  <time datetime="2016-05-22T09:19:17.000Z" itemprop="datePublished">2016-05-22</time>
+    <a href="/2016/05/26/vertx-eventbus-interceptor/" class="article-date">
+  <time datetime="2016-05-26T10:58:38.000Z" itemprop="datePublished">2016-05-26</time>
 </a>
     
   </div>
@@ -101,7 +83,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      那些恶意的相似域名（Domain Name Typosquatting）
+      Vert.x技巧：使用EventBus Interceptor拦截消息
     </h1>
   
 
@@ -109,23 +91,19 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>原文：<a href="https://blog.acolyer.org/2016/05/20/the-landscape-of-domain-name-typosquatting-techniques-and-countermeasures/" target="_blank" rel="external">The landscape of domain name typosquatting: techniques and countermeasures</a></p>
-<p>人不是机器，总会犯错，这就给恶意相似域名提供了生存空间。文中提到的实验和数据充分证明了这些域名的“价值”。原本觉得这里面其实也就是钓鱼网站用得比较多，可看了这篇文章之后才知道还有那么多的道道：</p>
-<ul>
-<li>广告点击</li>
-<li>勒索</li>
-<li>将用户导向竞争对手</li>
-<li>……</li>
-</ul>
-<p>文中提到的 typosquatting cross-site scripting(TXSS) 更是让人心有余悸，算是给code review又提供了一个很好的理由，;)</p>
+        <p><a href="http://vertx.io/" target="_blank" rel="external">Vert.x</a>用久了肯定有这样的想法：拦截EventBus上发送的所有消息。这个需求用Vertx EventBus Interceptor可以非常简单的实现，可惜的是，<a href="http://vertx.io/docs/" target="_blank" rel="external">Vert.x文档</a>却并没有明确的指出来。</p>
+<p>其实它的使用很简单，直接看代码吧（Groovy代码）：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">vertx.eventBus().addInterceptor &#123; sendContext -&gt;</span><br><span class="line">    Message message = sendContext.message()</span><br><span class="line">    // 自由发挥……</span><br><span class="line"></span><br><span class="line">    sendContext.next()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>最后的那句 <strong>sendContext.next()</strong> 非常关键：如果没写，后续的consumer将无法收到刚刚被你拦截的消息！所以，一定要确保你是<strong>有意</strong>不写的。</p>
+<p>其他的就没什么可说得了，基本跟其他工具提供的拦截器的功能类似，查查API文档，看看代码，都能搞清楚。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://foxgem.github.io/2016/05/22/domain-typosquatting/" data-id="cioo7gzju00010wqck8n7261v" class="article-share-link">Share</a>
+      <a data-url="http://foxgem.github.io/2016/05/26/vertx-eventbus-interceptor/" data-id="cioo7gzk500060wqce0dmxpwr" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/The-Morning-Paper/">The Morning Paper</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/安全/">安全</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/开发/">开发</a></li></ul>
 
     </footer>
   </div>
@@ -133,15 +111,11 @@
     
 <nav id="article-nav">
   
-    <a href="/2016/05/23/rmdb-arch/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          关系数据库架构
-        
-      </div>
-    </a>
   
+    <a href="/2016/05/25/rich-and-poor/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">贫富差距为何会越来越大？</div>
+    </a>
   
 </nav>
 
