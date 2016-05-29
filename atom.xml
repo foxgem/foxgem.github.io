@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://foxgem.github.io/"/>
-  <updated>2016-05-28T11:31:48.000Z</updated>
+  <updated>2016-05-29T13:28:44.000Z</updated>
   <id>http://foxgem.github.io/</id>
   
   <author>
@@ -14,6 +14,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>不编码的（Codeless）程序员</title>
+    <link href="http://foxgem.github.io/2016/05/29/codeless/"/>
+    <id>http://foxgem.github.io/2016/05/29/codeless/</id>
+    <published>2016-05-29T13:17:52.000Z</published>
+    <updated>2016-05-29T13:28:44.000Z</updated>
+    
+    <content type="html">&lt;p&gt;&lt;a href=&quot;https://dzone.com/articles/the-codeless-developer&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;DZone有篇调侃Serverless的漫画&lt;/a&gt;：一位简历上写着具备有Serverless和NoDB技能的开发者度过无所事事的上班时间之后，在下班点高高兴兴的回家了。&lt;/p&gt;
+&lt;p&gt;不写代码，自然也是“Serverless”，;)&lt;/p&gt;
+&lt;p&gt;免责声明：各位勿怪，其实我还想抽时间了解一下Serverless呢。&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;a href=&quot;https://dzone.com/articles/the-codeless-developer&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;DZone有篇调侃Serverless的漫画&lt;/a&gt;：一位简历上写着具备有Serverles
+    
+    </summary>
+    
+    
+      <category term="阅读" scheme="http://foxgem.github.io/tags/%E9%98%85%E8%AF%BB/"/>
+    
+  </entry>
   
   <entry>
     <title>To Do List + Break List = 劳逸结合</title>
