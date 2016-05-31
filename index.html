@@ -53,7 +53,7 @@
         
           <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Zoeken"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://foxgem.github.io"></form>
@@ -63,6 +63,59 @@
 </header>
       <div class="outer">
         <section id="main">
+  
+    <article id="post-drcon" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/05/31/drcon/" class="article-date">
+  <time datetime="2016-05-31T08:53:55.000Z" itemprop="datePublished">2016-05-31</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/05/31/drcon/">一种可伸缩的微服务架构：DRCON</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>微服务时下正火，Docker是当红炸子鸡，稍微思考一下就能发现：两者结合为可伸缩的架构提供天然的基础，但怎么实现，却没有太多的头绪。直到发现<a href="https://www.airpair.com/scalable-architecture-with-docker-consul-and-nginx" target="_blank" rel="external">这篇旧文</a>才让我豁然开朗。【各位见谅，虽然名词很早就接触了，真正打算着手开干才是最近的事情。】</p>
+<p>DRCON其实是下列工具的集合：</p>
+<ul>
+<li>Docker，不必过多介绍，略过</li>
+<li>Registrator，可简化服务的注册</li>
+<li>Consul，服务注册和发现</li>
+<li>Consul Template + Nginx，服务的负载均衡和重定向</li>
+</ul>
+<p>服务的负载均衡和重定向也可以用SRV-Router来做，这一做法作者在<a href="http://www.maori.geek.nz/docker_web_services_with_consul/" target="_blank" rel="external">另一篇更老的文章</a>里有介绍。相比起来，这篇文章的做法要更简单一些，就是利用Consul Template在服务启停时自动去修改Nginx的配置文件。</p>
+<p>若采用SRV-Router，务必注意文中提到的小细节：</p>
+<blockquote>
+<p>The srv-router when called will query Consul for home.simple.service.consul, then route to the address and port that is returned. This is the tags namespace in Consul, so each consul service must have the home tag.</p>
+</blockquote>
+<p>我就是没有注意在Consul中要有个home tag，浪费了半天时间。</p>
+<p>最后提一句，与文中用python来实现服务的例子不同，我用的是<a href="http://vertx.io/docs/#web" target="_blank" rel="external">Vert.x Web</a>，;)。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://foxgem.github.io/2016/05/31/drcon/" data-id="ciov7jxgl000681qc00lnhodo" class="article-share-link">Delen</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/微服务/">微服务</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
   
     <article id="post-the-cause-of-breakage-of-web-app" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
@@ -95,7 +148,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://foxgem.github.io/2016/05/30/the-cause-of-breakage-of-web-app/" data-id="ciotzzlsw0006ymqc62d01tqg" class="article-share-link">Share</a>
+      <a data-url="http://foxgem.github.io/2016/05/30/the-cause-of-breakage-of-web-app/" data-id="ciov7jxgq000a81qczhnahscu" class="article-share-link">Delen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/The-Morning-Paper/">The Morning Paper</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/开发/">开发</a></li></ul>
@@ -136,7 +189,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://foxgem.github.io/2016/05/29/codeless/" data-id="ciotzzlso0001ymqcc3zrjct1" class="article-share-link">Share</a>
+      <a data-url="http://foxgem.github.io/2016/05/29/codeless/" data-id="ciov7jxfv000081qc0r1u8ubb" class="article-share-link">Delen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/阅读/">阅读</a></li></ul>
@@ -178,7 +231,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://foxgem.github.io/2016/05/28/break-list/" data-id="ciotzzlsh0000ymqciged7bjb" class="article-share-link">Share</a>
+      <a data-url="http://foxgem.github.io/2016/05/28/break-list/" data-id="ciov7jxgf000381qc8divq41l" class="article-share-link">Delen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/阅读/">阅读</a></li></ul>
@@ -227,7 +280,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://foxgem.github.io/2016/05/27/top-100-java-libs-in-2016/" data-id="ciotzzlsv0004ymqcnxolp9gu" class="article-share-link">Share</a>
+      <a data-url="http://foxgem.github.io/2016/05/27/top-100-java-libs-in-2016/" data-id="ciov7jxh4000d81qcgys6e6r5" class="article-share-link">Delen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/开发/">开发</a></li></ul>
@@ -270,7 +323,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://foxgem.github.io/2016/05/26/vertx-eventbus-interceptor/" data-id="ciotzzltb000eymqc92hua968" class="article-share-link">Share</a>
+      <a data-url="http://foxgem.github.io/2016/05/26/vertx-eventbus-interceptor/" data-id="ciov7jxh9000f81qcs642f176" class="article-share-link">Delen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/开发/">开发</a></li></ul>
@@ -320,7 +373,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://foxgem.github.io/2016/05/25/rich-and-poor/" data-id="ciotzzlt00008ymqcoiavtmue" class="article-share-link">Share</a>
+      <a data-url="http://foxgem.github.io/2016/05/25/rich-and-poor/" data-id="ciov7jxgi000481qcz5o466gv" class="article-share-link">Delen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/阅读/">阅读</a></li></ul>
@@ -368,7 +421,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://foxgem.github.io/2016/05/24/git-commit-message/" data-id="ciotzzlt2000aymqc9z3ksla9" class="article-share-link">Share</a>
+      <a data-url="http://foxgem.github.io/2016/05/24/git-commit-message/" data-id="ciov7jxgv000c81qcof52l8rp" class="article-share-link">Delen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/开发/">开发</a></li></ul>
@@ -407,7 +460,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://foxgem.github.io/2016/05/23/rmdb-arch/" data-id="ciotzzlt5000cymqcu38bx65x" class="article-share-link">Share</a>
+      <a data-url="http://foxgem.github.io/2016/05/23/rmdb-arch/" data-id="ciov7jxgo000881qc28a0xxqw" class="article-share-link">Delen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/The-Morning-Paper/">The Morning Paper</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数据库/">数据库</a></li></ul>
@@ -454,7 +507,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://foxgem.github.io/2016/05/22/domain-typosquatting/" data-id="ciotzzlsu0003ymqca8pa9nba" class="article-share-link">Share</a>
+      <a data-url="http://foxgem.github.io/2016/05/22/domain-typosquatting/" data-id="ciov7jxg4000181qc9sypc57k" class="article-share-link">Delen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/The-Morning-Paper/">The Morning Paper</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/安全/">安全</a></li></ul>
@@ -476,9 +529,9 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
+    <h3 class="widget-title">Labels</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/The-Morning-Paper/">The Morning Paper</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/安全/">安全</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/开发/">开发</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据库/">数据库</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/阅读/">阅读</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/The-Morning-Paper/">The Morning Paper</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/安全/">安全</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/开发/">开发</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/微服务/">微服务</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据库/">数据库</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/阅读/">阅读</a></li></ul>
     </div>
   </div>
 
@@ -488,14 +541,14 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/The-Morning-Paper/" style="font-size: 15px;">The Morning Paper</a> <a href="/tags/安全/" style="font-size: 10px;">安全</a> <a href="/tags/开发/" style="font-size: 20px;">开发</a> <a href="/tags/数据库/" style="font-size: 10px;">数据库</a> <a href="/tags/阅读/" style="font-size: 15px;">阅读</a>
+      <a href="/tags/The-Morning-Paper/" style="font-size: 15px;">The Morning Paper</a> <a href="/tags/安全/" style="font-size: 10px;">安全</a> <a href="/tags/开发/" style="font-size: 20px;">开发</a> <a href="/tags/微服务/" style="font-size: 10px;">微服务</a> <a href="/tags/数据库/" style="font-size: 10px;">数据库</a> <a href="/tags/阅读/" style="font-size: 15px;">阅读</a>
     </div>
   </div>
 
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
+    <h3 class="widget-title">Archieven</h3>
     <div class="widget">
       <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a></li></ul>
     </div>
@@ -505,9 +558,13 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
+    <h3 class="widget-title">Recente berichten</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2016/05/31/drcon/">一种可伸缩的微服务架构：DRCON</a>
+          </li>
         
           <li>
             <a href="/2016/05/30/the-cause-of-breakage-of-web-app/">导致Web应用测试失败的罪魁祸首</a>
@@ -523,10 +580,6 @@
         
           <li>
             <a href="/2016/05/27/top-100-java-libs-in-2016/">2016年最受欢迎的前100 Java开发库</a>
-          </li>
-        
-          <li>
-            <a href="/2016/05/26/vertx-eventbus-interceptor/">Vert.x技巧：使用EventBus Interceptor拦截消息</a>
           </li>
         
       </ul>

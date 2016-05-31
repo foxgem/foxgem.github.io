@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://foxgem.github.io/"/>
-  <updated>2016-05-30T13:04:34.000Z</updated>
+  <updated>2016-05-31T09:34:03.000Z</updated>
   <id>http://foxgem.github.io/</id>
   
   <author>
@@ -14,6 +14,41 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>一种可伸缩的微服务架构：DRCON</title>
+    <link href="http://foxgem.github.io/2016/05/31/drcon/"/>
+    <id>http://foxgem.github.io/2016/05/31/drcon/</id>
+    <published>2016-05-31T08:53:55.000Z</published>
+    <updated>2016-05-31T09:34:03.000Z</updated>
+    
+    <content type="html">&lt;p&gt;微服务时下正火，Docker是当红炸子鸡，稍微思考一下就能发现：两者结合为可伸缩的架构提供天然的基础，但怎么实现，却没有太多的头绪。直到发现&lt;a href=&quot;https://www.airpair.com/scalable-architecture-with-docker-consul-and-nginx&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;这篇旧文&lt;/a&gt;才让我豁然开朗。【各位见谅，虽然名词很早就接触了，真正打算着手开干才是最近的事情。】&lt;/p&gt;
+&lt;p&gt;DRCON其实是下列工具的集合：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Docker，不必过多介绍，略过&lt;/li&gt;
+&lt;li&gt;Registrator，可简化服务的注册&lt;/li&gt;
+&lt;li&gt;Consul，服务注册和发现&lt;/li&gt;
+&lt;li&gt;Consul Template + Nginx，服务的负载均衡和重定向&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;服务的负载均衡和重定向也可以用SRV-Router来做，这一做法作者在&lt;a href=&quot;http://www.maori.geek.nz/docker_web_services_with_consul/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;另一篇更老的文章&lt;/a&gt;里有介绍。相比起来，这篇文章的做法要更简单一些，就是利用Consul Template在服务启停时自动去修改Nginx的配置文件。&lt;/p&gt;
+&lt;p&gt;若采用SRV-Router，务必注意文中提到的小细节：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The srv-router when called will query Consul for home.simple.service.consul, then route to the address and port that is returned. This is the tags namespace in Consul, so each consul service must have the home tag.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;我就是没有注意在Consul中要有个home tag，浪费了半天时间。&lt;/p&gt;
+&lt;p&gt;最后提一句，与文中用python来实现服务的例子不同，我用的是&lt;a href=&quot;http://vertx.io/docs/#web&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Vert.x Web&lt;/a&gt;，;)。&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;微服务时下正火，Docker是当红炸子鸡，稍微思考一下就能发现：两者结合为可伸缩的架构提供天然的基础，但怎么实现，却没有太多的头绪。直到发现&lt;a href=&quot;https://www.airpair.com/scalable-architecture-with-docker-
+    
+    </summary>
+    
+    
+      <category term="微服务" scheme="http://foxgem.github.io/tags/%E5%BE%AE%E6%9C%8D%E5%8A%A1/"/>
+    
+  </entry>
   
   <entry>
     <title>导致Web应用测试失败的罪魁祸首</title>
