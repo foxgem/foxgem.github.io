@@ -3,33 +3,17 @@
 <head>
   <meta charset="utf-8">
   
-  <title>2016年最受欢迎的前100 Java开发库 | 老胡随手记</title>
+  <title>老胡随手记</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="说实话，文章有点标题党的味道，:)。按照这篇文章解释的数据获取方法，更准确的说法应该是“GitHub 2016年最受欢迎的Top 100 Java libs”。不过鉴于GitHub在开发界的地位，标题写成这样也不算太过分。
-根据这些数据做出的图表，很容易看出来：
-
-测试类工具比重不少，是否可以得出结论自动化测试已经深入人心？
-JUnit和Spring在Java生态中的地位依旧牢不可破
-日志大部分采">
-<meta property="og:type" content="article">
-<meta property="og:title" content="2016年最受欢迎的前100 Java开发库">
-<meta property="og:url" content="http://foxgem.github.io/2016/05/27/top-100-java-libs-in-2016/index.html">
+  <meta name="description">
+<meta property="og:type" content="website">
+<meta property="og:title" content="老胡随手记">
+<meta property="og:url" content="http://foxgem.github.io/page/2/index.html">
 <meta property="og:site_name" content="老胡随手记">
-<meta property="og:description" content="说实话，文章有点标题党的味道，:)。按照这篇文章解释的数据获取方法，更准确的说法应该是“GitHub 2016年最受欢迎的Top 100 Java libs”。不过鉴于GitHub在开发界的地位，标题写成这样也不算太过分。
-根据这些数据做出的图表，很容易看出来：
-
-测试类工具比重不少，是否可以得出结论自动化测试已经深入人心？
-JUnit和Spring在Java生态中的地位依旧牢不可破
-日志大部分采">
-<meta property="og:updated_time" content="2016-05-27T13:08:21.000Z">
+<meta property="og:description">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="2016年最受欢迎的前100 Java开发库">
-<meta name="twitter:description" content="说实话，文章有点标题党的味道，:)。按照这篇文章解释的数据获取方法，更准确的说法应该是“GitHub 2016年最受欢迎的Top 100 Java libs”。不过鉴于GitHub在开发界的地位，标题写成这样也不算太过分。
-根据这些数据做出的图表，很容易看出来：
-
-测试类工具比重不少，是否可以得出结论自动化测试已经深入人心？
-JUnit和Spring在Java生态中的地位依旧牢不可破
-日志大部分采">
+<meta name="twitter:title" content="老胡随手记">
+<meta name="twitter:description">
   
     <link rel="alternate" href="/atom.xml" title="老胡随手记" type="application/atom+xml">
   
@@ -78,10 +62,12 @@ JUnit和Spring在Java生态中的地位依旧牢不可破
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-top-100-java-libs-in-2016" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main">
+  
+    <article id="post-domain-typosquatting" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2016/05/27/top-100-java-libs-in-2016/" class="article-date">
-  <time datetime="2016-05-27T12:26:55.000Z" itemprop="datePublished">2016-05-27</time>
+    <a href="/2016/05/22/domain-typosquatting/" class="article-date">
+  <time datetime="2016-05-22T09:19:17.000Z" itemprop="datePublished">2016-05-22</time>
 </a>
     
   </div>
@@ -91,8 +77,8 @@ JUnit和Spring在Java生态中的地位依旧牢不可破
       <header class="article-header">
         
   
-    <h1 class="article-title" itemprop="name">
-      2016年最受欢迎的前100 Java开发库
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/05/22/domain-typosquatting/">那些恶意的相似域名（Domain Name Typosquatting）</a>
     </h1>
   
 
@@ -100,52 +86,36 @@ JUnit和Spring在Java生态中的地位依旧牢不可破
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>说实话，文章有点标题党的味道，:)。按照<a href="https://dzone.com/articles/the-top-100-java-libraries-in-2016-after-analyzing" target="_blank" rel="external">这篇文章</a>解释的数据获取方法，更准确的说法应该是“GitHub 2016年最受欢迎的Top 100 Java libs”。不过鉴于GitHub在开发界的地位，标题写成这样也不算太过分。</p>
-<p>根据这些数据做出的图表，很容易看出来：</p>
+        <p>原文：<a href="https://blog.acolyer.org/2016/05/20/the-landscape-of-domain-name-typosquatting-techniques-and-countermeasures/" target="_blank" rel="external">The landscape of domain name typosquatting: techniques and countermeasures</a></p>
+<p>人不是机器，总会犯错，这就给恶意相似域名提供了生存空间。文中提到的实验和数据充分证明了这些域名的“价值”。原本觉得这里面其实也就是钓鱼网站用得比较多，可看了这篇文章之后才知道还有那么多的道道：</p>
 <ul>
-<li>测试类工具比重不少，是否可以得出结论自动化测试已经深入人心？</li>
-<li>JUnit和Spring在Java生态中的地位依旧牢不可破</li>
-<li>日志大部分采用的是slf4j + slf4j-log12</li>
-<li>用Java做游戏的真不多，比起用它来做Web的差远了</li>
-<li>Parsing类的工具比重虽大，但其实多是用于对JSON和XML的解析</li>
+<li>广告点击</li>
+<li>勒索</li>
+<li>将用户导向竞争对手</li>
+<li>……</li>
 </ul>
-<p>最有趣的是，JVM上的动态语言<a href="http://www.groovy-lang.org/" target="_blank" rel="external">Groovy</a>也被纳入在内，作为Java库（org.codehaus.groovy.groovy-all）。作为一个资深Groovy用户，我可以负责任地说，自从用上Groovy，省掉了很多工具选择的烦恼，如JSON和XML的解析。</p>
-<p>而且，我也很高兴的看到Groovy的流行度逐年上升，并于2016年5月TIOBE的语言榜中排第17位。套句广告词：Groovy，谁用谁知道！</p>
+<p>文中提到的 typosquatting cross-site scripting(TXSS) 更是让人心有余悸，算是给code review又提供了一个很好的理由，;)</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://foxgem.github.io/2016/05/27/top-100-java-libs-in-2016/" data-id="ciowxhdko000hp5qc51lqlxu8" class="article-share-link">Share</a>
+      <a data-url="http://foxgem.github.io/2016/05/22/domain-typosquatting/" data-id="ciowxhdjh0004p5qcsy4z3wmq" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/开发/">开发</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/The-Morning-Paper/">The Morning Paper</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/安全/">安全</a></li></ul>
 
     </footer>
   </div>
   
-    
-<nav id="article-nav">
-  
-    <a href="/2016/05/28/break-list/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          To Do List + Break List = 劳逸结合
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2016/05/26/vertx-eventbus-interceptor/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Vert.x技巧：使用EventBus Interceptor拦截消息</div>
-    </a>
-  
-</nav>
-
-  
 </article>
 
+
+  
+
+
+  <nav id="page-nav">
+    <a class="extend prev" rel="prev" href="/">&laquo; __('prev')</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+  </nav>
 </section>
         
           <aside id="sidebar">
