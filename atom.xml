@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://foxgem.github.io/"/>
-  <updated>2016-06-04T12:54:35.000Z</updated>
+  <updated>2016-06-05T10:24:18.000Z</updated>
   <id>http://foxgem.github.io/</id>
   
   <author>
@@ -14,6 +14,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>数据仓库和BI的敏捷之道</title>
+    <link href="http://foxgem.github.io/2016/06/05/agile-dw-bi/"/>
+    <id>http://foxgem.github.io/2016/06/05/agile-dw-bi/</id>
+    <published>2016-06-05T09:54:13.000Z</published>
+    <updated>2016-06-05T10:24:18.000Z</updated>
+    
+    <content type="html">&lt;p&gt;相比十年前，如今敏捷已是路人皆知。然而，就数据仓库和BI项目来说，却鲜有相关文章涉及。今天&lt;a href=&quot;https://www.thoughtworks.com/insights/blog/agile-data-warehousing-and-business-intelligence-action&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;从Twitter看到的这篇发布在TW网站上的文章&lt;/a&gt;恰好可以补充我这方面的知识盲点。&lt;/p&gt;
+&lt;p&gt;下面是我觉得一些有趣的地方（那份仿“敏捷宣言”的“DW/BI系统开发宣言”就算了，:)）：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;难度和频率象限，重点关注那些处于“更频繁、难度更高”的用户故事&lt;/li&gt;
+&lt;li&gt;项目的推荐目录结构，方便将相关产出纳入版本控制&lt;/li&gt;
+&lt;li&gt;通过用户故事推动维度模型的演变&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;总得来讲，这篇文章是一份简要的数据仓库和BI项目敏捷实施指南。对于新手可以快速建立起全局观，对于老手则能带来一些新思路，读读还是不错的。&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;相比十年前，如今敏捷已是路人皆知。然而，就数据仓库和BI项目来说，却鲜有相关文章涉及。今天&lt;a href=&quot;https://www.thoughtworks.com/insights/blog/agile-data-warehousing-and-business-inte
+    
+    </summary>
+    
+    
+      <category term="数据库" scheme="http://foxgem.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+  </entry>
   
   <entry>
     <title>拒绝低价值的工作</title>
@@ -392,9 +420,9 @@
     </summary>
     
     
-      <category term="The Morning Paper" scheme="http://foxgem.github.io/tags/The-Morning-Paper/"/>
-    
       <category term="数据库" scheme="http://foxgem.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+      <category term="The Morning Paper" scheme="http://foxgem.github.io/tags/The-Morning-Paper/"/>
     
   </entry>
   

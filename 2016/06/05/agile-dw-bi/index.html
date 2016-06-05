@@ -3,18 +3,33 @@
 <head>
   <meta charset="utf-8">
   
-  <title>关系数据库架构 | 老胡随手记</title>
+  <title>数据仓库和BI的敏捷之道 | 老胡随手记</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="今天从The Morning Paper上发现一篇关于数据库架构的不错的导读，接下来的几天看看原论文。">
+  <meta name="description" content="相比十年前，如今敏捷已是路人皆知。然而，就数据仓库和BI项目来说，却鲜有相关文章涉及。今天从Twitter看到的这篇发布在TW网站上的文章恰好可以补充我这方面的知识盲点。
+下面是我觉得一些有趣的地方（那份仿“敏捷宣言”的“DW/BI系统开发宣言”就算了，:)）：
+
+难度和频率象限，重点关注那些处于“更频繁、难度更高”的用户故事
+项目的推荐目录结构，方便将相关产出纳入版本控制
+通过用户故事推动维度模">
 <meta property="og:type" content="article">
-<meta property="og:title" content="关系数据库架构">
-<meta property="og:url" content="http://foxgem.github.io/2016/05/23/rmdb-arch/index.html">
+<meta property="og:title" content="数据仓库和BI的敏捷之道">
+<meta property="og:url" content="http://foxgem.github.io/2016/06/05/agile-dw-bi/index.html">
 <meta property="og:site_name" content="老胡随手记">
-<meta property="og:description" content="今天从The Morning Paper上发现一篇关于数据库架构的不错的导读，接下来的几天看看原论文。">
-<meta property="og:updated_time" content="2016-05-24T01:12:15.000Z">
+<meta property="og:description" content="相比十年前，如今敏捷已是路人皆知。然而，就数据仓库和BI项目来说，却鲜有相关文章涉及。今天从Twitter看到的这篇发布在TW网站上的文章恰好可以补充我这方面的知识盲点。
+下面是我觉得一些有趣的地方（那份仿“敏捷宣言”的“DW/BI系统开发宣言”就算了，:)）：
+
+难度和频率象限，重点关注那些处于“更频繁、难度更高”的用户故事
+项目的推荐目录结构，方便将相关产出纳入版本控制
+通过用户故事推动维度模">
+<meta property="og:updated_time" content="2016-06-05T10:24:18.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="关系数据库架构">
-<meta name="twitter:description" content="今天从The Morning Paper上发现一篇关于数据库架构的不错的导读，接下来的几天看看原论文。">
+<meta name="twitter:title" content="数据仓库和BI的敏捷之道">
+<meta name="twitter:description" content="相比十年前，如今敏捷已是路人皆知。然而，就数据仓库和BI项目来说，却鲜有相关文章涉及。今天从Twitter看到的这篇发布在TW网站上的文章恰好可以补充我这方面的知识盲点。
+下面是我觉得一些有趣的地方（那份仿“敏捷宣言”的“DW/BI系统开发宣言”就算了，:)）：
+
+难度和频率象限，重点关注那些处于“更频繁、难度更高”的用户故事
+项目的推荐目录结构，方便将相关产出纳入版本控制
+通过用户故事推动维度模">
   
     <link rel="alternate" href="/atom.xml" title="老胡随手记" type="application/atom+xml">
   
@@ -63,10 +78,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-rmdb-arch" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-agile-dw-bi" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2016/05/23/rmdb-arch/" class="article-date">
-  <time datetime="2016-05-23T15:08:34.000Z" itemprop="datePublished">2016-05-23</time>
+    <a href="/2016/06/05/agile-dw-bi/" class="article-date">
+  <time datetime="2016-06-05T09:54:13.000Z" itemprop="datePublished">2016-06-05</time>
 </a>
     
   </div>
@@ -77,7 +92,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      关系数据库架构
+      数据仓库和BI的敏捷之道
     </h1>
   
 
@@ -85,15 +100,22 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>今天从<a href="https://blog.acolyer.org/" target="_blank" rel="external">The Morning Paper</a>上发现一篇关于<a href="http://db.cs.berkeley.edu/papers/fntdb07-architecture.pdf" target="_blank" rel="external">数据库架构</a>的不错的<a href="https://blog.acolyer.org/2015/01/20/architecture-of-a-database-system/" target="_blank" rel="external">导读</a>，接下来的几天看看原论文。</p>
+        <p>相比十年前，如今敏捷已是路人皆知。然而，就数据仓库和BI项目来说，却鲜有相关文章涉及。今天<a href="https://www.thoughtworks.com/insights/blog/agile-data-warehousing-and-business-intelligence-action" target="_blank" rel="external">从Twitter看到的这篇发布在TW网站上的文章</a>恰好可以补充我这方面的知识盲点。</p>
+<p>下面是我觉得一些有趣的地方（那份仿“敏捷宣言”的“DW/BI系统开发宣言”就算了，:)）：</p>
+<ul>
+<li>难度和频率象限，重点关注那些处于“更频繁、难度更高”的用户故事</li>
+<li>项目的推荐目录结构，方便将相关产出纳入版本控制</li>
+<li>通过用户故事推动维度模型的演变</li>
+</ul>
+<p>总得来讲，这篇文章是一份简要的数据仓库和BI项目敏捷实施指南。对于新手可以快速建立起全局观，对于老手则能带来一些新思路，读读还是不错的。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://foxgem.github.io/2016/05/23/rmdb-arch/" data-id="cip2fx7jr000lwrqcelffsqqo" class="article-share-link">Share</a>
+      <a data-url="http://foxgem.github.io/2016/06/05/agile-dw-bi/" data-id="cip2fx7iq0000wrqcur2lsqgq" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/The-Morning-Paper/">The Morning Paper</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数据库/">数据库</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数据库/">数据库</a></li></ul>
 
     </footer>
   </div>
@@ -101,19 +123,10 @@
     
 <nav id="article-nav">
   
-    <a href="/2016/05/24/git-commit-message/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          做一个体贴的代码提交人
-        
-      </div>
-    </a>
   
-  
-    <a href="/2016/05/22/domain-typosquatting/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2016/06/04/no-low-value-work/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">那些恶意的相似域名（Domain Name Typosquatting）</div>
+      <div class="article-nav-title">拒绝低价值的工作</div>
     </a>
   
 </nav>
