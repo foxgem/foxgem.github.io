@@ -3,33 +3,27 @@
 <head>
   <meta charset="utf-8">
   
-  <title>数据仓库和BI的敏捷之道 | 老胡随手记</title>
+  <title>Groovy老鸟的回顾 | 老胡随手记</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="相比十年前，如今敏捷已是路人皆知。然而，就数据仓库和BI项目来说，却鲜有相关文章涉及。今天从Twitter看到的这篇发布在TW网站上的文章恰好可以补充我这方面的知识盲点。
-下面是我觉得一些有趣的地方（那份仿“敏捷宣言”的“DW/BI系统开发宣言”就算了，:)）：
+  <meta name="description" content="今天在DZone上读到一名Groovy老鸟在即将转战其他语言之前写的自己对于Groovy的回顾总结。文章盛赞了Groovy的稳定和简洁，同时也提及了Java程序员转Groovy时需要注意的思维转变。余心有戚戚焉。
+关于类型这部分，我不能同意得更多：
 
-难度和频率象限，重点关注那些处于“更频繁、难度更高”的用户故事
-项目的推荐目录结构，方便将相关产出纳入版本控制
-通过用户故事推动维度模">
+Again, in my opinion, typing is better - I still don’t buy that typing def">
 <meta property="og:type" content="article">
-<meta property="og:title" content="数据仓库和BI的敏捷之道">
-<meta property="og:url" content="http://foxgem.github.io/2016/06/05/agile-dw-bi/index.html">
+<meta property="og:title" content="Groovy老鸟的回顾">
+<meta property="og:url" content="http://foxgem.github.io/2016/06/06/groovy-a-retrospective/index.html">
 <meta property="og:site_name" content="老胡随手记">
-<meta property="og:description" content="相比十年前，如今敏捷已是路人皆知。然而，就数据仓库和BI项目来说，却鲜有相关文章涉及。今天从Twitter看到的这篇发布在TW网站上的文章恰好可以补充我这方面的知识盲点。
-下面是我觉得一些有趣的地方（那份仿“敏捷宣言”的“DW/BI系统开发宣言”就算了，:)）：
+<meta property="og:description" content="今天在DZone上读到一名Groovy老鸟在即将转战其他语言之前写的自己对于Groovy的回顾总结。文章盛赞了Groovy的稳定和简洁，同时也提及了Java程序员转Groovy时需要注意的思维转变。余心有戚戚焉。
+关于类型这部分，我不能同意得更多：
 
-难度和频率象限，重点关注那些处于“更频繁、难度更高”的用户故事
-项目的推荐目录结构，方便将相关产出纳入版本控制
-通过用户故事推动维度模">
-<meta property="og:updated_time" content="2016-06-05T10:24:18.000Z">
+Again, in my opinion, typing is better - I still don’t buy that typing def">
+<meta property="og:updated_time" content="2016-06-06T12:18:11.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="数据仓库和BI的敏捷之道">
-<meta name="twitter:description" content="相比十年前，如今敏捷已是路人皆知。然而，就数据仓库和BI项目来说，却鲜有相关文章涉及。今天从Twitter看到的这篇发布在TW网站上的文章恰好可以补充我这方面的知识盲点。
-下面是我觉得一些有趣的地方（那份仿“敏捷宣言”的“DW/BI系统开发宣言”就算了，:)）：
+<meta name="twitter:title" content="Groovy老鸟的回顾">
+<meta name="twitter:description" content="今天在DZone上读到一名Groovy老鸟在即将转战其他语言之前写的自己对于Groovy的回顾总结。文章盛赞了Groovy的稳定和简洁，同时也提及了Java程序员转Groovy时需要注意的思维转变。余心有戚戚焉。
+关于类型这部分，我不能同意得更多：
 
-难度和频率象限，重点关注那些处于“更频繁、难度更高”的用户故事
-项目的推荐目录结构，方便将相关产出纳入版本控制
-通过用户故事推动维度模">
+Again, in my opinion, typing is better - I still don’t buy that typing def">
   
     <link rel="alternate" href="/atom.xml" title="老胡随手记" type="application/atom+xml">
   
@@ -78,10 +72,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-agile-dw-bi" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-groovy-a-retrospective" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2016/06/05/agile-dw-bi/" class="article-date">
-  <time datetime="2016-06-05T09:54:13.000Z" itemprop="datePublished">2016-06-05</time>
+    <a href="/2016/06/06/groovy-a-retrospective/" class="article-date">
+  <time datetime="2016-06-06T12:05:48.000Z" itemprop="datePublished">2016-06-06</time>
 </a>
     
   </div>
@@ -92,7 +86,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      数据仓库和BI的敏捷之道
+      Groovy老鸟的回顾
     </h1>
   
 
@@ -100,22 +94,20 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>相比十年前，如今敏捷已是路人皆知。然而，就数据仓库和BI项目来说，却鲜有相关文章涉及。今天<a href="https://www.thoughtworks.com/insights/blog/agile-data-warehousing-and-business-intelligence-action" target="_blank" rel="external">从Twitter看到的这篇发布在TW网站上的文章</a>恰好可以补充我这方面的知识盲点。</p>
-<p>下面是我觉得一些有趣的地方（那份仿“敏捷宣言”的“DW/BI系统开发宣言”就算了，:)）：</p>
-<ul>
-<li>难度和频率象限，重点关注那些处于“更频繁、难度更高”的用户故事</li>
-<li>项目的推荐目录结构，方便将相关产出纳入版本控制</li>
-<li>通过用户故事推动维度模型的演变</li>
-</ul>
-<p>总得来讲，这篇文章是一份简要的数据仓库和BI项目敏捷实施指南。对于新手可以快速建立起全局观，对于老手则能带来一些新思路，读读还是不错的。</p>
+        <p>今天在DZone上读到<a href="https://dzone.com/articles/groovy-a-retrospective" target="_blank" rel="external">一名Groovy老鸟在即将转战其他语言之前写的自己对于Groovy的回顾总结</a>。文章盛赞了Groovy的稳定和简洁，同时也提及了Java程序员转Groovy时需要注意的思维转变。余心有戚戚焉。</p>
+<p>关于类型这部分，我不能同意得更多：</p>
+<blockquote>
+<p>Again, in my opinion, typing is better - I still don’t buy that typing def rather than the actual type is actually that much of a saving, and often ends up being a code-smell (even if it didn’t start out as one). The official Groovy recommendation is to type things, with the exception of local method scoped variables - but even in that case I cannot see the benefit: there is no real gain to the developer in typing those precious fewer characters and the future readability suffers as other developers have to track through the code more to be sure as to what a variable is doing.</p>
+</blockquote>
+<p>我记得在Burt寄给我的<a href="https://www.amazon.cn/Programming-Grails-Beckwith-Burt/dp/1449323936/ref=sr_1_1?ie=UTF8&amp;qid=1465215356&amp;sr=8-1&amp;keywords=Programming+grails" target="_blank" rel="external">“Programming Grails”</a>一书中也提到了类似关于在变量声明时是否明确声明变量类型的内容。我个人觉得宗旨就是：不要影响阅读性。而且，在使用@CompileStatic时，声明类型有助于减少修改编译错误的麻烦。此外，声明类型可以带来额外的好处：在像Idea这样的IDE中可以方便的查看对应类型的源代码（按住Ctrl，在相应类型上鼠标点击即可）。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://foxgem.github.io/2016/06/05/agile-dw-bi/" data-id="cip3zdhy70000n7qcepu6yo21" class="article-share-link">Share</a>
+      <a data-url="http://foxgem.github.io/2016/06/06/groovy-a-retrospective/" data-id="cip3zdhyl0004n7qc7y3t8wtd" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数据库/">数据库</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/开发/">开发</a></li></ul>
 
     </footer>
   </div>
@@ -123,19 +115,10 @@
     
 <nav id="article-nav">
   
-    <a href="/2016/06/06/groovy-a-retrospective/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          Groovy老鸟的回顾
-        
-      </div>
-    </a>
   
-  
-    <a href="/2016/06/04/no-low-value-work/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2016/06/05/agile-dw-bi/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">拒绝低价值的工作</div>
+      <div class="article-nav-title">数据仓库和BI的敏捷之道</div>
     </a>
   
 </nav>
