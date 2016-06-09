@@ -64,6 +64,49 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-the-cause-of-breakage-of-web-app" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/05/30/the-cause-of-breakage-of-web-app/" class="article-date">
+  <time datetime="2016-05-30T12:34:24.000Z" itemprop="datePublished">2016-05-30</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/05/30/the-cause-of-breakage-of-web-app/">导致Web应用测试失败的罪魁祸首</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>但凡给Web应用写过自动化功能测试的人都会对这类测试的脆弱性印象深刻，并经常怀疑自己做这件事情的价值。相信我，若没有这样的疑问，那是你写的还不够多，;)</p>
+<p>虽然脆弱，但它却并非一无是处，有时确实能够省掉不少人工，尤其是当UI已经定型并且在可预见的未来很长时间内不会有大的动作时。我猜<a href="http://martinfowler.com/bliki/TestPyramid.html" target="_blank" rel="external">测试金字塔</a>大概就是在这种又爱又恨的情绪下诞生的：很明显，跟UI有关的功能测试是最少的。</p>
+<p>今天，<a href="https://blog.acolyer.org/2016/05/30/why-do-recordreplay-tests-of-web-applications-break/" target="_blank" rel="external">The Morning Paper上的一篇文章给这类测试的脆弱性提供了理论上的指导</a>，细节大家就上网站上自己看吧，结论是大家基本都很清楚的：导致Web应用功能测试失败的最大原因是测试中用到的定位符。这也难怪，人就是喜新厌旧的动物，再好看的UI看久了都会有审美疲劳。于是，改头换面自然就成了寻常事，这种背景下原来的测试用得上才怪。</p>
+<p>我也是懒人，也不主张花很大代价去完成一个100%覆盖的功能测试。我更倾向于尽可能大面积覆盖较为稳定的非GUI测试（单元测试和集成测试），严格验证跟GUI交互的接口，最好能在无界面的前提之下就能验证功能流程的流转。至于GUI，则口子放的开一点，方便它们随时调整布局和设计。</p>
+<p>最后又到广告时间，对于Web的功能测试，我推荐<a href="http://www.gebish.org/" target="_blank" rel="external">Geb</a>，它基于<a href="http://docs.seleniumhq.org/" target="_blank" rel="external">Selenium</a>，同时又支持<a href="http://spockframework.org/" target="_blank" rel="external">Spock</a>，而且还有<a href="https://grails.org/" target="_blank" rel="external">Grails</a>的插件，非常的方便易用。我之前在老东家SAP时还专门让人用它做了一个小的测试工具，效果还不错，;)</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://foxgem.github.io/2016/05/30/the-cause-of-breakage-of-web-app/" data-id="cip8brwau000vtzqc7v67j8lk" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/The-Morning-Paper/">The Morning Paper</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/开发/">开发</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-codeless" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/05/29/codeless/" class="article-date">
@@ -93,7 +136,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://foxgem.github.io/2016/05/29/codeless/" data-id="cip6yeikj0004rbqcjbojkqe7" class="article-share-link">Share</a>
+      <a data-url="http://foxgem.github.io/2016/05/29/codeless/" data-id="cip8brwa00006tzqcme7i5l59" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/阅读/">阅读</a></li></ul>
@@ -135,7 +178,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://foxgem.github.io/2016/05/28/break-list/" data-id="cip6yeikh0003rbqcvmahzi53" class="article-share-link">Share</a>
+      <a data-url="http://foxgem.github.io/2016/05/28/break-list/" data-id="cip8brw9r0001tzqczril7p2k" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/阅读/">阅读</a></li></ul>
@@ -184,7 +227,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://foxgem.github.io/2016/05/27/top-100-java-libs-in-2016/" data-id="cip6yeili000xrbqcpgymqdts" class="article-share-link">Share</a>
+      <a data-url="http://foxgem.github.io/2016/05/27/top-100-java-libs-in-2016/" data-id="cip8brwb10010tzqctwvtgl6k" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/开发/">开发</a></li></ul>
@@ -227,7 +270,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://foxgem.github.io/2016/05/26/vertx-eventbus-interceptor/" data-id="cip6yeiln0010rbqcxbm8bl8m" class="article-share-link">Share</a>
+      <a data-url="http://foxgem.github.io/2016/05/26/vertx-eventbus-interceptor/" data-id="cip8brwb20012tzqcd1avxnnw" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/开发/">开发</a></li></ul>
@@ -277,7 +320,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://foxgem.github.io/2016/05/25/rich-and-poor/" data-id="cip6yeila000qrbqc78gbg6va" class="article-share-link">Share</a>
+      <a data-url="http://foxgem.github.io/2016/05/25/rich-and-poor/" data-id="cip8brwat000stzqcxg6jkn88" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/阅读/">阅读</a></li></ul>
@@ -325,7 +368,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://foxgem.github.io/2016/05/24/git-commit-message/" data-id="cip6yeiku000crbqc89vx8t1w" class="article-share-link">Share</a>
+      <a data-url="http://foxgem.github.io/2016/05/24/git-commit-message/" data-id="cip8brwak000gtzqckxqgspi3" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/开发/">开发</a></li></ul>
@@ -364,7 +407,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://foxgem.github.io/2016/05/23/rmdb-arch/" data-id="cip6yeile000vrbqc8pipy64o" class="article-share-link">Share</a>
+      <a data-url="http://foxgem.github.io/2016/05/23/rmdb-arch/" data-id="cip8brway000xtzqc4db9ex3q" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/The-Morning-Paper/">The Morning Paper</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数据库/">数据库</a></li></ul>
@@ -411,7 +454,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://foxgem.github.io/2016/05/22/domain-typosquatting/" data-id="cip6yeikm0006rbqc1b06uey6" class="article-share-link">Share</a>
+      <a data-url="http://foxgem.github.io/2016/05/22/domain-typosquatting/" data-id="cip8brwa50008tzqcp0hxwwcd" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/The-Morning-Paper/">The Morning Paper</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/安全/">安全</a></li></ul>
@@ -449,7 +492,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签云</h3>
     <div class="widget tagcloud">
-      <a href="/tags/The-Morning-Paper/" style="font-size: 15px;">The Morning Paper</a> <a href="/tags/安全/" style="font-size: 10px;">安全</a> <a href="/tags/开发/" style="font-size: 17.5px;">开发</a> <a href="/tags/微服务/" style="font-size: 12.5px;">微服务</a> <a href="/tags/数据库/" style="font-size: 12.5px;">数据库</a> <a href="/tags/阅读/" style="font-size: 20px;">阅读</a>
+      <a href="/tags/The-Morning-Paper/" style="font-size: 13.33px;">The Morning Paper</a> <a href="/tags/安全/" style="font-size: 10px;">安全</a> <a href="/tags/开发/" style="font-size: 16.67px;">开发</a> <a href="/tags/微服务/" style="font-size: 10px;">微服务</a> <a href="/tags/数据库/" style="font-size: 10px;">数据库</a> <a href="/tags/阅读/" style="font-size: 20px;">阅读</a>
     </div>
   </div>
 
@@ -471,6 +514,10 @@
       <ul>
         
           <li>
+            <a href="/2016/06/09/password-complexity/">为什么复杂的密码不能让你的账号更安全？</a>
+          </li>
+        
+          <li>
             <a href="/2016/06/08/not-loving-yourself-just-as-you-are/">拒绝“无条件的爱自己”</a>
           </li>
         
@@ -484,10 +531,6 @@
         
           <li>
             <a href="/2016/06/05/agile-dw-bi/">数据仓库和BI的敏捷之道</a>
-          </li>
-        
-          <li>
-            <a href="/2016/06/04/no-low-value-work/">拒绝低价值的工作</a>
           </li>
         
       </ul>
