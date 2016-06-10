@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://foxgem.github.io/"/>
-  <updated>2016-06-09T13:12:03.000Z</updated>
+  <updated>2016-06-10T14:30:49.000Z</updated>
   <id>http://foxgem.github.io/</id>
   
   <author>
@@ -14,6 +14,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>意识的进化史</title>
+    <link href="http://foxgem.github.io/2016/06/10/theory-on-conscious-evolution/"/>
+    <id>http://foxgem.github.io/2016/06/10/theory-on-conscious-evolution/</id>
+    <published>2016-06-10T13:57:43.000Z</published>
+    <updated>2016-06-10T14:30:49.000Z</updated>
+    
+    <content type="html">&lt;p&gt;意识是如何形成的？&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.theatlantic.com/science/archive/2016/06/how-consciousness-evolved/485558/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;这篇介绍神经学最新理论（The Attention Schema Theory）的科普文章&lt;/a&gt;在一开始就给出了答案：意识是大脑为处理复杂性而进化的结果。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The theory suggests that consciousness arises as a solution to one of the most fundamental problems facing any nervous system: Too much information constantly flows in to be fully processed. The brain evolved increasingly sophisticated mechanisms for deeply processing a few select signals at the expense of others, and in the AST, consciousness is the ultimate result of that evolutionary sequence.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;在接下来的段落，文章回顾了大脑的进化过程，向我们展示了一个复杂神经系统的形成。让我这个外行基本看懂了，还是值得一读的，:)。&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;意识是如何形成的？&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.theatlantic.com/science/archive/2016/06/how-consciousness-evolved/485558/&quot; target=&quot;_blank&quot; rel=&quot;exte
+    
+    </summary>
+    
+    
+      <category term="阅读" scheme="http://foxgem.github.io/tags/%E9%98%85%E8%AF%BB/"/>
+    
+  </entry>
   
   <entry>
     <title>为什么复杂的密码不能让你的账号更安全？</title>
