@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://foxgem.github.io/"/>
-  <updated>2016-06-10T14:30:49.000Z</updated>
+  <updated>2016-06-11T11:15:34.000Z</updated>
   <id>http://foxgem.github.io/</id>
   
   <author>
@@ -14,6 +14,59 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>SMART帮助提高大脑的注意力和思考力</title>
+    <link href="http://foxgem.github.io/2016/06/11/training-brain-to-focus/"/>
+    <id>http://foxgem.github.io/2016/06/11/training-brain-to-focus/</id>
+    <published>2016-06-11T10:40:35.000Z</published>
+    <updated>2016-06-11T11:15:34.000Z</updated>
+    
+    <content type="html">&lt;p&gt;作为脑力工作者，有谁会嫌脑力提高太多呢？很自然的，当Pocket向我推荐&lt;a href=&quot;http://www.fastcompany.com/3060709/your-most-productive-self/how-to-train-your-brain-to-focus-remember-and-have-more-breakthrou&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;这篇如何提高脑力的文章&lt;/a&gt;时，我毫不犹豫地打开了它。SMART，Strategic Memory Advanced Reasoning Training，就是文章中介绍的方法。这个号称9小时就能提升你大脑能力的培训包括3个关键内容：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Strategic Attention&lt;ul&gt;
+&lt;li&gt;强调注意力，避免多任务。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Integration&lt;ul&gt;
+&lt;li&gt;强调思考的深度和广度，既能抓住关键细节，同时又能将之放入到一个更大的框架之中。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Mental Flexibility&lt;ul&gt;
+&lt;li&gt;强调思维角度的变换，而不仅仅只是从固有角度去看问题。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;似乎有点老调重弹是不是？相比起上面的内容，个人觉得SMART提出者给出的日常脑力改进建议要更有趣一些：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;停止多任务&lt;/li&gt;
+&lt;li&gt;提炼加总结&lt;ul&gt;
+&lt;li&gt;不断找出关键点，总结形成大局观；再从大局观，反查是否还有值得注意的细节。在“大局观”和“细节”之间不断切换，帮助加深对主题的理解。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;尝试新视角&lt;/li&gt;
+&lt;li&gt;让大脑放轻松&lt;ul&gt;
+&lt;li&gt;紧张的大脑如同电量不足的电池，难以帮助手电发出强有力的光照亮我们前进的道路。放松的目的就是帮助大脑更好地积蓄电量。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;读少一点，读精一些&lt;ul&gt;
+&lt;li&gt;这一点，个人持保留意见。我觉得只要自己掌握好就行了，区分哪些是精读，哪些是泛读就ok了。然后限定每天泛读的时间长度就好，而且泛读其实也相当于一种放松嘛。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;有意思的是，SMART背后的组织还有今夏推出App（BrainHealth）的打算，到时候你会买吗？&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;作为脑力工作者，有谁会嫌脑力提高太多呢？很自然的，当Pocket向我推荐&lt;a href=&quot;http://www.fastcompany.com/3060709/your-most-productive-self/how-to-train-your-brain-to-focu
+    
+    </summary>
+    
+    
+      <category term="阅读" scheme="http://foxgem.github.io/tags/%E9%98%85%E8%AF%BB/"/>
+    
+  </entry>
   
   <entry>
     <title>意识的进化史</title>
@@ -577,37 +630,6 @@
     
     
       <category term="数据库" scheme="http://foxgem.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
-    
-      <category term="The Morning Paper" scheme="http://foxgem.github.io/tags/The-Morning-Paper/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>那些恶意的相似域名（Domain Name Typosquatting）</title>
-    <link href="http://foxgem.github.io/2016/05/22/domain-typosquatting/"/>
-    <id>http://foxgem.github.io/2016/05/22/domain-typosquatting/</id>
-    <published>2016-05-22T09:19:17.000Z</published>
-    <updated>2016-05-22T09:55:07.000Z</updated>
-    
-    <content type="html">&lt;p&gt;原文：&lt;a href=&quot;https://blog.acolyer.org/2016/05/20/the-landscape-of-domain-name-typosquatting-techniques-and-countermeasures/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;The landscape of domain name typosquatting: techniques and countermeasures&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;人不是机器，总会犯错，这就给恶意相似域名提供了生存空间。文中提到的实验和数据充分证明了这些域名的“价值”。原本觉得这里面其实也就是钓鱼网站用得比较多，可看了这篇文章之后才知道还有那么多的道道：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;广告点击&lt;/li&gt;
-&lt;li&gt;勒索&lt;/li&gt;
-&lt;li&gt;将用户导向竞争对手&lt;/li&gt;
-&lt;li&gt;……&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;文中提到的 typosquatting cross-site scripting(TXSS) 更是让人心有余悸，算是给code review又提供了一个很好的理由，;)&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;原文：&lt;a href=&quot;https://blog.acolyer.org/2016/05/20/the-landscape-of-domain-name-typosquatting-techniques-and-countermeasures/&quot; target=&quot;_blan
-    
-    </summary>
-    
-    
-      <category term="安全" scheme="http://foxgem.github.io/tags/%E5%AE%89%E5%85%A8/"/>
     
       <category term="The Morning Paper" scheme="http://foxgem.github.io/tags/The-Morning-Paper/"/>
     
