@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://foxgem.github.io/"/>
-  <updated>2016-06-11T11:15:34.000Z</updated>
+  <updated>2016-06-12T11:58:28.000Z</updated>
   <id>http://foxgem.github.io/</id>
   
   <author>
@@ -14,6 +14,50 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>趣文三则</title>
+    <link href="http://foxgem.github.io/2016/06/12/interesting-3/"/>
+    <id>http://foxgem.github.io/2016/06/12/interesting-3/</id>
+    <published>2016-06-12T11:06:01.000Z</published>
+    <updated>2016-06-12T11:58:28.000Z</updated>
+    
+    <content type="html">&lt;p&gt;今天阅读了三篇有趣的短文，因为都不长而且易懂，所以就一起记下了。&lt;/p&gt;
+&lt;h2 id=&quot;漫画：is-Java-Dying？&quot;&gt;&lt;a href=&quot;#漫画：is-Java-Dying？&quot; class=&quot;headerlink&quot; title=&quot;漫画：is Java Dying？&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://dzone.com/articles/big-numbers-comic&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;漫画：is Java Dying？&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;知道天堂排名第三的人造数字是什么？咳咳，那就是“宣传Java正走向死亡的文章数量”，:)&lt;/p&gt;
+&lt;h2 id=&quot;消灭if语句的方法总结&quot;&gt;&lt;a href=&quot;#消灭if语句的方法总结&quot; class=&quot;headerlink&quot; title=&quot;消灭if语句的方法总结&quot;&gt;&lt;/a&gt;&lt;a href=&quot;http://code.joejag.com/2016/anti-if-the-missing-patterns.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;消灭if语句的方法总结&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;if语句的问题已经是路人皆知了，文章介绍了5种方法来消灭它：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;若方法的参数中有布尔类型，那就写成两个方法，一个对应false，另一个对应true&lt;/li&gt;
+&lt;li&gt;用多态来替换switch语句&lt;/li&gt;
+&lt;li&gt;采用Optional或NullObject避免null判断&lt;ul&gt;
+&lt;li&gt;Optional在Java 8或Guava中都有&lt;/li&gt;
+&lt;li&gt;NullObject，典型的如空数组或空字符串，视使用情况而定。Optional本质上也是一种NullObject。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;尽量用inline语句来表达，如布尔表达式或三目运算符&lt;/li&gt;
+&lt;li&gt;将反复出现的if语句往调用链的上游移动&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;个人认为，可以从公共方法，且调用方最常用的那部分开始，逐步向内推进，这样可以让外层逻辑清爽很多。&lt;/p&gt;
+&lt;h2 id=&quot;谎言的4种语言特征&quot;&gt;&lt;a href=&quot;#谎言的4种语言特征&quot; class=&quot;headerlink&quot; title=&quot;谎言的4种语言特征&quot;&gt;&lt;/a&gt;&lt;a href=&quot;http://lifehacker.com/learn-to-spot-a-liar-with-these-verbal-signs-1780047717&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;谎言的4种语言特征&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;这篇文章相当于文中内嵌Ted视频的文字解读，列出了谎言的四种语言特征：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;尽可能少的自我引用，一般采用第三人称说话&lt;/li&gt;
+&lt;li&gt;负面的语言，由于负罪感作祟&lt;/li&gt;
+&lt;li&gt;简单阐述，因为大脑很难产生复杂的谎言&lt;/li&gt;
+&lt;li&gt;故意用冗长晦涩的表达方式来讲一件简单的事情，简而言之就是“绕着弯说话”&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;今天的阅读小结就到这里，谢谢！&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;今天阅读了三篇有趣的短文，因为都不长而且易懂，所以就一起记下了。&lt;/p&gt;
+&lt;h2 id=&quot;漫画：is-Java-Dying？&quot;&gt;&lt;a href=&quot;#漫画：is-Java-Dying？&quot; class=&quot;headerlink&quot; title=&quot;漫画：is Java Dying？&quot;
+    
+    </summary>
+    
+    
+      <category term="阅读" scheme="http://foxgem.github.io/tags/%E9%98%85%E8%AF%BB/"/>
+    
+  </entry>
   
   <entry>
     <title>SMART帮助提高大脑的注意力和思考力</title>
@@ -609,29 +653,6 @@
     
     
       <category term="开发" scheme="http://foxgem.github.io/tags/%E5%BC%80%E5%8F%91/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>关系数据库架构</title>
-    <link href="http://foxgem.github.io/2016/05/23/rmdb-arch/"/>
-    <id>http://foxgem.github.io/2016/05/23/rmdb-arch/</id>
-    <published>2016-05-23T15:08:34.000Z</published>
-    <updated>2016-05-24T01:12:15.000Z</updated>
-    
-    <content type="html">&lt;p&gt;今天从&lt;a href=&quot;https://blog.acolyer.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;The Morning Paper&lt;/a&gt;上发现一篇关于&lt;a href=&quot;http://db.cs.berkeley.edu/papers/fntdb07-architecture.pdf&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;数据库架构&lt;/a&gt;的不错的&lt;a href=&quot;https://blog.acolyer.org/2015/01/20/architecture-of-a-database-system/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;导读&lt;/a&gt;，接下来的几天看看原论文。&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;今天从&lt;a href=&quot;https://blog.acolyer.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;The Morning Paper&lt;/a&gt;上发现一篇关于&lt;a href=&quot;http://db.cs.berkeley.edu/pape
-    
-    </summary>
-    
-    
-      <category term="数据库" scheme="http://foxgem.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
-    
-      <category term="The Morning Paper" scheme="http://foxgem.github.io/tags/The-Morning-Paper/"/>
     
   </entry>
   
