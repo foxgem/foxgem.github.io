@@ -64,6 +64,58 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-speed-up-pagination" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/06/13/speed-up-pagination/" class="article-date">
+  <time datetime="2016-06-13T11:41:15.000Z" itemprop="datePublished">2016-06-13</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/06/13/speed-up-pagination/">采用Seek Method加速分页</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>这是今天在<a href="http://use-the-index-luke.com/no-offset" target="_blank" rel="external">码天狗周刊上看到的文章</a>，加上之前曾有过切身体会（只不过不是在SQL上），故觉得有必要摘记下来广而告之。</p>
+<p>凡事做过页面的，一般对分页不会陌生，也不会觉得它有多难：就是limit + offset的组合就可以了呀。但是，危险往往都是从最不起眼的地方开始的。在这里，我先说一下我之前在用MongoDB时遇到的问题。这类问题同样会出现在这种分页方式上。</p>
+<p>当时，我需要对于MongoDB中的数据进行处理，每次处理一批，也相当于是按页来操作数据啦。这个没啥难度，直接使用API中的find + skip + limit就可以轻易搞定。迅速把程序写完之后就开始拿产品库开搞了。刚开始一切正常，可过了没多久，就发现整个程序的性能下降了。进入Mongo一查，发现是Table Scan。哇，那个collection中有上千万的数据啊！</p>
+<p>此处略去3000字。</p>
+<p>总之，问题最后解决了，程序又运行如飞。而解决之道很简单：只用find + limit，不再使用skip（原因自己想）。只不过在find中加了一个条件：上一批的最后一个document的_id。整个代码形似（groovy代码）：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">if (docId) &#123;</span><br><span class="line">    batch = collection.find([&apos;_id&apos;: [&apos;$gt&apos;: docId]] as Document).limit(BATCH_SIZE)</span><br><span class="line">&#125; else &#123;</span><br><span class="line">    batch = collection.find().limit(BATCH_SIZE)</span><br><span class="line">&#125;</span><br><span class="line">docId = batch[-1][&apos;_id&apos;]</span><br></pre></td></tr></table></figure>
+<p>它的原理很简单，其实就是利用可以利用的index来加速分页。这种思想跟今天看到的文章的思路如出一辙，不再使用offset，寻找能达到同样效果的index，用它来助力搜索。因此，文中给出的方案跟上面的代码类似：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">SELECT ...</span><br><span class="line">  FROM ...</span><br><span class="line"> WHERE ...</span><br><span class="line">   AND id &lt; ?last_seen_id</span><br><span class="line"> ORDER BY id DESC</span><br><span class="line"> FETCH FIRST 10 ROWS ONLY</span><br></pre></td></tr></table></figure>
+<p>这种分页方式被称为“seek method”，其中的id被称为“seek predicate”。典型的seek predicate还可以是日期。需要提醒的是，seek predicate上需要有index才有意义，而且它可以有多列！采用这种方式的分页可以避免上述分页的潜在危险：当页数达到一定量之后，分页速度会严重下降。</p>
+<p>关于seek method，还可以参考下面的文章：</p>
+<ul>
+<li><a href="https://blog.jooq.org/2013/10/26/faster-sql-paging-with-jooq-using-the-seek-method/" target="_blank" rel="external">https://blog.jooq.org/2013/10/26/faster-sql-paging-with-jooq-using-the-seek-method/</a></li>
+<li><a href="http://use-the-index-luke.com/sql/partial-results/fetch-next-page" target="_blank" rel="external">http://use-the-index-luke.com/sql/partial-results/fetch-next-page</a></li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://foxgem.github.io/2016/06/13/speed-up-pagination/" data-id="cipdzp3vm0013lgqct52oweox" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/开发/">开发</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数据库/">数据库</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-interesting-3" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/06/12/interesting-3/" class="article-date">
@@ -113,7 +165,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://foxgem.github.io/2016/06/12/interesting-3/" data-id="cipcjey3v0009mkqcpyfajcaz" class="article-share-link">Share</a>
+      <a data-url="http://foxgem.github.io/2016/06/12/interesting-3/" data-id="cipdzp3ut000hlgqcsh2hsgu2" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/阅读/">阅读</a></li></ul>
@@ -184,7 +236,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://foxgem.github.io/2016/06/11/training-brain-to-focus/" data-id="cipcjey4y0013mkqcc0n1ucpx" class="article-share-link">Share</a>
+      <a data-url="http://foxgem.github.io/2016/06/11/training-brain-to-focus/" data-id="cipdzp3vy001blgqcvvwkqgn3" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/阅读/">阅读</a></li></ul>
@@ -228,7 +280,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://foxgem.github.io/2016/06/10/theory-on-conscious-evolution/" data-id="cipcjey510015mkqcbxfibaj3" class="article-share-link">Share</a>
+      <a data-url="http://foxgem.github.io/2016/06/10/theory-on-conscious-evolution/" data-id="cipdzp3vo0015lgqc7wqd6yax" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/阅读/">阅读</a></li></ul>
@@ -283,7 +335,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://foxgem.github.io/2016/06/09/password-complexity/" data-id="cipcjey4g000rmkqcrhouh3qa" class="article-share-link">Share</a>
+      <a data-url="http://foxgem.github.io/2016/06/09/password-complexity/" data-id="cipdzp3v3000rlgqccnkl389d" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/安全/">安全</a></li></ul>
@@ -333,7 +385,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://foxgem.github.io/2016/06/08/not-loving-yourself-just-as-you-are/" data-id="cipcjey4e000omkqcn1xh276p" class="article-share-link">Share</a>
+      <a data-url="http://foxgem.github.io/2016/06/08/not-loving-yourself-just-as-you-are/" data-id="cipdzp3uz000mlgqce39r2s7b" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/阅读/">阅读</a></li></ul>
@@ -384,7 +436,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://foxgem.github.io/2016/06/07/practice-makes-possible/" data-id="cipcjey4i000tmkqcxsxhz8i1" class="article-share-link">Share</a>
+      <a data-url="http://foxgem.github.io/2016/06/07/practice-makes-possible/" data-id="cipdzp3v7000tlgqcpzombgx4" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/阅读/">阅读</a></li></ul>
@@ -428,7 +480,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://foxgem.github.io/2016/06/06/groovy-a-retrospective/" data-id="cipcjey48000hmkqcchduznyg" class="article-share-link">Share</a>
+      <a data-url="http://foxgem.github.io/2016/06/06/groovy-a-retrospective/" data-id="cipdzp3ui000clgqc1d8htki7" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/开发/">开发</a></li></ul>
@@ -474,7 +526,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://foxgem.github.io/2016/06/05/agile-dw-bi/" data-id="cipcjey390000mkqc2jnx8nmc" class="article-share-link">Share</a>
+      <a data-url="http://foxgem.github.io/2016/06/05/agile-dw-bi/" data-id="cipdzp3u50004lgqcypr8rb04" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数据库/">数据库</a></li></ul>
@@ -527,49 +579,10 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://foxgem.github.io/2016/06/04/no-low-value-work/" data-id="cipcjey4c000mmkqct16eh122" class="article-share-link">Share</a>
+      <a data-url="http://foxgem.github.io/2016/06/04/no-low-value-work/" data-id="cipdzp3v1000olgqcpna8tn7i" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/阅读/">阅读</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-microservice-pitfall" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/06/03/microservice-pitfall/" class="article-date">
-  <time datetime="2016-06-03T13:13:20.000Z" itemprop="datePublished">2016-06-03</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/06/03/microservice-pitfall/">微服务的若干注意事项</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><a href="https://dzone.com/articles/walking-the-microservices-path-towards-loose-coupl" target="_blank" rel="external">这篇文章</a>列出了若干微服务开发中的注意事项，涉及：共享数据库、安全、服务组合和依赖，给出参考链接也很赞，值得参考，特记之。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://foxgem.github.io/2016/06/03/microservice-pitfall/" data-id="cipcjey49000jmkqcvx6xnmes" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/微服务/">微服务</a></li></ul>
 
     </footer>
   </div>
@@ -604,7 +617,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签云</h3>
     <div class="widget tagcloud">
-      <a href="/tags/The-Morning-Paper/" style="font-size: 13.33px;">The Morning Paper</a> <a href="/tags/安全/" style="font-size: 10px;">安全</a> <a href="/tags/开发/" style="font-size: 16.67px;">开发</a> <a href="/tags/微服务/" style="font-size: 10px;">微服务</a> <a href="/tags/数据库/" style="font-size: 10px;">数据库</a> <a href="/tags/阅读/" style="font-size: 20px;">阅读</a>
+      <a href="/tags/The-Morning-Paper/" style="font-size: 13.33px;">The Morning Paper</a> <a href="/tags/安全/" style="font-size: 10px;">安全</a> <a href="/tags/开发/" style="font-size: 16.67px;">开发</a> <a href="/tags/微服务/" style="font-size: 10px;">微服务</a> <a href="/tags/数据库/" style="font-size: 13.33px;">数据库</a> <a href="/tags/阅读/" style="font-size: 20px;">阅读</a>
     </div>
   </div>
 
@@ -626,6 +639,10 @@
       <ul>
         
           <li>
+            <a href="/2016/06/13/speed-up-pagination/">采用Seek Method加速分页</a>
+          </li>
+        
+          <li>
             <a href="/2016/06/12/interesting-3/">趣文三则</a>
           </li>
         
@@ -639,10 +656,6 @@
         
           <li>
             <a href="/2016/06/09/password-complexity/">为什么复杂的密码不能让你的账号更安全？</a>
-          </li>
-        
-          <li>
-            <a href="/2016/06/08/not-loving-yourself-just-as-you-are/">拒绝“无条件的爱自己”</a>
           </li>
         
       </ul>

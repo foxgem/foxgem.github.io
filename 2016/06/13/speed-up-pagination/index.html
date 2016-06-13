@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>采用Seek Method加速分页 | 老胡随手记</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="这是今天在码天狗周刊上看到的文章，加上之前曾有过切身体会（只不过不是在SQL上），故觉得有必要摘记下来广而告之。
+凡事做过页面的，一般对分页不会陌生，也不会觉得它有多难：就是limit + offset的组合就可以了呀。但是，危险往往都是从最不起眼的地方开始的。在这里，我先说一下我之前在用MongoDB时遇到的问题。这类问题同样会出现在这种分页方式上。
+当时，我需要对于MongoDB中的数据进行处">
+<meta property="og:type" content="article">
+<meta property="og:title" content="采用Seek Method加速分页">
+<meta property="og:url" content="http://foxgem.github.io/2016/06/13/speed-up-pagination/index.html">
+<meta property="og:site_name" content="老胡随手记">
+<meta property="og:description" content="这是今天在码天狗周刊上看到的文章，加上之前曾有过切身体会（只不过不是在SQL上），故觉得有必要摘记下来广而告之。
+凡事做过页面的，一般对分页不会陌生，也不会觉得它有多难：就是limit + offset的组合就可以了呀。但是，危险往往都是从最不起眼的地方开始的。在这里，我先说一下我之前在用MongoDB时遇到的问题。这类问题同样会出现在这种分页方式上。
+当时，我需要对于MongoDB中的数据进行处">
+<meta property="og:updated_time" content="2016-06-13T12:21:58.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="采用Seek Method加速分页">
+<meta name="twitter:description" content="这是今天在码天狗周刊上看到的文章，加上之前曾有过切身体会（只不过不是在SQL上），故觉得有必要摘记下来广而告之。
+凡事做过页面的，一般对分页不会陌生，也不会觉得它有多难：就是limit + offset的组合就可以了呀。但是，危险往往都是从最不起眼的地方开始的。在这里，我先说一下我之前在用MongoDB时遇到的问题。这类问题同样会出现在这种分页方式上。
+当时，我需要对于MongoDB中的数据进行处">
+  
+    <link rel="alternate" href="/atom.xml" title="老胡随手记" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">老胡随手记</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://foxgem.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-speed-up-pagination" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/06/13/speed-up-pagination/" class="article-date">
+  <time datetime="2016-06-13T11:41:15.000Z" itemprop="datePublished">2016-06-13</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      采用Seek Method加速分页
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>这是今天在<a href="http://use-the-index-luke.com/no-offset" target="_blank" rel="external">码天狗周刊上看到的文章</a>，加上之前曾有过切身体会（只不过不是在SQL上），故觉得有必要摘记下来广而告之。</p>
+<p>凡事做过页面的，一般对分页不会陌生，也不会觉得它有多难：就是limit + offset的组合就可以了呀。但是，危险往往都是从最不起眼的地方开始的。在这里，我先说一下我之前在用MongoDB时遇到的问题。这类问题同样会出现在这种分页方式上。</p>
+<p>当时，我需要对于MongoDB中的数据进行处理，每次处理一批，也相当于是按页来操作数据啦。这个没啥难度，直接使用API中的find + skip + limit就可以轻易搞定。迅速把程序写完之后就开始拿产品库开搞了。刚开始一切正常，可过了没多久，就发现整个程序的性能下降了。进入Mongo一查，发现是Table Scan。哇，那个collection中有上千万的数据啊！</p>
+<p>此处略去3000字。</p>
+<p>总之，问题最后解决了，程序又运行如飞。而解决之道很简单：只用find + limit，不再使用skip（原因自己想）。只不过在find中加了一个条件：上一批的最后一个document的_id。整个代码形似（groovy代码）：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">if (docId) &#123;</span><br><span class="line">    batch = collection.find([&apos;_id&apos;: [&apos;$gt&apos;: docId]] as Document).limit(BATCH_SIZE)</span><br><span class="line">&#125; else &#123;</span><br><span class="line">    batch = collection.find().limit(BATCH_SIZE)</span><br><span class="line">&#125;</span><br><span class="line">docId = batch[-1][&apos;_id&apos;]</span><br></pre></td></tr></table></figure>
+<p>它的原理很简单，其实就是利用可以利用的index来加速分页。这种思想跟今天看到的文章的思路如出一辙，不再使用offset，寻找能达到同样效果的index，用它来助力搜索。因此，文中给出的方案跟上面的代码类似：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">SELECT ...</span><br><span class="line">  FROM ...</span><br><span class="line"> WHERE ...</span><br><span class="line">   AND id &lt; ?last_seen_id</span><br><span class="line"> ORDER BY id DESC</span><br><span class="line"> FETCH FIRST 10 ROWS ONLY</span><br></pre></td></tr></table></figure>
+<p>这种分页方式被称为“seek method”，其中的id被称为“seek predicate”。典型的seek predicate还可以是日期。需要提醒的是，seek predicate上需要有index才有意义，而且它可以有多列！采用这种方式的分页可以避免上述分页的潜在危险：当页数达到一定量之后，分页速度会严重下降。</p>
+<p>关于seek method，还可以参考下面的文章：</p>
+<ul>
+<li><a href="https://blog.jooq.org/2013/10/26/faster-sql-paging-with-jooq-using-the-seek-method/" target="_blank" rel="external">https://blog.jooq.org/2013/10/26/faster-sql-paging-with-jooq-using-the-seek-method/</a></li>
+<li><a href="http://use-the-index-luke.com/sql/partial-results/fetch-next-page" target="_blank" rel="external">http://use-the-index-luke.com/sql/partial-results/fetch-next-page</a></li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://foxgem.github.io/2016/06/13/speed-up-pagination/" data-id="cipdzp3vm0013lgqct52oweox" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/开发/">开发</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数据库/">数据库</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/06/12/interesting-3/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">趣文三则</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/The-Morning-Paper/">The Morning Paper</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/安全/">安全</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/开发/">开发</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/微服务/">微服务</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据库/">数据库</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/阅读/">阅读</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/The-Morning-Paper/" style="font-size: 13.33px;">The Morning Paper</a> <a href="/tags/安全/" style="font-size: 10px;">安全</a> <a href="/tags/开发/" style="font-size: 16.67px;">开发</a> <a href="/tags/微服务/" style="font-size: 10px;">微服务</a> <a href="/tags/数据库/" style="font-size: 13.33px;">数据库</a> <a href="/tags/阅读/" style="font-size: 20px;">阅读</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">六月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">五月 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2016/06/13/speed-up-pagination/">采用Seek Method加速分页</a>
+          </li>
+        
+          <li>
+            <a href="/2016/06/12/interesting-3/">趣文三则</a>
+          </li>
+        
+          <li>
+            <a href="/2016/06/11/training-brain-to-focus/">SMART帮助提高大脑的注意力和思考力</a>
+          </li>
+        
+          <li>
+            <a href="/2016/06/10/theory-on-conscious-evolution/">意识的进化史</a>
+          </li>
+        
+          <li>
+            <a href="/2016/06/09/password-complexity/">为什么复杂的密码不能让你的账号更安全？</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 胡键（jianhgreat@hotmail.com）<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+<!-- Baidu Tongji -->
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?1f898523fbfe8b3547cd3812290e6f84";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<!-- End Baidu Tongji -->
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//code.jquery.com/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
