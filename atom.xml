@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://foxgem.github.io/"/>
-  <updated>2016-06-30T08:21:11.000Z</updated>
+  <updated>2016-07-03T12:18:25.000Z</updated>
   <id>http://foxgem.github.io/</id>
   
   <author>
@@ -14,6 +14,58 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>数据科学家养成之道</title>
+    <link href="http://foxgem.github.io/2016/07/03/being-data-scientist/"/>
+    <id>http://foxgem.github.io/2016/07/03/being-data-scientist/</id>
+    <published>2016-07-03T11:44:06.000Z</published>
+    <updated>2016-07-03T12:18:25.000Z</updated>
+    
+    <content type="html">&lt;p&gt;本来想等到这个由三篇文章组成的系列完结才写这篇笔记，无奈最后一篇迟迟不见更新，且看完标题之后，个人觉得前两篇内容足以涵盖“数据科学家养成”这一主题，故手指一抖，本笔记就诞生了。&lt;/p&gt;
+&lt;p&gt;闲话少说，书归正传。这个主题为“How to Become a Data Scientist”的系列博文按作者的规划共计三篇，分别是：&lt;a href=&quot;https://www.experfy.com/blog/how-to-become-a-data-scientist-part-1-3&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;数据科学家是何方神圣&lt;/a&gt;、&lt;a href=&quot;https://www.experfy.com/blog/how-to-become-a-data-scientist-part-2-3&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;修炼之路&lt;/a&gt;和就业前景。目前就剩最后一篇未公开，但窃以为主要也就是说明一下该职业的广阔就业前景，以及是目前最炙手可热的高逼格职业等等。就如何成功挤入这一未来热门职业来说，单看标题便知道前两篇已经是重点了。&lt;/p&gt;
+&lt;p&gt;想成数据科学家，就得先了解他们要求的技能，文中列出的清单可谓比较详尽了：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;解决问题的能力&lt;/li&gt;
+&lt;li&gt;统计/机器学习&lt;/li&gt;
+&lt;li&gt;计算机相关技能&lt;ul&gt;
+&lt;li&gt;编程&lt;/li&gt;
+&lt;li&gt;分布式计算&lt;/li&gt;
+&lt;li&gt;软件工程&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;数据整理（data wrangling）&lt;/li&gt;
+&lt;li&gt;相关工具和技术&lt;/li&gt;
+&lt;li&gt;沟通/业务敏感度&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;其中作者提到最关键的能力是第一条，我深以为然，若不是一个问题解决者，难以成为优秀的数据科学家，只能是书呆子。鉴于这令人生畏的清单，作者向每位有志成为数据科学家的人提出了三个问题&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ol&gt;
+&lt;li&gt;Why do you want to be a data scientist?&lt;/li&gt;
+&lt;li&gt;What type of data science interests you?&lt;/li&gt;
+&lt;li&gt;What natural capabilities or relevant skills do you already possess?&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;为何要问这三个问题？作者意图：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;you need to have the right reasons for going down this path, otherwise – chances are – you will give up when the going gets tough (and it will).&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;在后续的内容中，作者引述了一系列过来人的经验之谈，看看还是有帮助的。会有助于你想清楚了再投入到这个职业中来，而不是因为看到目前这个职业吃香，脑子一热就发下宏愿再苦再累也要上，结果稍遇困难就临阵退缩。&lt;/p&gt;
+&lt;p&gt;作为一篇合格的养成指南，指出技能要求之后当然是要指出修炼之路，这里也不例外。基本上就是列出各种资料，学习方法，以及探讨是否值得去读PhD（鉴于其所需技能的理论性比较高）。在第二篇最有收获的就是知道了&lt;a href=&quot;https://www.kaggle.com&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Kaggle&lt;/a&gt;（请原谅我的孤陋寡闻，没听说的请自觉Google）&lt;/p&gt;
+&lt;p&gt;诚如作者一再强调，成为数据科学家的方法就是实践、实践、再实践。除此之外别无捷径，所以，骚年们，加油吧！&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;本来想等到这个由三篇文章组成的系列完结才写这篇笔记，无奈最后一篇迟迟不见更新，且看完标题之后，个人觉得前两篇内容足以涵盖“数据科学家养成”这一主题，故手指一抖，本笔记就诞生了。&lt;/p&gt;
+&lt;p&gt;闲话少说，书归正传。这个主题为“How to Become a Data Scie
+    
+    </summary>
+    
+    
+      <category term="数据科学" scheme="http://foxgem.github.io/tags/%E6%95%B0%E6%8D%AE%E7%A7%91%E5%AD%A6/"/>
+    
+  </entry>
   
   <entry>
     <title>作为TSDB的Elasticsearch</title>
@@ -68,9 +120,9 @@
     </summary>
     
     
-      <category term="数据库" scheme="http://foxgem.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
-    
       <category term="开发" scheme="http://foxgem.github.io/tags/%E5%BC%80%E5%8F%91/"/>
+    
+      <category term="数据库" scheme="http://foxgem.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
   </entry>
   
@@ -619,31 +671,6 @@
     <summary type="html">
     
       &lt;p&gt;说实话，文章有点标题党的味道，:)。按照&lt;a href=&quot;https://dzone.com/articles/the-top-100-java-libraries-in-2016-after-analyzing&quot; target=&quot;_blank&quot; rel=&quot;external
-    
-    </summary>
-    
-    
-      <category term="开发" scheme="http://foxgem.github.io/tags/%E5%BC%80%E5%8F%91/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Vert.x技巧：使用EventBus Interceptor拦截消息</title>
-    <link href="http://foxgem.github.io/2016/05/26/vertx-eventbus-interceptor/"/>
-    <id>http://foxgem.github.io/2016/05/26/vertx-eventbus-interceptor/</id>
-    <published>2016-05-26T10:58:38.000Z</published>
-    <updated>2016-05-26T11:17:12.000Z</updated>
-    
-    <content type="html">&lt;p&gt;&lt;a href=&quot;http://vertx.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Vert.x&lt;/a&gt;用久了肯定有这样的想法：拦截EventBus上发送的所有消息。这个需求用Vertx EventBus Interceptor可以非常简单的实现，可惜的是，&lt;a href=&quot;http://vertx.io/docs/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Vert.x文档&lt;/a&gt;却并没有明确的指出来。&lt;/p&gt;
-&lt;p&gt;其实它的使用很简单，直接看代码吧（Groovy代码）：&lt;/p&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;vertx.eventBus().addInterceptor &amp;#123; sendContext -&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    Message message = sendContext.message()&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    // 自由发挥……&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    sendContext.next()&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;最后的那句 &lt;strong&gt;sendContext.next()&lt;/strong&gt; 非常关键：如果没写，后续的consumer将无法收到刚刚被你拦截的消息！所以，一定要确保你是&lt;strong&gt;有意&lt;/strong&gt;不写的。&lt;/p&gt;
-&lt;p&gt;其他的就没什么可说得了，基本跟其他工具提供的拦截器的功能类似，查查API文档，看看代码，都能搞清楚。&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;a href=&quot;http://vertx.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Vert.x&lt;/a&gt;用久了肯定有这样的想法：拦截EventBus上发送的所有消息。这个需求用Vertx EventBus Interceptor可以非常简单的
     
     </summary>
     
