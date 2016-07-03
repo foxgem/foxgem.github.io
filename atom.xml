@@ -17,8 +17,8 @@
   
   <entry>
     <title>数据科学家养成之道</title>
-    <link href="http://foxgem.github.io/2016/07/03/being-data-scientist/"/>
-    <id>http://foxgem.github.io/2016/07/03/being-data-scientist/</id>
+    <link href="http://foxgem.github.io/2016/07/being-data-scientist/"/>
+    <id>http://foxgem.github.io/2016/07/being-data-scientist/</id>
     <published>2016-07-03T11:44:06.000Z</published>
     <updated>2016-07-03T12:18:25.000Z</updated>
     
@@ -69,8 +69,8 @@
   
   <entry>
     <title>作为TSDB的Elasticsearch</title>
-    <link href="http://foxgem.github.io/2016/06/30/es-as-tsdb/"/>
-    <id>http://foxgem.github.io/2016/06/30/es-as-tsdb/</id>
+    <link href="http://foxgem.github.io/2016/06/es-as-tsdb/"/>
+    <id>http://foxgem.github.io/2016/06/es-as-tsdb/</id>
     <published>2016-06-30T08:06:28.000Z</published>
     <updated>2016-06-30T08:21:11.000Z</updated>
     
@@ -92,8 +92,8 @@
   
   <entry>
     <title>采用Seek Method加速分页</title>
-    <link href="http://foxgem.github.io/2016/06/13/speed-up-pagination/"/>
-    <id>http://foxgem.github.io/2016/06/13/speed-up-pagination/</id>
+    <link href="http://foxgem.github.io/2016/06/speed-up-pagination/"/>
+    <id>http://foxgem.github.io/2016/06/speed-up-pagination/</id>
     <published>2016-06-13T11:41:15.000Z</published>
     <updated>2016-06-13T12:21:58.000Z</updated>
     
@@ -128,8 +128,8 @@
   
   <entry>
     <title>趣文三则</title>
-    <link href="http://foxgem.github.io/2016/06/12/interesting-3/"/>
-    <id>http://foxgem.github.io/2016/06/12/interesting-3/</id>
+    <link href="http://foxgem.github.io/2016/06/interesting-3/"/>
+    <id>http://foxgem.github.io/2016/06/interesting-3/</id>
     <published>2016-06-12T11:06:01.000Z</published>
     <updated>2016-06-12T11:58:28.000Z</updated>
     
@@ -172,8 +172,8 @@
   
   <entry>
     <title>SMART帮助提高大脑的注意力和思考力</title>
-    <link href="http://foxgem.github.io/2016/06/11/training-brain-to-focus/"/>
-    <id>http://foxgem.github.io/2016/06/11/training-brain-to-focus/</id>
+    <link href="http://foxgem.github.io/2016/06/training-brain-to-focus/"/>
+    <id>http://foxgem.github.io/2016/06/training-brain-to-focus/</id>
     <published>2016-06-11T10:40:35.000Z</published>
     <updated>2016-06-11T11:15:34.000Z</updated>
     
@@ -225,8 +225,8 @@
   
   <entry>
     <title>意识的进化史</title>
-    <link href="http://foxgem.github.io/2016/06/10/theory-on-conscious-evolution/"/>
-    <id>http://foxgem.github.io/2016/06/10/theory-on-conscious-evolution/</id>
+    <link href="http://foxgem.github.io/2016/06/theory-on-conscious-evolution/"/>
+    <id>http://foxgem.github.io/2016/06/theory-on-conscious-evolution/</id>
     <published>2016-06-10T13:57:43.000Z</published>
     <updated>2016-06-10T14:30:49.000Z</updated>
     
@@ -252,8 +252,8 @@
   
   <entry>
     <title>为什么复杂的密码不能让你的账号更安全？</title>
-    <link href="http://foxgem.github.io/2016/06/09/password-complexity/"/>
-    <id>http://foxgem.github.io/2016/06/09/password-complexity/</id>
+    <link href="http://foxgem.github.io/2016/06/password-complexity/"/>
+    <id>http://foxgem.github.io/2016/06/password-complexity/</id>
     <published>2016-06-09T12:36:07.000Z</published>
     <updated>2016-06-09T13:12:03.000Z</updated>
     
@@ -289,8 +289,8 @@
   
   <entry>
     <title>拒绝“无条件的爱自己”</title>
-    <link href="http://foxgem.github.io/2016/06/08/not-loving-yourself-just-as-you-are/"/>
-    <id>http://foxgem.github.io/2016/06/08/not-loving-yourself-just-as-you-are/</id>
+    <link href="http://foxgem.github.io/2016/06/not-loving-yourself-just-as-you-are/"/>
+    <id>http://foxgem.github.io/2016/06/not-loving-yourself-just-as-you-are/</id>
     <published>2016-06-08T11:04:54.000Z</published>
     <updated>2016-06-08T14:09:27.000Z</updated>
     
@@ -322,8 +322,8 @@
   
   <entry>
     <title>勤能补拙</title>
-    <link href="http://foxgem.github.io/2016/06/07/practice-makes-possible/"/>
-    <id>http://foxgem.github.io/2016/06/07/practice-makes-possible/</id>
+    <link href="http://foxgem.github.io/2016/06/practice-makes-possible/"/>
+    <id>http://foxgem.github.io/2016/06/practice-makes-possible/</id>
     <published>2016-06-07T14:32:55.000Z</published>
     <updated>2016-06-07T15:19:04.000Z</updated>
     
@@ -355,8 +355,8 @@
   
   <entry>
     <title>Groovy老鸟的回顾</title>
-    <link href="http://foxgem.github.io/2016/06/06/groovy-a-retrospective/"/>
-    <id>http://foxgem.github.io/2016/06/06/groovy-a-retrospective/</id>
+    <link href="http://foxgem.github.io/2016/06/groovy-a-retrospective/"/>
+    <id>http://foxgem.github.io/2016/06/groovy-a-retrospective/</id>
     <published>2016-06-06T12:05:48.000Z</published>
     <updated>2016-06-06T12:18:11.000Z</updated>
     
@@ -381,8 +381,8 @@
   
   <entry>
     <title>数据仓库和BI的敏捷之道</title>
-    <link href="http://foxgem.github.io/2016/06/05/agile-dw-bi/"/>
-    <id>http://foxgem.github.io/2016/06/05/agile-dw-bi/</id>
+    <link href="http://foxgem.github.io/2016/06/agile-dw-bi/"/>
+    <id>http://foxgem.github.io/2016/06/agile-dw-bi/</id>
     <published>2016-06-05T09:54:13.000Z</published>
     <updated>2016-06-05T10:24:18.000Z</updated>
     
@@ -409,8 +409,8 @@
   
   <entry>
     <title>拒绝低价值的工作</title>
-    <link href="http://foxgem.github.io/2016/06/04/no-low-value-work/"/>
-    <id>http://foxgem.github.io/2016/06/04/no-low-value-work/</id>
+    <link href="http://foxgem.github.io/2016/06/no-low-value-work/"/>
+    <id>http://foxgem.github.io/2016/06/no-low-value-work/</id>
     <published>2016-06-04T11:42:09.000Z</published>
     <updated>2016-06-04T12:54:35.000Z</updated>
     
@@ -444,8 +444,8 @@
   
   <entry>
     <title>微服务的若干注意事项</title>
-    <link href="http://foxgem.github.io/2016/06/03/microservice-pitfall/"/>
-    <id>http://foxgem.github.io/2016/06/03/microservice-pitfall/</id>
+    <link href="http://foxgem.github.io/2016/06/microservice-pitfall/"/>
+    <id>http://foxgem.github.io/2016/06/microservice-pitfall/</id>
     <published>2016-06-03T13:13:20.000Z</published>
     <updated>2016-06-03T13:21:58.000Z</updated>
     
@@ -465,8 +465,8 @@
   
   <entry>
     <title>Groovy历史回顾</title>
-    <link href="http://foxgem.github.io/2016/06/02/a-groovy-journey/"/>
-    <id>http://foxgem.github.io/2016/06/02/a-groovy-journey/</id>
+    <link href="http://foxgem.github.io/2016/06/a-groovy-journey/"/>
+    <id>http://foxgem.github.io/2016/06/a-groovy-journey/</id>
     <published>2016-06-02T13:25:08.000Z</published>
     <updated>2016-06-02T13:58:42.000Z</updated>
     
@@ -501,8 +501,8 @@
   
   <entry>
     <title>勿把颠覆当战略</title>
-    <link href="http://foxgem.github.io/2016/06/01/disruption-strategy/"/>
-    <id>http://foxgem.github.io/2016/06/01/disruption-strategy/</id>
+    <link href="http://foxgem.github.io/2016/06/disruption-strategy/"/>
+    <id>http://foxgem.github.io/2016/06/disruption-strategy/</id>
     <published>2016-06-01T13:43:53.000Z</published>
     <updated>2016-06-01T15:19:57.000Z</updated>
     
@@ -540,8 +540,8 @@
   
   <entry>
     <title>一种可伸缩的微服务架构：DRCON</title>
-    <link href="http://foxgem.github.io/2016/05/31/drcon/"/>
-    <id>http://foxgem.github.io/2016/05/31/drcon/</id>
+    <link href="http://foxgem.github.io/2016/05/drcon/"/>
+    <id>http://foxgem.github.io/2016/05/drcon/</id>
     <published>2016-05-31T08:53:55.000Z</published>
     <updated>2016-05-31T09:34:03.000Z</updated>
     
@@ -575,8 +575,8 @@
   
   <entry>
     <title>导致Web应用测试失败的罪魁祸首</title>
-    <link href="http://foxgem.github.io/2016/05/30/the-cause-of-breakage-of-web-app/"/>
-    <id>http://foxgem.github.io/2016/05/30/the-cause-of-breakage-of-web-app/</id>
+    <link href="http://foxgem.github.io/2016/05/the-cause-of-breakage-of-web-app/"/>
+    <id>http://foxgem.github.io/2016/05/the-cause-of-breakage-of-web-app/</id>
     <published>2016-05-30T12:34:24.000Z</published>
     <updated>2016-05-30T13:04:34.000Z</updated>
     
@@ -595,16 +595,16 @@
     </summary>
     
     
-      <category term="开发" scheme="http://foxgem.github.io/tags/%E5%BC%80%E5%8F%91/"/>
-    
       <category term="The Morning Paper" scheme="http://foxgem.github.io/tags/The-Morning-Paper/"/>
+    
+      <category term="开发" scheme="http://foxgem.github.io/tags/%E5%BC%80%E5%8F%91/"/>
     
   </entry>
   
   <entry>
     <title>不编码的（Codeless）程序员</title>
-    <link href="http://foxgem.github.io/2016/05/29/codeless/"/>
-    <id>http://foxgem.github.io/2016/05/29/codeless/</id>
+    <link href="http://foxgem.github.io/2016/05/codeless/"/>
+    <id>http://foxgem.github.io/2016/05/codeless/</id>
     <published>2016-05-29T13:17:52.000Z</published>
     <updated>2016-05-29T13:28:44.000Z</updated>
     
@@ -626,8 +626,8 @@
   
   <entry>
     <title>To Do List + Break List = 劳逸结合</title>
-    <link href="http://foxgem.github.io/2016/05/28/break-list/"/>
-    <id>http://foxgem.github.io/2016/05/28/break-list/</id>
+    <link href="http://foxgem.github.io/2016/05/break-list/"/>
+    <id>http://foxgem.github.io/2016/05/break-list/</id>
     <published>2016-05-28T10:53:05.000Z</published>
     <updated>2016-05-28T11:31:48.000Z</updated>
     
@@ -650,8 +650,8 @@
   
   <entry>
     <title>2016年最受欢迎的前100 Java开发库</title>
-    <link href="http://foxgem.github.io/2016/05/27/top-100-java-libs-in-2016/"/>
-    <id>http://foxgem.github.io/2016/05/27/top-100-java-libs-in-2016/</id>
+    <link href="http://foxgem.github.io/2016/05/top-100-java-libs-in-2016/"/>
+    <id>http://foxgem.github.io/2016/05/top-100-java-libs-in-2016/</id>
     <published>2016-05-27T12:26:55.000Z</published>
     <updated>2016-05-27T13:08:21.000Z</updated>
     
