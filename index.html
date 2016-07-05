@@ -64,6 +64,69 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-2016/07/vertx-tcp-eventbus-bridge" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/07/vertx-tcp-eventbus-bridge/" class="article-date">
+  <time datetime="2016-07-05T12:27:19.000Z" itemprop="datePublished">2016-07-05</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/07/vertx-tcp-eventbus-bridge/">Vert.x TCP EventBus Bridge补遗</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>如果没有记错的话，Vert.x从3.2就开始支持<a href="http://vertx.io/docs/vertx-tcp-eventbus-bridge/java/" target="_blank" rel="external">TCP Eventbus Bridge</a>了，它使得Client可以直接通过socket跟Vert.x EventBus进行通信。可遗憾的是，整个文档就像半成品，并没有把很多事情说清楚。</p>
+<p>为了搞清楚这个特性，今天抽空完成了一个TCP Eventbus Bridge的例子，源码见<a href="https://github.com/shifudao/how-to/tree/master/vertx-tcp-eventbridge" target="_blank" rel="external">这里</a>。</p>
+<p>按理，都已经用TCP了，Client和Server之间干嘛还需要多此一举地采用所谓的Eventbus Bridge？我认为：</p>
+<ul>
+<li>Server和Client之间采用这种方式进行通信可以让Server端的代码更加清晰明了</li>
+<li>Client和Server之间的交互模式也更简单一些：<ul>
+<li>对于request-response，server简单地message.reply即可</li>
+<li>对于某些广播消息，client向多个server实例广播，或者是server向多个client广播，又或某些client也想接收另外的client向server的广播都非常简单和直观。</li>
+<li>通过注册地址，client也可以收到感兴趣的消息，不论是server发的，还是client发的</li>
+</ul>
+</li>
+</ul>
+<p>这两点可参考例子源码详细了解。整个例子很简单，实现了：</p>
+<ul>
+<li>client向多个bridge send，则只有一个bridge可以收到</li>
+<li>client向多个bridge publish，则都能收到</li>
+<li>server和client之间的request-response</li>
+<li>client注册要接受某地址的消息</li>
+</ul>
+<p>关于API的使用，有以下几点需要注意：</p>
+<ul>
+<li>bridge在server端建立，client只需要使用普通socket去连接即可</li>
+<li>client要接收某地址的消息，仍然是使用socket来接收。因为client并不一定是Vert.x应用，并没有eventbus可用！这一点是引起我误解，同时文档没有讲清楚的地方。</li>
+<li>对于Java语言，使用io.vertx.ext.eventbus.bridge.tcp.impl.protocol.FrameHelper和io.vertx.ext.eventbus.bridge.tcp.impl.protocol.FrameParser可以简化数据帧的发送和解析。可遗憾的是，没有提供其他语言，如Groovy的对应工具类，弄得我只好采用一种变通的方式去用【还是看代码去了解】。因此，对于Vert.x开发，建议还是首选Java语言来做，可以省掉一些不必要的麻烦。</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://foxgem.github.io/2016/07/vertx-tcp-eventbus-bridge/" data-id="ciq9gymnx001arpqc97b77x4z" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/开发/">开发</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-2016/07/being-data-scientist" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/07/being-data-scientist/" class="article-date">
@@ -121,7 +184,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://foxgem.github.io/2016/07/being-data-scientist/" data-id="ciq6lfvnn0017iyqccxdwhqbq" class="article-share-link">Share</a>
+      <a data-url="http://foxgem.github.io/2016/07/being-data-scientist/" data-id="ciq9gymnu0017rpqc23fxakl5" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数据科学/">数据科学</a></li></ul>
@@ -162,7 +225,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://foxgem.github.io/2016/06/es-as-tsdb/" data-id="ciq6lfvms000hiyqcj73jp2dr" class="article-share-link">Share</a>
+      <a data-url="http://foxgem.github.io/2016/06/es-as-tsdb/" data-id="ciq9gymne000orpqcf0i5jmzp" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数据库/">数据库</a></li></ul>
@@ -214,7 +277,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://foxgem.github.io/2016/06/speed-up-pagination/" data-id="ciq6lfvnf000yiyqcj128p314" class="article-share-link">Share</a>
+      <a data-url="http://foxgem.github.io/2016/06/speed-up-pagination/" data-id="ciq9gymnz001crpqc3y9rfiqm" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/开发/">开发</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数据库/">数据库</a></li></ul>
@@ -275,7 +338,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://foxgem.github.io/2016/06/interesting-3/" data-id="ciq6lfvmw000liyqc45ygb2xv" class="article-share-link">Share</a>
+      <a data-url="http://foxgem.github.io/2016/06/interesting-3/" data-id="ciq9gymnh000trpqcm9xvr2ed" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/阅读/">阅读</a></li></ul>
@@ -346,7 +409,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://foxgem.github.io/2016/06/training-brain-to-focus/" data-id="ciq6lfvnm0015iyqctbopirkj" class="article-share-link">Share</a>
+      <a data-url="http://foxgem.github.io/2016/06/training-brain-to-focus/" data-id="ciq9gymo0001frpqcvdth3wai" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/阅读/">阅读</a></li></ul>
@@ -390,7 +453,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://foxgem.github.io/2016/06/theory-on-conscious-evolution/" data-id="ciq6lfvni0012iyqc77zfuwgi" class="article-share-link">Share</a>
+      <a data-url="http://foxgem.github.io/2016/06/theory-on-conscious-evolution/" data-id="ciq9gymo8001hrpqcdzozcfj3" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/阅读/">阅读</a></li></ul>
@@ -445,7 +508,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://foxgem.github.io/2016/06/password-complexity/" data-id="ciq6lfvn8000viyqc85dudeux" class="article-share-link">Share</a>
+      <a data-url="http://foxgem.github.io/2016/06/password-complexity/" data-id="ciq9gymnr0015rpqci7t4mlt7" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/安全/">安全</a></li></ul>
@@ -495,7 +558,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://foxgem.github.io/2016/06/not-loving-yourself-just-as-you-are/" data-id="ciq6lfvn5000tiyqce8vq76r8" class="article-share-link">Share</a>
+      <a data-url="http://foxgem.github.io/2016/06/not-loving-yourself-just-as-you-are/" data-id="ciq9gymnn000yrpqc9ciaey33" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/阅读/">阅读</a></li></ul>
@@ -546,54 +609,10 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://foxgem.github.io/2016/06/practice-makes-possible/" data-id="ciq6lfvng0010iyqcjbuusmhz" class="article-share-link">Share</a>
+      <a data-url="http://foxgem.github.io/2016/06/practice-makes-possible/" data-id="ciq9gymnp0010rpqcwrj9u1kn" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/阅读/">阅读</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-2016/06/groovy-a-retrospective" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/06/groovy-a-retrospective/" class="article-date">
-  <time datetime="2016-06-06T12:05:48.000Z" itemprop="datePublished">2016-06-06</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/06/groovy-a-retrospective/">Groovy老鸟的回顾</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>今天在DZone上读到<a href="https://dzone.com/articles/groovy-a-retrospective" target="_blank" rel="external">一名Groovy老鸟在即将转战其他语言之前写的自己对于Groovy的回顾总结</a>。文章盛赞了Groovy的稳定和简洁，同时也提及了Java程序员转Groovy时需要注意的思维转变。余心有戚戚焉。</p>
-<p>关于类型这部分，我不能同意得更多：</p>
-<blockquote>
-<p>Again, in my opinion, typing is better - I still don’t buy that typing def rather than the actual type is actually that much of a saving, and often ends up being a code-smell (even if it didn’t start out as one). The official Groovy recommendation is to type things, with the exception of local method scoped variables - but even in that case I cannot see the benefit: there is no real gain to the developer in typing those precious fewer characters and the future readability suffers as other developers have to track through the code more to be sure as to what a variable is doing.</p>
-</blockquote>
-<p>我记得在Burt寄给我的<a href="https://www.amazon.cn/Programming-Grails-Beckwith-Burt/dp/1449323936/ref=sr_1_1?ie=UTF8&amp;qid=1465215356&amp;sr=8-1&amp;keywords=Programming+grails" target="_blank" rel="external">“Programming Grails”</a>一书中也提到了类似关于在变量声明时是否明确声明变量类型的内容。我个人觉得宗旨就是：不要影响阅读性。而且，在使用@CompileStatic时，声明类型有助于减少修改编译错误的麻烦。此外，声明类型可以带来额外的好处：在像Idea这样的IDE中可以方便的查看对应类型的源代码（按住Ctrl，在相应类型上鼠标点击即可）。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://foxgem.github.io/2016/06/groovy-a-retrospective/" data-id="ciq6lfvmu000jiyqcohz95c4x" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/开发/">开发</a></li></ul>
 
     </footer>
   </div>
@@ -650,6 +669,10 @@
       <ul>
         
           <li>
+            <a href="/2016/07/vertx-tcp-eventbus-bridge/">Vert.x TCP EventBus Bridge补遗</a>
+          </li>
+        
+          <li>
             <a href="/2016/07/being-data-scientist/">数据科学家养成之道</a>
           </li>
         
@@ -663,10 +686,6 @@
         
           <li>
             <a href="/2016/06/interesting-3/">趣文三则</a>
-          </li>
-        
-          <li>
-            <a href="/2016/06/training-brain-to-focus/">SMART帮助提高大脑的注意力和思考力</a>
           </li>
         
       </ul>

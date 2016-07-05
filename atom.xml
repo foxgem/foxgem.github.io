@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://foxgem.github.io/"/>
-  <updated>2016-07-03T12:18:25.000Z</updated>
+  <updated>2016-07-05T13:08:25.000Z</updated>
   <id>http://foxgem.github.io/</id>
   
   <author>
@@ -14,6 +14,51 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Vert.x TCP EventBus Bridge补遗</title>
+    <link href="http://foxgem.github.io/2016/07/vertx-tcp-eventbus-bridge/"/>
+    <id>http://foxgem.github.io/2016/07/vertx-tcp-eventbus-bridge/</id>
+    <published>2016-07-05T12:27:19.000Z</published>
+    <updated>2016-07-05T13:08:25.000Z</updated>
+    
+    <content type="html">&lt;p&gt;如果没有记错的话，Vert.x从3.2就开始支持&lt;a href=&quot;http://vertx.io/docs/vertx-tcp-eventbus-bridge/java/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;TCP Eventbus Bridge&lt;/a&gt;了，它使得Client可以直接通过socket跟Vert.x EventBus进行通信。可遗憾的是，整个文档就像半成品，并没有把很多事情说清楚。&lt;/p&gt;
+&lt;p&gt;为了搞清楚这个特性，今天抽空完成了一个TCP Eventbus Bridge的例子，源码见&lt;a href=&quot;https://github.com/shifudao/how-to/tree/master/vertx-tcp-eventbridge&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;这里&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;按理，都已经用TCP了，Client和Server之间干嘛还需要多此一举地采用所谓的Eventbus Bridge？我认为：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Server和Client之间采用这种方式进行通信可以让Server端的代码更加清晰明了&lt;/li&gt;
+&lt;li&gt;Client和Server之间的交互模式也更简单一些：&lt;ul&gt;
+&lt;li&gt;对于request-response，server简单地message.reply即可&lt;/li&gt;
+&lt;li&gt;对于某些广播消息，client向多个server实例广播，或者是server向多个client广播，又或某些client也想接收另外的client向server的广播都非常简单和直观。&lt;/li&gt;
+&lt;li&gt;通过注册地址，client也可以收到感兴趣的消息，不论是server发的，还是client发的&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;这两点可参考例子源码详细了解。整个例子很简单，实现了：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;client向多个bridge send，则只有一个bridge可以收到&lt;/li&gt;
+&lt;li&gt;client向多个bridge publish，则都能收到&lt;/li&gt;
+&lt;li&gt;server和client之间的request-response&lt;/li&gt;
+&lt;li&gt;client注册要接受某地址的消息&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;关于API的使用，有以下几点需要注意：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;bridge在server端建立，client只需要使用普通socket去连接即可&lt;/li&gt;
+&lt;li&gt;client要接收某地址的消息，仍然是使用socket来接收。因为client并不一定是Vert.x应用，并没有eventbus可用！这一点是引起我误解，同时文档没有讲清楚的地方。&lt;/li&gt;
+&lt;li&gt;对于Java语言，使用io.vertx.ext.eventbus.bridge.tcp.impl.protocol.FrameHelper和io.vertx.ext.eventbus.bridge.tcp.impl.protocol.FrameParser可以简化数据帧的发送和解析。可遗憾的是，没有提供其他语言，如Groovy的对应工具类，弄得我只好采用一种变通的方式去用【还是看代码去了解】。因此，对于Vert.x开发，建议还是首选Java语言来做，可以省掉一些不必要的麻烦。&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;如果没有记错的话，Vert.x从3.2就开始支持&lt;a href=&quot;http://vertx.io/docs/vertx-tcp-eventbus-bridge/java/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;TCP Eventbus Bridge
+    
+    </summary>
+    
+    
+      <category term="开发" scheme="http://foxgem.github.io/tags/%E5%BC%80%E5%8F%91/"/>
+    
+  </entry>
   
   <entry>
     <title>数据科学家养成之道</title>
@@ -120,9 +165,9 @@
     </summary>
     
     
-      <category term="开发" scheme="http://foxgem.github.io/tags/%E5%BC%80%E5%8F%91/"/>
-    
       <category term="数据库" scheme="http://foxgem.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+      <category term="开发" scheme="http://foxgem.github.io/tags/%E5%BC%80%E5%8F%91/"/>
     
   </entry>
   
@@ -645,37 +690,6 @@
     
     
       <category term="阅读" scheme="http://foxgem.github.io/tags/%E9%98%85%E8%AF%BB/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>2016年最受欢迎的前100 Java开发库</title>
-    <link href="http://foxgem.github.io/2016/05/top-100-java-libs-in-2016/"/>
-    <id>http://foxgem.github.io/2016/05/top-100-java-libs-in-2016/</id>
-    <published>2016-05-27T12:26:55.000Z</published>
-    <updated>2016-05-27T13:08:21.000Z</updated>
-    
-    <content type="html">&lt;p&gt;说实话，文章有点标题党的味道，:)。按照&lt;a href=&quot;https://dzone.com/articles/the-top-100-java-libraries-in-2016-after-analyzing&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;这篇文章&lt;/a&gt;解释的数据获取方法，更准确的说法应该是“GitHub 2016年最受欢迎的Top 100 Java libs”。不过鉴于GitHub在开发界的地位，标题写成这样也不算太过分。&lt;/p&gt;
-&lt;p&gt;根据这些数据做出的图表，很容易看出来：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;测试类工具比重不少，是否可以得出结论自动化测试已经深入人心？&lt;/li&gt;
-&lt;li&gt;JUnit和Spring在Java生态中的地位依旧牢不可破&lt;/li&gt;
-&lt;li&gt;日志大部分采用的是slf4j + slf4j-log12&lt;/li&gt;
-&lt;li&gt;用Java做游戏的真不多，比起用它来做Web的差远了&lt;/li&gt;
-&lt;li&gt;Parsing类的工具比重虽大，但其实多是用于对JSON和XML的解析&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;最有趣的是，JVM上的动态语言&lt;a href=&quot;http://www.groovy-lang.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Groovy&lt;/a&gt;也被纳入在内，作为Java库（org.codehaus.groovy.groovy-all）。作为一个资深Groovy用户，我可以负责任地说，自从用上Groovy，省掉了很多工具选择的烦恼，如JSON和XML的解析。&lt;/p&gt;
-&lt;p&gt;而且，我也很高兴的看到Groovy的流行度逐年上升，并于2016年5月TIOBE的语言榜中排第17位。套句广告词：Groovy，谁用谁知道！&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;说实话，文章有点标题党的味道，:)。按照&lt;a href=&quot;https://dzone.com/articles/the-top-100-java-libraries-in-2016-after-analyzing&quot; target=&quot;_blank&quot; rel=&quot;external
-    
-    </summary>
-    
-    
-      <category term="开发" scheme="http://foxgem.github.io/tags/%E5%BC%80%E5%8F%91/"/>
     
   </entry>
   

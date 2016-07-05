@@ -3,17 +3,24 @@
 <head>
   <meta charset="utf-8">
   
-  <title>归档: 2016 | 老胡随手记</title>
+  <title>Vert.x TCP EventBus Bridge补遗 | 老胡随手记</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="老胡随手记">
-<meta property="og:url" content="http://foxgem.github.io/archives/2016/page/3/index.html">
+  <meta name="description" content="如果没有记错的话，Vert.x从3.2就开始支持TCP Eventbus Bridge了，它使得Client可以直接通过socket跟Vert.x EventBus进行通信。可遗憾的是，整个文档就像半成品，并没有把很多事情说清楚。
+为了搞清楚这个特性，今天抽空完成了一个TCP Eventbus Bridge的例子，源码见这里。
+按理，都已经用TCP了，Client和Server之间干嘛还需要多此一">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Vert.x TCP EventBus Bridge补遗">
+<meta property="og:url" content="http://foxgem.github.io/2016/07/vertx-tcp-eventbus-bridge/index.html">
 <meta property="og:site_name" content="老胡随手记">
-<meta property="og:description">
+<meta property="og:description" content="如果没有记错的话，Vert.x从3.2就开始支持TCP Eventbus Bridge了，它使得Client可以直接通过socket跟Vert.x EventBus进行通信。可遗憾的是，整个文档就像半成品，并没有把很多事情说清楚。
+为了搞清楚这个特性，今天抽空完成了一个TCP Eventbus Bridge的例子，源码见这里。
+按理，都已经用TCP了，Client和Server之间干嘛还需要多此一">
+<meta property="og:updated_time" content="2016-07-05T13:08:25.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="老胡随手记">
-<meta name="twitter:description">
+<meta name="twitter:title" content="Vert.x TCP EventBus Bridge补遗">
+<meta name="twitter:description" content="如果没有记错的话，Vert.x从3.2就开始支持TCP Eventbus Bridge了，它使得Client可以直接通过socket跟Vert.x EventBus进行通信。可遗憾的是，整个文档就像半成品，并没有把很多事情说清楚。
+为了搞清楚这个特性，今天抽空完成了一个TCP Eventbus Bridge的例子，源码见这里。
+按理，都已经用TCP了，Client和Server之间干嘛还需要多此一">
   
     <link rel="alternate" href="/atom.xml" title="老胡随手记" type="application/atom+xml">
   
@@ -62,139 +69,79 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/05/top-100-java-libs-in-2016/" class="archive-article-date">
-  <time datetime="2016-05-27T12:26:55.000Z" itemprop="datePublished">5月 27</time>
+        <section id="main"><article id="post-2016/07/vertx-tcp-eventbus-bridge" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/07/vertx-tcp-eventbus-bridge/" class="article-date">
+  <time datetime="2016-07-05T12:27:19.000Z" itemprop="datePublished">2016-07-05</time>
 </a>
-      
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/05/top-100-java-libs-in-2016/">2016年最受欢迎的前100 Java开发库</a>
+    <h1 class="article-title" itemprop="name">
+      Vert.x TCP EventBus Bridge补遗
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
+      </header>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/05/vertx-eventbus-interceptor/" class="archive-article-date">
-  <time datetime="2016-05-26T10:58:38.000Z" itemprop="datePublished">5月 26</time>
-</a>
+    <div class="article-entry" itemprop="articleBody">
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/05/vertx-eventbus-interceptor/">Vert.x技巧：使用EventBus Interceptor拦截消息</a>
-    </h1>
-  
+        <p>如果没有记错的话，Vert.x从3.2就开始支持<a href="http://vertx.io/docs/vertx-tcp-eventbus-bridge/java/" target="_blank" rel="external">TCP Eventbus Bridge</a>了，它使得Client可以直接通过socket跟Vert.x EventBus进行通信。可遗憾的是，整个文档就像半成品，并没有把很多事情说清楚。</p>
+<p>为了搞清楚这个特性，今天抽空完成了一个TCP Eventbus Bridge的例子，源码见<a href="https://github.com/shifudao/how-to/tree/master/vertx-tcp-eventbridge" target="_blank" rel="external">这里</a>。</p>
+<p>按理，都已经用TCP了，Client和Server之间干嘛还需要多此一举地采用所谓的Eventbus Bridge？我认为：</p>
+<ul>
+<li>Server和Client之间采用这种方式进行通信可以让Server端的代码更加清晰明了</li>
+<li>Client和Server之间的交互模式也更简单一些：<ul>
+<li>对于request-response，server简单地message.reply即可</li>
+<li>对于某些广播消息，client向多个server实例广播，或者是server向多个client广播，又或某些client也想接收另外的client向server的广播都非常简单和直观。</li>
+<li>通过注册地址，client也可以收到感兴趣的消息，不论是server发的，还是client发的</li>
+</ul>
+</li>
+</ul>
+<p>这两点可参考例子源码详细了解。整个例子很简单，实现了：</p>
+<ul>
+<li>client向多个bridge send，则只有一个bridge可以收到</li>
+<li>client向多个bridge publish，则都能收到</li>
+<li>server和client之间的request-response</li>
+<li>client注册要接受某地址的消息</li>
+</ul>
+<p>关于API的使用，有以下几点需要注意：</p>
+<ul>
+<li>bridge在server端建立，client只需要使用普通socket去连接即可</li>
+<li>client要接收某地址的消息，仍然是使用socket来接收。因为client并不一定是Vert.x应用，并没有eventbus可用！这一点是引起我误解，同时文档没有讲清楚的地方。</li>
+<li>对于Java语言，使用io.vertx.ext.eventbus.bridge.tcp.impl.protocol.FrameHelper和io.vertx.ext.eventbus.bridge.tcp.impl.protocol.FrameParser可以简化数据帧的发送和解析。可遗憾的是，没有提供其他语言，如Groovy的对应工具类，弄得我只好采用一种变通的方式去用【还是看代码去了解】。因此，对于Vert.x开发，建议还是首选Java语言来做，可以省掉一些不必要的麻烦。</li>
+</ul>
 
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/05/rich-and-poor/" class="archive-article-date">
-  <time datetime="2016-05-25T12:30:26.000Z" itemprop="datePublished">5月 25</time>
-</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/05/rich-and-poor/">贫富差距为何会越来越大？</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/05/git-commit-message/" class="archive-article-date">
-  <time datetime="2016-05-24T08:36:08.000Z" itemprop="datePublished">5月 24</time>
-</a>
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://foxgem.github.io/2016/07/vertx-tcp-eventbus-bridge/" data-id="ciq9gymnx001arpqc97b77x4z" class="article-share-link">Share</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/05/git-commit-message/">做一个体贴的代码提交人</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/05/rmdb-arch/" class="archive-article-date">
-  <time datetime="2016-05-23T15:08:34.000Z" itemprop="datePublished">5月 23</time>
-</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/05/rmdb-arch/">关系数据库架构</a>
-    </h1>
-  
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/开发/">开发</a></li></ul>
 
-    </header>
+    </footer>
   </div>
-</article>
   
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/05/domain-typosquatting/" class="archive-article-date">
-  <time datetime="2016-05-22T09:19:17.000Z" itemprop="datePublished">5月 22</time>
-</a>
-      
+<nav id="article-nav">
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/05/domain-typosquatting/">那些恶意的相似域名（Domain Name Typosquatting）</a>
-    </h1>
   
+    <a href="/2016/07/being-data-scientist/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">数据科学家养成之道</div>
+    </a>
+  
+</nav>
 
-    </header>
-  </div>
+  
 </article>
-  
-  
-    </div></section>
-  
 
-
-  <nav id="page-nav">
-    <a class="extend prev" rel="prev" href="/archives/2016/page/2/">&laquo; __('prev')</a><a class="page-number" href="/archives/2016/">1</a><a class="page-number" href="/archives/2016/page/2/">2</a><span class="page-number current">3</span>
-  </nav>
 </section>
         
           <aside id="sidebar">
