@@ -3,21 +3,30 @@
 <head>
   <meta charset="utf-8">
   
-  <title>拒绝低价值的工作 | 老胡随手记</title>
+  <title>Vert.x Circuit Breaker须知 | 老胡随手记</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="如何来衡量工作的“价值”从而方便判断它的高低？我的理解是：影响深远的工作就是有价值的，反之则是无价值或是价值低的。比如，手动部署，就是低价值的；而部署自动化，则是价值高的。因为很明显可以看出后者对开发的影响：把工程师从那些费事费力且容易出错的工作中解放出来，以从事更符合他们身份的工作，:)。显然，从效益上讲，我们应该尽可能的做有价值的工作。
-无独有偶，这篇哈佛商业评论上的文章以“停止做低价值的工作">
+  <meta name="description" content="Vert.x 3.3新增的Circuit Breaker深得我心，使用简单，而且文档齐全。今天照着文档写了一个探索性的例子，为接下来的项目做技术性预研。
+整个过程非常顺利，但有几点有必要说明一下：
+
+future.complete()必须被调用，无论有无返回值，否则这次执行不会被认为是结束，进而导致超时。
+为了让CircuitBreaker检查到超时，在CircuitBreaker.execute">
 <meta property="og:type" content="article">
-<meta property="og:title" content="拒绝低价值的工作">
-<meta property="og:url" content="http://foxgem.github.io/2016/06/no-low-value-work/index.html">
+<meta property="og:title" content="Vert.x Circuit Breaker须知">
+<meta property="og:url" content="http://foxgem.github.io/2016/07/vertx-circuit-breaker-example/index.html">
 <meta property="og:site_name" content="老胡随手记">
-<meta property="og:description" content="如何来衡量工作的“价值”从而方便判断它的高低？我的理解是：影响深远的工作就是有价值的，反之则是无价值或是价值低的。比如，手动部署，就是低价值的；而部署自动化，则是价值高的。因为很明显可以看出后者对开发的影响：把工程师从那些费事费力且容易出错的工作中解放出来，以从事更符合他们身份的工作，:)。显然，从效益上讲，我们应该尽可能的做有价值的工作。
-无独有偶，这篇哈佛商业评论上的文章以“停止做低价值的工作">
-<meta property="og:updated_time" content="2016-06-04T12:54:35.000Z">
+<meta property="og:description" content="Vert.x 3.3新增的Circuit Breaker深得我心，使用简单，而且文档齐全。今天照着文档写了一个探索性的例子，为接下来的项目做技术性预研。
+整个过程非常顺利，但有几点有必要说明一下：
+
+future.complete()必须被调用，无论有无返回值，否则这次执行不会被认为是结束，进而导致超时。
+为了让CircuitBreaker检查到超时，在CircuitBreaker.execute">
+<meta property="og:updated_time" content="2016-07-11T10:00:06.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="拒绝低价值的工作">
-<meta name="twitter:description" content="如何来衡量工作的“价值”从而方便判断它的高低？我的理解是：影响深远的工作就是有价值的，反之则是无价值或是价值低的。比如，手动部署，就是低价值的；而部署自动化，则是价值高的。因为很明显可以看出后者对开发的影响：把工程师从那些费事费力且容易出错的工作中解放出来，以从事更符合他们身份的工作，:)。显然，从效益上讲，我们应该尽可能的做有价值的工作。
-无独有偶，这篇哈佛商业评论上的文章以“停止做低价值的工作">
+<meta name="twitter:title" content="Vert.x Circuit Breaker须知">
+<meta name="twitter:description" content="Vert.x 3.3新增的Circuit Breaker深得我心，使用简单，而且文档齐全。今天照着文档写了一个探索性的例子，为接下来的项目做技术性预研。
+整个过程非常顺利，但有几点有必要说明一下：
+
+future.complete()必须被调用，无论有无返回值，否则这次执行不会被认为是结束，进而导致超时。
+为了让CircuitBreaker检查到超时，在CircuitBreaker.execute">
   
     <link rel="alternate" href="/atom.xml" title="老胡随手记" type="application/atom+xml">
   
@@ -66,10 +75,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-2016/06/no-low-value-work" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-2016/07/vertx-circuit-breaker-example" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2016/06/no-low-value-work/" class="article-date">
-  <time datetime="2016-06-04T11:42:09.000Z" itemprop="datePublished">2016-06-04</time>
+    <a href="/2016/07/vertx-circuit-breaker-example/" class="article-date">
+  <time datetime="2016-07-11T09:30:03.000Z" itemprop="datePublished">2016-07-11</time>
 </a>
     
   </div>
@@ -80,7 +89,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      拒绝低价值的工作
+      Vert.x Circuit Breaker须知
     </h1>
   
 
@@ -88,29 +97,21 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>如何来衡量工作的“价值”从而方便判断它的高低？我的理解是：影响深远的工作就是有价值的，反之则是无价值或是价值低的。比如，手动部署，就是低价值的；而部署自动化，则是价值高的。因为很明显可以看出后者对开发的影响：把工程师从那些费事费力且容易出错的工作中解放出来，以从事更符合他们<strong>身份</strong>的工作，:)。显然，从效益上讲，我们应该尽可能的做有价值的工作。</p>
-<p>无独有偶，<a href="https://hbr.org/2016/06/stop-doing-low-value-work" target="_blank" rel="external">这篇哈佛商业评论上的文章以“停止做低价值的工作”为题讨论了如何提高生产力</a>。其中的有些观点有点意思：</p>
+        <p>Vert.x 3.3新增的<a href="http://vertx.io/docs/vertx-circuit-breaker/java/" target="_blank" rel="external">Circuit Breaker</a>深得我心，使用简单，而且文档齐全。今天照着文档写了<a href="https://github.com/shifudao/how-to/tree/master/circuitbreaker" target="_blank" rel="external">一个探索性的例子</a>，为接下来的项目做技术性预研。</p>
+<p>整个过程非常顺利，但有几点有必要说明一下：</p>
 <ul>
-<li>由于经济下滑，工作职位虽然减少了，但工作量却没有。这导致每人的工作量都上升了，于是尽量避免低价值的工作对于职业生涯至关重要。</li>
-<li>当遇到组织重组时，人们会下意识的迎合他人，因为担心被解雇。但其实这是多余的，因为幸存下来的人对组织未来的成功至关重要。</li>
-<li>当完成了众人叫好的工作，乘机要求公司帮忙减少自己低价值的工作。</li>
+<li>future.complete()必须被调用，无论有无返回值，否则这次执行不会被认为是结束，进而导致超时。</li>
+<li>为了让CircuitBreaker检查到超时，在CircuitBreaker.execute()外部套了一层vertx.executeBlocking()，否则即便CircuitBreaker.execute()内的操作的执行时间超过了外部设置的时间长度，CircuitBreaker也不会检查到。</li>
 </ul>
-<p>对于如何避免继续做低价值的工作，除了IT人都知道的自动化大法，本文还给出了其他有益的建议：</p>
-<ul>
-<li>把选择权交给他人来决定价值的高低</li>
-<li>将自己的做事规则公开</li>
-<li>每周自我总结</li>
-</ul>
-<p>此外，我还想补充一些关于自动化方面的内容。一说起自动化，想当然的会误解只有自己手头重复的工作才值得自动化。但还有一类容易被忽视就是自助类工具。比如，开发人员总会遇到有人找你来看看是不是你负责的那部分代码有问题。若能将整个运行日志（如果有的话）以合适的方式，如ELK，收集和展示出来，相信找你的人会少很多。这种自助类工具带来的效果往往比起仅仅服务于个人的自动化工具更好，因为它节约的是整个组织的多个人的时间。</p>
-<p>最后，作为结尾，我还想说：低价值的工作总得有人做，而且它本身对于人来讲也是相对的。一份工作，对于新人来说，可能是有价值的；但是对于老鸟，则可能不然。单纯地做低价值的工作是低价值的，但在不损伤结果的前提之下，消灭低价值工作，则是有价值的。</p>
+<p>总得来说，还是不错。只不过需要注意该版本还只是技术预览版，不排除以后有接口变动的可能。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://foxgem.github.io/2016/06/no-low-value-work/" data-id="ciqhuzakw001gxwqc3iq259nr" class="article-share-link">Share</a>
+      <a data-url="http://foxgem.github.io/2016/07/vertx-circuit-breaker-example/" data-id="ciqhuzalh001uxwqcjldzgogb" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/阅读/">阅读</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/开发/">开发</a></li></ul>
 
     </footer>
   </div>
@@ -118,19 +119,10 @@
     
 <nav id="article-nav">
   
-    <a href="/2016/06/agile-dw-bi/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          数据仓库和BI的敏捷之道
-        
-      </div>
-    </a>
   
-  
-    <a href="/2016/06/microservice-pitfall/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2016/07/vertx-tcp-eventbus-bridge/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">微服务的若干注意事项</div>
+      <div class="article-nav-title">Vert.x TCP EventBus Bridge补遗</div>
     </a>
   
 </nav>

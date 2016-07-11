@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://foxgem.github.io/"/>
-  <updated>2016-07-05T13:08:25.000Z</updated>
+  <updated>2016-07-11T10:00:06.000Z</updated>
   <id>http://foxgem.github.io/</id>
   
   <author>
@@ -14,6 +14,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Vert.x Circuit Breaker须知</title>
+    <link href="http://foxgem.github.io/2016/07/vertx-circuit-breaker-example/"/>
+    <id>http://foxgem.github.io/2016/07/vertx-circuit-breaker-example/</id>
+    <published>2016-07-11T09:30:03.000Z</published>
+    <updated>2016-07-11T10:00:06.000Z</updated>
+    
+    <content type="html">&lt;p&gt;Vert.x 3.3新增的&lt;a href=&quot;http://vertx.io/docs/vertx-circuit-breaker/java/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Circuit Breaker&lt;/a&gt;深得我心，使用简单，而且文档齐全。今天照着文档写了&lt;a href=&quot;https://github.com/shifudao/how-to/tree/master/circuitbreaker&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;一个探索性的例子&lt;/a&gt;，为接下来的项目做技术性预研。&lt;/p&gt;
+&lt;p&gt;整个过程非常顺利，但有几点有必要说明一下：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;future.complete()必须被调用，无论有无返回值，否则这次执行不会被认为是结束，进而导致超时。&lt;/li&gt;
+&lt;li&gt;为了让CircuitBreaker检查到超时，在CircuitBreaker.execute()外部套了一层vertx.executeBlocking()，否则即便CircuitBreaker.execute()内的操作的执行时间超过了外部设置的时间长度，CircuitBreaker也不会检查到。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;总得来说，还是不错。只不过需要注意该版本还只是技术预览版，不排除以后有接口变动的可能。&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Vert.x 3.3新增的&lt;a href=&quot;http://vertx.io/docs/vertx-circuit-breaker/java/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Circuit Breaker&lt;/a&gt;深得我心，使用简单，而且文档齐
+    
+    </summary>
+    
+    
+      <category term="开发" scheme="http://foxgem.github.io/tags/%E5%BC%80%E5%8F%91/"/>
+    
+  </entry>
   
   <entry>
     <title>Vert.x TCP EventBus Bridge补遗</title>
@@ -165,9 +192,9 @@
     </summary>
     
     
-      <category term="数据库" scheme="http://foxgem.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
-    
       <category term="开发" scheme="http://foxgem.github.io/tags/%E5%BC%80%E5%8F%91/"/>
+    
+      <category term="数据库" scheme="http://foxgem.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
   </entry>
   
@@ -661,30 +688,6 @@
     <summary type="html">
     
       &lt;p&gt;&lt;a href=&quot;https://dzone.com/articles/the-codeless-developer&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;DZone有篇调侃Serverless的漫画&lt;/a&gt;：一位简历上写着具备有Serverles
-    
-    </summary>
-    
-    
-      <category term="阅读" scheme="http://foxgem.github.io/tags/%E9%98%85%E8%AF%BB/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>To Do List + Break List = 劳逸结合</title>
-    <link href="http://foxgem.github.io/2016/05/break-list/"/>
-    <id>http://foxgem.github.io/2016/05/break-list/</id>
-    <published>2016-05-28T10:53:05.000Z</published>
-    <updated>2016-05-28T11:31:48.000Z</updated>
-    
-    <content type="html">&lt;p&gt;关于&lt;a href=&quot;https://en.wikipedia.org/wiki/Getting_Things_Done&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;GTD&lt;/a&gt;的文章永远不会嫌太多，这是&lt;a href=&quot;http://lifehacker.com/swap-your-to-do-list-for-a-break-list-to-get-more-don-1774565496&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;另一篇发布在LifeHacker上的同类题材的文章&lt;/a&gt;。与那些专注于“如何完成任务的学问”的文章不同，它介绍的是工作的另一面：如何休息的艺术。&lt;/p&gt;
-&lt;p&gt;就其整体思想而言，跟番茄工作法有几许相似：都主张工作和休息相结合，避免过渡操劳；不同于采用结构化“工作-休息”循环的番茄工作法，这篇文章介绍的劳逸结合方式颇为随意：列出一个跟To Do List并列的Break List，每次休息完，就划掉一项。至于什么时候休息，it’s up to you！Break List和To Do List的关系就像阴和阳一样，既对立，又统一。&lt;/p&gt;
-&lt;p&gt;我很喜欢这篇文章表达的一个观点：过犹不及，不论是工作还是休息，都需要管理。过渡工作，身体吃不消；过渡休息，事情就被耽误。&lt;/p&gt;
-&lt;p&gt;同时，对于这种由你自己（而不是番茄钟）说了算的劳逸结合方式，我个人觉得可操作性更强一些。毕竟，你很难要求跟你一起工作的人完全按照你的（番茄）工作节奏来，除非工作环境具备这一要求。&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;关于&lt;a href=&quot;https://en.wikipedia.org/wiki/Getting_Things_Done&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;GTD&lt;/a&gt;的文章永远不会嫌太多，这是&lt;a href=&quot;http://lifehack
     
     </summary>
     
