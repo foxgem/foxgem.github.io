@@ -64,6 +64,49 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-2016/05/the-cause-of-breakage-of-web-app" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/05/the-cause-of-breakage-of-web-app/" class="article-date">
+  <time datetime="2016-05-30T12:34:24.000Z" itemprop="datePublished">2016-05-30</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/05/the-cause-of-breakage-of-web-app/">导致Web应用测试失败的罪魁祸首</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>但凡给Web应用写过自动化功能测试的人都会对这类测试的脆弱性印象深刻，并经常怀疑自己做这件事情的价值。相信我，若没有这样的疑问，那是你写的还不够多，;)</p>
+<p>虽然脆弱，但它却并非一无是处，有时确实能够省掉不少人工，尤其是当UI已经定型并且在可预见的未来很长时间内不会有大的动作时。我猜<a href="http://martinfowler.com/bliki/TestPyramid.html" target="_blank" rel="external">测试金字塔</a>大概就是在这种又爱又恨的情绪下诞生的：很明显，跟UI有关的功能测试是最少的。</p>
+<p>今天，<a href="https://blog.acolyer.org/2016/05/30/why-do-recordreplay-tests-of-web-applications-break/" target="_blank" rel="external">The Morning Paper上的一篇文章给这类测试的脆弱性提供了理论上的指导</a>，细节大家就上网站上自己看吧，结论是大家基本都很清楚的：导致Web应用功能测试失败的最大原因是测试中用到的定位符。这也难怪，人就是喜新厌旧的动物，再好看的UI看久了都会有审美疲劳。于是，改头换面自然就成了寻常事，这种背景下原来的测试用得上才怪。</p>
+<p>我也是懒人，也不主张花很大代价去完成一个100%覆盖的功能测试。我更倾向于尽可能大面积覆盖较为稳定的非GUI测试（单元测试和集成测试），严格验证跟GUI交互的接口，最好能在无界面的前提之下就能验证功能流程的流转。至于GUI，则口子放的开一点，方便它们随时调整布局和设计。</p>
+<p>最后又到广告时间，对于Web的功能测试，我推荐<a href="http://www.gebish.org/" target="_blank" rel="external">Geb</a>，它基于<a href="http://docs.seleniumhq.org/" target="_blank" rel="external">Selenium</a>，同时又支持<a href="http://spockframework.org/" target="_blank" rel="external">Spock</a>，而且还有<a href="https://grails.org/" target="_blank" rel="external">Grails</a>的插件，非常的方便易用。我之前在老东家SAP时还专门让人用它做了一个小的测试工具，效果还不错，;)</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://foxgem.github.io/2016/05/the-cause-of-breakage-of-web-app/" data-id="ciso356lq000colqcuoiw22xm" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/The-Morning-Paper/">The Morning Paper</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/开发/">开发</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-2016/05/codeless" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/05/codeless/" class="article-date">
@@ -93,7 +136,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://foxgem.github.io/2016/05/codeless/" data-id="cir5p05xs0001ipqcsitx6cab" class="article-share-link">Share</a>
+      <a data-url="http://foxgem.github.io/2016/05/codeless/" data-id="ciso356l40001olqcn9es6fit" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/阅读/">阅读</a></li></ul>
@@ -135,7 +178,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://foxgem.github.io/2016/05/break-list/" data-id="cir5p05xn0000ipqch8ho75ly" class="article-share-link">Share</a>
+      <a data-url="http://foxgem.github.io/2016/05/break-list/" data-id="ciso356ky0000olqcopr7ffgj" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/阅读/">阅读</a></li></ul>
@@ -184,7 +227,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://foxgem.github.io/2016/05/top-100-java-libs-in-2016/" data-id="cir5p05yi000cipqc0hbu2xet" class="article-share-link">Share</a>
+      <a data-url="http://foxgem.github.io/2016/05/top-100-java-libs-in-2016/" data-id="ciso356lw000eolqchk5wn82f" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/开发/">开发</a></li></ul>
@@ -227,7 +270,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://foxgem.github.io/2016/05/vertx-eventbus-interceptor/" data-id="cir5p05yr000hipqc6k8bf2dz" class="article-share-link">Share</a>
+      <a data-url="http://foxgem.github.io/2016/05/vertx-eventbus-interceptor/" data-id="ciso356lz000golqc9b7rkxab" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/开发/">开发</a></li></ul>
@@ -277,7 +320,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://foxgem.github.io/2016/05/rich-and-poor/" data-id="cir5p05yb0008ipqcl234cis2" class="article-share-link">Share</a>
+      <a data-url="http://foxgem.github.io/2016/05/rich-and-poor/" data-id="ciso356lk0008olqcflr23qc5" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/阅读/">阅读</a></li></ul>
@@ -325,7 +368,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://foxgem.github.io/2016/05/git-commit-message/" data-id="cir5p05y00004ipqc712pqx5w" class="article-share-link">Share</a>
+      <a data-url="http://foxgem.github.io/2016/05/git-commit-message/" data-id="ciso356lg0006olqca0gjscqg" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/开发/">开发</a></li></ul>
@@ -364,7 +407,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://foxgem.github.io/2016/05/rmdb-arch/" data-id="cir5p05yo000eipqczv8yrau9" class="article-share-link">Share</a>
+      <a data-url="http://foxgem.github.io/2016/05/rmdb-arch/" data-id="ciso356lm000aolqcactwy0ff" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/The-Morning-Paper/">The Morning Paper</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数据库/">数据库</a></li></ul>
@@ -411,7 +454,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://foxgem.github.io/2016/05/domain-typosquatting/" data-id="cir5p05y50006ipqc7o4fbb43" class="article-share-link">Share</a>
+      <a data-url="http://foxgem.github.io/2016/05/domain-typosquatting/" data-id="ciso356la0003olqc7jpe1uva" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/The-Morning-Paper/">The Morning Paper</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/安全/">安全</a></li></ul>
@@ -458,7 +501,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">七月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">六月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">五月 2016</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">九月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">七月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">六月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">五月 2016</a></li></ul>
     </div>
   </div>
 
@@ -469,6 +512,10 @@
     <h3 class="widget-title">最新文章</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2016/09/four-burners-theory/">四炉膛理论（Four-Burners Theory）</a>
+          </li>
         
           <li>
             <a href="/2016/07/design-thinking-for-job-learning/">利用Design Thinking促进岗位培训</a>
@@ -484,10 +531,6 @@
         
           <li>
             <a href="/2016/07/being-data-scientist/">数据科学家养成之道</a>
-          </li>
-        
-          <li>
-            <a href="/2016/06/es-as-tsdb/">作为TSDB的Elasticsearch</a>
           </li>
         
       </ul>

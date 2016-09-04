@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://foxgem.github.io/"/>
-  <updated>2016-07-28T02:23:31.000Z</updated>
+  <updated>2016-09-04T03:54:36.000Z</updated>
   <id>http://foxgem.github.io/</id>
   
   <author>
@@ -14,6 +14,47 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>四炉膛理论（Four-Burners Theory）</title>
+    <link href="http://foxgem.github.io/2016/09/four-burners-theory/"/>
+    <id>http://foxgem.github.io/2016/09/four-burners-theory/</id>
+    <published>2016-09-04T03:02:56.000Z</published>
+    <updated>2016-09-04T03:54:36.000Z</updated>
+    
+    <content type="html">&lt;p&gt;&lt;a href=&quot;http://jamesclear.com/four-burners-theory&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;这篇讨论工作/生活平衡的文章&lt;/a&gt;让我知道了“四炉膛理论”：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Imagine that your life is represented by a stove with four burners on it. Each burner symbolizes one major quadrant of your life.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;The first burner represents your family.&lt;/li&gt;
+&lt;li&gt;The second burner is your friends.&lt;/li&gt;
+&lt;li&gt;The third burner is your health.&lt;/li&gt;
+&lt;li&gt;The fourth burner is your work.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;The Four Burners Theory says that “in order to be successful you have to cut off one of your burners. And in order to be really successful you have to cut off two.”&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;讲白了，它的实质还是一再弹起的老调调：人的精力和时间是有限的，要想成功，就必须有重点地投入到你在意的那一个方面。按照这个理论，平衡工作和生活的结果就是平凡的人生。否则，若想走上人生巅峰，万人敬仰，那就得有所取舍。&lt;/p&gt;
+&lt;p&gt;关于烧炉子的技巧，作者在文后给出了3条建议，可供你参考：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;把炉膛外包出去，让你获得更多的时间和精力&lt;/li&gt;
+&lt;li&gt;承认现实，拥抱约束，想办法提高工作效率&lt;/li&gt;
+&lt;li&gt;规划人生，不同的阶段烧旺不同的炉膛&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;最后一条建议挺有意思，不是吗？&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;a href=&quot;http://jamesclear.com/four-burners-theory&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;这篇讨论工作/生活平衡的文章&lt;/a&gt;让我知道了“四炉膛理论”：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Im
+    
+    </summary>
+    
+    
+      <category term="阅读" scheme="http://foxgem.github.io/tags/%E9%98%85%E8%AF%BB/"/>
+    
+  </entry>
   
   <entry>
     <title>利用Design Thinking促进岗位培训</title>
@@ -677,34 +718,6 @@
     
     
       <category term="微服务" scheme="http://foxgem.github.io/tags/%E5%BE%AE%E6%9C%8D%E5%8A%A1/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>导致Web应用测试失败的罪魁祸首</title>
-    <link href="http://foxgem.github.io/2016/05/the-cause-of-breakage-of-web-app/"/>
-    <id>http://foxgem.github.io/2016/05/the-cause-of-breakage-of-web-app/</id>
-    <published>2016-05-30T12:34:24.000Z</published>
-    <updated>2016-05-30T13:04:34.000Z</updated>
-    
-    <content type="html">&lt;p&gt;但凡给Web应用写过自动化功能测试的人都会对这类测试的脆弱性印象深刻，并经常怀疑自己做这件事情的价值。相信我，若没有这样的疑问，那是你写的还不够多，;)&lt;/p&gt;
-&lt;p&gt;虽然脆弱，但它却并非一无是处，有时确实能够省掉不少人工，尤其是当UI已经定型并且在可预见的未来很长时间内不会有大的动作时。我猜&lt;a href=&quot;http://martinfowler.com/bliki/TestPyramid.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;测试金字塔&lt;/a&gt;大概就是在这种又爱又恨的情绪下诞生的：很明显，跟UI有关的功能测试是最少的。&lt;/p&gt;
-&lt;p&gt;今天，&lt;a href=&quot;https://blog.acolyer.org/2016/05/30/why-do-recordreplay-tests-of-web-applications-break/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;The Morning Paper上的一篇文章给这类测试的脆弱性提供了理论上的指导&lt;/a&gt;，细节大家就上网站上自己看吧，结论是大家基本都很清楚的：导致Web应用功能测试失败的最大原因是测试中用到的定位符。这也难怪，人就是喜新厌旧的动物，再好看的UI看久了都会有审美疲劳。于是，改头换面自然就成了寻常事，这种背景下原来的测试用得上才怪。&lt;/p&gt;
-&lt;p&gt;我也是懒人，也不主张花很大代价去完成一个100%覆盖的功能测试。我更倾向于尽可能大面积覆盖较为稳定的非GUI测试（单元测试和集成测试），严格验证跟GUI交互的接口，最好能在无界面的前提之下就能验证功能流程的流转。至于GUI，则口子放的开一点，方便它们随时调整布局和设计。&lt;/p&gt;
-&lt;p&gt;最后又到广告时间，对于Web的功能测试，我推荐&lt;a href=&quot;http://www.gebish.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Geb&lt;/a&gt;，它基于&lt;a href=&quot;http://docs.seleniumhq.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Selenium&lt;/a&gt;，同时又支持&lt;a href=&quot;http://spockframework.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Spock&lt;/a&gt;，而且还有&lt;a href=&quot;https://grails.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Grails&lt;/a&gt;的插件，非常的方便易用。我之前在老东家SAP时还专门让人用它做了一个小的测试工具，效果还不错，;)&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;但凡给Web应用写过自动化功能测试的人都会对这类测试的脆弱性印象深刻，并经常怀疑自己做这件事情的价值。相信我，若没有这样的疑问，那是你写的还不够多，;)&lt;/p&gt;
-&lt;p&gt;虽然脆弱，但它却并非一无是处，有时确实能够省掉不少人工，尤其是当UI已经定型并且在可预见的未来很长时间内不
-    
-    </summary>
-    
-    
-      <category term="开发" scheme="http://foxgem.github.io/tags/%E5%BC%80%E5%8F%91/"/>
-    
-      <category term="The Morning Paper" scheme="http://foxgem.github.io/tags/The-Morning-Paper/"/>
     
   </entry>
   
