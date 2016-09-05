@@ -64,6 +64,59 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-2016/05/drcon" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/05/drcon/" class="article-date">
+  <time datetime="2016-05-31T08:53:55.000Z" itemprop="datePublished">2016-05-31</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/05/drcon/">一种可伸缩的微服务架构：DRCON</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>微服务时下正火，Docker是当红炸子鸡，稍微思考一下就能发现：两者结合为可伸缩的架构提供天然的基础，但怎么实现，却没有太多的头绪。直到发现<a href="https://www.airpair.com/scalable-architecture-with-docker-consul-and-nginx" target="_blank" rel="external">这篇旧文</a>才让我豁然开朗。【各位见谅，虽然名词很早就接触了，真正打算着手开干才是最近的事情。】</p>
+<p>DRCON其实是下列工具的集合：</p>
+<ul>
+<li>Docker，不必过多介绍，略过</li>
+<li>Registrator，可简化服务的注册</li>
+<li>Consul，服务注册和发现</li>
+<li>Consul Template + Nginx，服务的负载均衡和重定向</li>
+</ul>
+<p>服务的负载均衡和重定向也可以用SRV-Router来做，这一做法作者在<a href="http://www.maori.geek.nz/docker_web_services_with_consul/" target="_blank" rel="external">另一篇更老的文章</a>里有介绍。相比起来，这篇文章的做法要更简单一些，就是利用Consul Template在服务启停时自动去修改Nginx的配置文件。</p>
+<p>若采用SRV-Router，务必注意文中提到的小细节：</p>
+<blockquote>
+<p>The srv-router when called will query Consul for home.simple.service.consul, then route to the address and port that is returned. This is the tags namespace in Consul, so each consul service must have the home tag.</p>
+</blockquote>
+<p>我就是没有注意在Consul中要有个home tag，浪费了半天时间。</p>
+<p>最后提一句，与文中用python来实现服务的例子不同，我用的是<a href="http://vertx.io/docs/#web" target="_blank" rel="external">Vert.x Web</a>，;)。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://foxgem.github.io/2016/05/drcon/" data-id="cisphgrvh000345qcojfm9ui1" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/微服务/">微服务</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-2016/05/the-cause-of-breakage-of-web-app" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/05/the-cause-of-breakage-of-web-app/" class="article-date">
@@ -95,7 +148,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://foxgem.github.io/2016/05/the-cause-of-breakage-of-web-app/" data-id="ciso356lq000colqcuoiw22xm" class="article-share-link">Share</a>
+      <a data-url="http://foxgem.github.io/2016/05/the-cause-of-breakage-of-web-app/" data-id="cisphgrw5000f45qcq88whbwx" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/The-Morning-Paper/">The Morning Paper</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/开发/">开发</a></li></ul>
@@ -136,7 +189,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://foxgem.github.io/2016/05/codeless/" data-id="ciso356l40001olqcn9es6fit" class="article-share-link">Share</a>
+      <a data-url="http://foxgem.github.io/2016/05/codeless/" data-id="cisphgruz000045qc5m1qxfei" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/阅读/">阅读</a></li></ul>
@@ -178,7 +231,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://foxgem.github.io/2016/05/break-list/" data-id="ciso356ky0000olqcopr7ffgj" class="article-share-link">Share</a>
+      <a data-url="http://foxgem.github.io/2016/05/break-list/" data-id="cisphgrvi000445qcwzlqw0tq" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/阅读/">阅读</a></li></ul>
@@ -227,7 +280,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://foxgem.github.io/2016/05/top-100-java-libs-in-2016/" data-id="ciso356lw000eolqchk5wn82f" class="article-share-link">Share</a>
+      <a data-url="http://foxgem.github.io/2016/05/top-100-java-libs-in-2016/" data-id="cisphgrvp000a45qcs6karxyg" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/开发/">开发</a></li></ul>
@@ -270,7 +323,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://foxgem.github.io/2016/05/vertx-eventbus-interceptor/" data-id="ciso356lz000golqc9b7rkxab" class="article-share-link">Share</a>
+      <a data-url="http://foxgem.github.io/2016/05/vertx-eventbus-interceptor/" data-id="cisphgrvt000c45qc788cdxai" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/开发/">开发</a></li></ul>
@@ -320,7 +373,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://foxgem.github.io/2016/05/rich-and-poor/" data-id="ciso356lk0008olqcflr23qc5" class="article-share-link">Share</a>
+      <a data-url="http://foxgem.github.io/2016/05/rich-and-poor/" data-id="cisphgrw0000d45qcywza0zmc" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/阅读/">阅读</a></li></ul>
@@ -368,7 +421,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://foxgem.github.io/2016/05/git-commit-message/" data-id="ciso356lg0006olqca0gjscqg" class="article-share-link">Share</a>
+      <a data-url="http://foxgem.github.io/2016/05/git-commit-message/" data-id="cisphgrvn000845qcfde0lnen" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/开发/">开发</a></li></ul>
@@ -407,7 +460,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://foxgem.github.io/2016/05/rmdb-arch/" data-id="ciso356lm000aolqcactwy0ff" class="article-share-link">Share</a>
+      <a data-url="http://foxgem.github.io/2016/05/rmdb-arch/" data-id="cisphgrvk000645qcavzj3rxl" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/The-Morning-Paper/">The Morning Paper</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数据库/">数据库</a></li></ul>
@@ -454,7 +507,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://foxgem.github.io/2016/05/domain-typosquatting/" data-id="ciso356la0003olqc7jpe1uva" class="article-share-link">Share</a>
+      <a data-url="http://foxgem.github.io/2016/05/domain-typosquatting/" data-id="cisphgrv8000145qcoakbzf8f" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/The-Morning-Paper/">The Morning Paper</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/安全/">安全</a></li></ul>
@@ -514,6 +567,10 @@
       <ul>
         
           <li>
+            <a href="/2016/09/hbase-schema/">HBase模式设计指南</a>
+          </li>
+        
+          <li>
             <a href="/2016/09/four-burners-theory/">四炉膛理论（Four-Burners Theory）</a>
           </li>
         
@@ -527,10 +584,6 @@
         
           <li>
             <a href="/2016/07/vertx-tcp-eventbus-bridge/">Vert.x TCP EventBus Bridge补遗</a>
-          </li>
-        
-          <li>
-            <a href="/2016/07/being-data-scientist/">数据科学家养成之道</a>
           </li>
         
       </ul>

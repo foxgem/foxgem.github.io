@@ -3,17 +3,30 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Tag: 数据科学 | 老胡随手记</title>
+  <title>HBase模式设计指南 | 老胡随手记</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="老胡随手记">
-<meta property="og:url" content="http://foxgem.github.io/tags/数据科学/index.html">
+  <meta name="description" content="对于初涉HBase的开发者，这篇文章提供了一份简明扼要的建模指南。其中的几个观点对于关系数据库出身的开发者尤其重要：
+
+关系数据库优先关注实体和实体之间的关系，然后才设计查询和索引；HBase恰恰相反，它是“Query-First”的模式设计，在设计模式之前，尽可能地先将所有查询识别出来。
+上一条的目的是避免无谓的远程访问，将一起访问的数据存放在一起。
+Normalization在HBase中不再">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HBase模式设计指南">
+<meta property="og:url" content="http://foxgem.github.io/2016/09/hbase-schema/index.html">
 <meta property="og:site_name" content="老胡随手记">
-<meta property="og:description">
+<meta property="og:description" content="对于初涉HBase的开发者，这篇文章提供了一份简明扼要的建模指南。其中的几个观点对于关系数据库出身的开发者尤其重要：
+
+关系数据库优先关注实体和实体之间的关系，然后才设计查询和索引；HBase恰恰相反，它是“Query-First”的模式设计，在设计模式之前，尽可能地先将所有查询识别出来。
+上一条的目的是避免无谓的远程访问，将一起访问的数据存放在一起。
+Normalization在HBase中不再">
+<meta property="og:updated_time" content="2016-09-05T03:23:57.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="老胡随手记">
-<meta name="twitter:description">
+<meta name="twitter:title" content="HBase模式设计指南">
+<meta name="twitter:description" content="对于初涉HBase的开发者，这篇文章提供了一份简明扼要的建模指南。其中的几个观点对于关系数据库出身的开发者尤其重要：
+
+关系数据库优先关注实体和实体之间的关系，然后才设计查询和索引；HBase恰恰相反，它是“Query-First”的模式设计，在设计模式之前，尽可能地先将所有查询识别出来。
+上一条的目的是避免无谓的远程访问，将一起访问的数据存放在一起。
+Normalization在HBase中不再">
   
     <link rel="alternate" href="/atom.xml" title="老胡随手记" type="application/atom+xml">
   
@@ -62,39 +75,69 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/07/being-data-scientist/" class="archive-article-date">
-  <time datetime="2016-07-03T11:44:06.000Z" itemprop="datePublished">7月 3</time>
+        <section id="main"><article id="post-2016/09/hbase-schema" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/09/hbase-schema/" class="article-date">
+  <time datetime="2016-09-05T03:06:23.000Z" itemprop="datePublished">2016-09-05</time>
 </a>
-      
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/07/being-data-scientist/">数据科学家养成之道</a>
+    <h1 class="article-title" itemprop="name">
+      HBase模式设计指南
     </h1>
   
 
-    </header>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>对于初涉HBase的开发者，<a href="https://www.mapr.com/blog/guidelines-hbase-schema-design" target="_blank" rel="external">这篇文章提供了一份简明扼要的建模指南</a>。其中的几个观点对于关系数据库出身的开发者尤其重要：</p>
+<ol>
+<li>关系数据库优先关注实体和实体之间的关系，然后才设计查询和索引；HBase恰恰相反，它是<strong>“Query-First”</strong>的模式设计，在设计模式之前，尽可能地先将所有查询识别出来。</li>
+<li>上一条的目的是避免无谓的远程访问，将一起访问的数据存放在一起。</li>
+<li>Normalization在HBase中不再是金科玉律</li>
+</ol>
+<p>文后分别针对典型的关系给出相应的范例：</p>
+<ul>
+<li>父子关系</li>
+<li>多对多关系</li>
+<li>通用数据，即字典数据</li>
+<li>自关联关系</li>
+<li>树和图</li>
+<li>继承关系</li>
+</ul>
+<p>虽然是一篇2015年发表的文章，但放在今天依旧不过时，对于刚刚开始学习HBase的开发者有很好的借鉴意义。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://foxgem.github.io/2016/09/hbase-schema/" data-id="cisphgrxg001k45qckh2t83ef" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数据库/">数据库</a></li></ul>
+
+    </footer>
   </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/09/four-burners-theory/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">四炉膛理论（Four-Burners Theory）</div>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
-  
-    </div></section>
-  
 
 </section>
         

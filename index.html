@@ -64,6 +64,60 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-2016/09/hbase-schema" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/09/hbase-schema/" class="article-date">
+  <time datetime="2016-09-05T03:06:23.000Z" itemprop="datePublished">2016-09-05</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/09/hbase-schema/">HBase模式设计指南</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>对于初涉HBase的开发者，<a href="https://www.mapr.com/blog/guidelines-hbase-schema-design" target="_blank" rel="external">这篇文章提供了一份简明扼要的建模指南</a>。其中的几个观点对于关系数据库出身的开发者尤其重要：</p>
+<ol>
+<li>关系数据库优先关注实体和实体之间的关系，然后才设计查询和索引；HBase恰恰相反，它是<strong>“Query-First”</strong>的模式设计，在设计模式之前，尽可能地先将所有查询识别出来。</li>
+<li>上一条的目的是避免无谓的远程访问，将一起访问的数据存放在一起。</li>
+<li>Normalization在HBase中不再是金科玉律</li>
+</ol>
+<p>文后分别针对典型的关系给出相应的范例：</p>
+<ul>
+<li>父子关系</li>
+<li>多对多关系</li>
+<li>通用数据，即字典数据</li>
+<li>自关联关系</li>
+<li>树和图</li>
+<li>继承关系</li>
+</ul>
+<p>虽然是一篇2015年发表的文章，但放在今天依旧不过时，对于刚刚开始学习HBase的开发者有很好的借鉴意义。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://foxgem.github.io/2016/09/hbase-schema/" data-id="cisphgrxg001k45qckh2t83ef" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数据库/">数据库</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-2016/09/four-burners-theory" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/09/four-burners-theory/" class="article-date">
@@ -109,7 +163,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://foxgem.github.io/2016/09/four-burners-theory/" data-id="ciso356nn0023olqcoh4h4bvy" class="article-share-link">Share</a>
+      <a data-url="http://foxgem.github.io/2016/09/four-burners-theory/" data-id="cisphgrxi001m45qc5irqgn53" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/阅读/">阅读</a></li></ul>
@@ -162,7 +216,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://foxgem.github.io/2016/07/design-thinking-for-job-learning/" data-id="ciso356ne001yolqceeokycn6" class="article-share-link">Share</a>
+      <a data-url="http://foxgem.github.io/2016/07/design-thinking-for-job-learning/" data-id="cisphgrxc001h45qcgtbjaod4" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/阅读/">阅读</a></li></ul>
@@ -207,7 +261,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://foxgem.github.io/2016/07/vertx-circuit-breaker-example/" data-id="ciso356ne001zolqc7mpuwcc9" class="article-share-link">Share</a>
+      <a data-url="http://foxgem.github.io/2016/07/vertx-circuit-breaker-example/" data-id="cisphgrxo001r45qc53801no9" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/开发/">开发</a></li></ul>
@@ -270,7 +324,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://foxgem.github.io/2016/07/vertx-tcp-eventbus-bridge/" data-id="ciso356nk0021olqc25b8o3vt" class="article-share-link">Share</a>
+      <a data-url="http://foxgem.github.io/2016/07/vertx-tcp-eventbus-bridge/" data-id="cisphgrxl001p45qcbas772cn" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/开发/">开发</a></li></ul>
@@ -339,7 +393,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://foxgem.github.io/2016/07/being-data-scientist/" data-id="ciso356mv001folqc1ncsrbsv" class="article-share-link">Share</a>
+      <a data-url="http://foxgem.github.io/2016/07/being-data-scientist/" data-id="cisphgrx6001f45qcujv26q22" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数据科学/">数据科学</a></li></ul>
@@ -380,7 +434,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://foxgem.github.io/2016/06/es-as-tsdb/" data-id="ciso356m8000oolqc5854fr29" class="article-share-link">Share</a>
+      <a data-url="http://foxgem.github.io/2016/06/es-as-tsdb/" data-id="cisphgrwc000m45qcbceiw469" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数据库/">数据库</a></li></ul>
@@ -432,7 +486,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://foxgem.github.io/2016/06/speed-up-pagination/" data-id="ciso356mr0017olqce1y1qxnq" class="article-share-link">Share</a>
+      <a data-url="http://foxgem.github.io/2016/06/speed-up-pagination/" data-id="cisphgrwt001045qcqglnu25h" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/开发/">开发</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数据库/">数据库</a></li></ul>
@@ -493,7 +547,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://foxgem.github.io/2016/06/interesting-3/" data-id="ciso356me000tolqcczerfipl" class="article-share-link">Share</a>
+      <a data-url="http://foxgem.github.io/2016/06/interesting-3/" data-id="cisphgrwg000q45qcd5dvrc2n" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/阅读/">阅读</a></li></ul>
@@ -564,51 +618,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://foxgem.github.io/2016/06/training-brain-to-focus/" data-id="ciso356mt001colqc9eko7tp0" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/阅读/">阅读</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-2016/06/theory-on-conscious-evolution" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/06/theory-on-conscious-evolution/" class="article-date">
-  <time datetime="2016-06-10T13:57:43.000Z" itemprop="datePublished">2016-06-10</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/06/theory-on-conscious-evolution/">意识的进化史</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>意识是如何形成的？</p>
-<p><a href="http://www.theatlantic.com/science/archive/2016/06/how-consciousness-evolved/485558/" target="_blank" rel="external">这篇介绍神经学最新理论（The Attention Schema Theory）的科普文章</a>在一开始就给出了答案：意识是大脑为处理复杂性而进化的结果。</p>
-<blockquote>
-<p>The theory suggests that consciousness arises as a solution to one of the most fundamental problems facing any nervous system: Too much information constantly flows in to be fully processed. The brain evolved increasingly sophisticated mechanisms for deeply processing a few select signals at the expense of others, and in the AST, consciousness is the ultimate result of that evolutionary sequence.</p>
-</blockquote>
-<p>在接下来的段落，文章回顾了大脑的进化过程，向我们展示了一个复杂神经系统的形成。让我这个外行基本看懂了，还是值得一读的，:)。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://foxgem.github.io/2016/06/theory-on-conscious-evolution/" data-id="ciso356ms001aolqct6kppfo2" class="article-share-link">Share</a>
+      <a data-url="http://foxgem.github.io/2016/06/training-brain-to-focus/" data-id="cisphgrx1001a45qcruhxu42h" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/阅读/">阅读</a></li></ul>
@@ -668,6 +678,10 @@
       <ul>
         
           <li>
+            <a href="/2016/09/hbase-schema/">HBase模式设计指南</a>
+          </li>
+        
+          <li>
             <a href="/2016/09/four-burners-theory/">四炉膛理论（Four-Burners Theory）</a>
           </li>
         
@@ -681,10 +695,6 @@
         
           <li>
             <a href="/2016/07/vertx-tcp-eventbus-bridge/">Vert.x TCP EventBus Bridge补遗</a>
-          </li>
-        
-          <li>
-            <a href="/2016/07/being-data-scientist/">数据科学家养成之道</a>
           </li>
         
       </ul>
