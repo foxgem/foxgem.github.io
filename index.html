@@ -64,6 +64,55 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-2016/09/how-dropbox-saves-your-password" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/09/how-dropbox-saves-your-password/" class="article-date">
+  <time datetime="2016-09-25T13:10:13.000Z" itemprop="datePublished">2016-09-25</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/09/how-dropbox-saves-your-password/">Dropbox保存用户口令的安全之法</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>近日，<a href="https://blogs.dropbox.com/tech/2016/09/how-dropbox-securely-stores-your-passwords" target="_blank" rel="external">Dropbox公布了它的用户口令保存安全之道</a>，以应对日益猖獗的网络安全形势。这不，就在前几天，<a href="https://yahoo.tumblr.com/post/150781911849/an-important-message-about-yahoo-user-security" target="_blank" rel="external">Yahoo就承认至少丢失了5亿用户数据</a>。</p>
+<p>Dropbox的方法可以归结成两点：多重Hash并加密和关键数据单独保存。Dropbox用下图进行了展示：</p>
+<p><img src="https://dropboxtechblog.files.wordpress.com/2016/09/layers.png" width="650" height="443"></p>
+<p>从下到上可以视为Password的处理过程，最外层加密用的全局密钥（Dropbox称之为pepper）单独存放，这样即使存放口令存放点被破，黑客依旧无法拿到pepper，无法就口令破解实施攻击。</p>
+<p>针对每一层的算法选择，Dropbox分别给出了理由：</p>
+<ul>
+<li>SHA512，将口令规范化成512 bit值，克服bcrypt的缺点。</li>
+<li>bcrypt，高强度hash，防止暴力破解。</li>
+<li>AES256，采用加密而非Hash是为了方便轮换（rotate，注：猜测是定期重新计算一次，故能解密就能方便的实现这一点。而单向加密，则无法做到）。按照文中的说法，Dropbox还有计划将这个全局密钥植入硬件。</li>
+</ul>
+<p>就这个方案来讲，应该是我目前所见为止最强的方案了！</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://foxgem.github.io/2016/09/how-dropbox-saves-your-password/" data-id="citio8a47001kswqcq03p1mj2" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/安全/">安全</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-2016/09/whose-black-box-do-you-trust" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/09/whose-black-box-do-you-trust/" class="article-date">
@@ -105,7 +154,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://foxgem.github.io/2016/09/whose-black-box-do-you-trust/" data-id="citfkgnu700289iqc1uq0eayi" class="article-share-link">Share</a>
+      <a data-url="http://foxgem.github.io/2016/09/whose-black-box-do-you-trust/" data-id="citio8a4i001wswqcfce8u9ph" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/阅读/">阅读</a></li></ul>
@@ -156,7 +205,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://foxgem.github.io/2016/09/iots-killer-app-is-not-home-security/" data-id="citfkgnu500269iqchu6f24v2" class="article-share-link">Share</a>
+      <a data-url="http://foxgem.github.io/2016/09/iots-killer-app-is-not-home-security/" data-id="citio8a4h001uswqcnns6vvjq" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/阅读/">阅读</a></li></ul>
@@ -210,7 +259,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://foxgem.github.io/2016/09/hbase-schema/" data-id="citfkgnu100229iqcg7ykzcmc" class="article-share-link">Share</a>
+      <a data-url="http://foxgem.github.io/2016/09/hbase-schema/" data-id="citio8a4d001pswqc0mwxr9l9" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数据库/">数据库</a></li></ul>
@@ -267,7 +316,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://foxgem.github.io/2016/09/four-burners-theory/" data-id="citfkgnti001g9iqcma415v2e" class="article-share-link">Share</a>
+      <a data-url="http://foxgem.github.io/2016/09/four-burners-theory/" data-id="citio8a4b001mswqcowgef95i" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/阅读/">阅读</a></li></ul>
@@ -320,7 +369,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://foxgem.github.io/2016/07/design-thinking-for-job-learning/" data-id="citfkgnu400249iqcinq62ryk" class="article-share-link">Share</a>
+      <a data-url="http://foxgem.github.io/2016/07/design-thinking-for-job-learning/" data-id="citio8a3w001cswqc67inho50" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/阅读/">阅读</a></li></ul>
@@ -365,7 +414,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://foxgem.github.io/2016/07/vertx-circuit-breaker-example/" data-id="citfkgntx001z9iqcario7vck" class="article-share-link">Share</a>
+      <a data-url="http://foxgem.github.io/2016/07/vertx-circuit-breaker-example/" data-id="citio8a4f001rswqc6sf8cg6i" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/开发/">开发</a></li></ul>
@@ -428,7 +477,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://foxgem.github.io/2016/07/vertx-tcp-eventbus-bridge/" data-id="citfkgntz00209iqcxz7rcwbi" class="article-share-link">Share</a>
+      <a data-url="http://foxgem.github.io/2016/07/vertx-tcp-eventbus-bridge/" data-id="citio8a45001hswqck1vz008a" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/开发/">开发</a></li></ul>
@@ -497,7 +546,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://foxgem.github.io/2016/07/being-data-scientist/" data-id="citfkgntb001e9iqcvwnqc8r1" class="article-share-link">Share</a>
+      <a data-url="http://foxgem.github.io/2016/07/being-data-scientist/" data-id="citio8a3v001aswqcjjfpckme" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数据科学/">数据科学</a></li></ul>
@@ -538,62 +587,10 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://foxgem.github.io/2016/06/es-as-tsdb/" data-id="citfkgnsn000n9iqc3ttldh97" class="article-share-link">Share</a>
+      <a data-url="http://foxgem.github.io/2016/06/es-as-tsdb/" data-id="citio8a38000lswqcmjvdnws3" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数据库/">数据库</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-2016/06/speed-up-pagination" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/06/speed-up-pagination/" class="article-date">
-  <time datetime="2016-06-13T11:41:15.000Z" itemprop="datePublished">2016-06-13</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/06/speed-up-pagination/">采用Seek Method加速分页</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>这是今天在<a href="http://use-the-index-luke.com/no-offset" target="_blank" rel="external">码天狗周刊上看到的文章</a>，加上之前曾有过切身体会（只不过不是在SQL上），故觉得有必要摘记下来广而告之。</p>
-<p>凡事做过页面的，一般对分页不会陌生，也不会觉得它有多难：就是limit + offset的组合就可以了呀。但是，危险往往都是从最不起眼的地方开始的。在这里，我先说一下我之前在用MongoDB时遇到的问题。这类问题同样会出现在这种分页方式上。</p>
-<p>当时，我需要对于MongoDB中的数据进行处理，每次处理一批，也相当于是按页来操作数据啦。这个没啥难度，直接使用API中的find + skip + limit就可以轻易搞定。迅速把程序写完之后就开始拿产品库开搞了。刚开始一切正常，可过了没多久，就发现整个程序的性能下降了。进入Mongo一查，发现是Table Scan。哇，那个collection中有上千万的数据啊！</p>
-<p>此处略去3000字。</p>
-<p>总之，问题最后解决了，程序又运行如飞。而解决之道很简单：只用find + limit，不再使用skip（原因自己想）。只不过在find中加了一个条件：上一批的最后一个document的_id。整个代码形似（groovy代码）：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">if (docId) &#123;</span><br><span class="line">    batch = collection.find([&apos;_id&apos;: [&apos;$gt&apos;: docId]] as Document).limit(BATCH_SIZE)</span><br><span class="line">&#125; else &#123;</span><br><span class="line">    batch = collection.find().limit(BATCH_SIZE)</span><br><span class="line">&#125;</span><br><span class="line">docId = batch[-1][&apos;_id&apos;]</span><br></pre></td></tr></table></figure>
-<p>它的原理很简单，其实就是利用可以利用的index来加速分页。这种思想跟今天看到的文章的思路如出一辙，不再使用offset，寻找能达到同样效果的index，用它来助力搜索。因此，文中给出的方案跟上面的代码类似：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">SELECT ...</span><br><span class="line">  FROM ...</span><br><span class="line"> WHERE ...</span><br><span class="line">   AND id &lt; ?last_seen_id</span><br><span class="line"> ORDER BY id DESC</span><br><span class="line"> FETCH FIRST 10 ROWS ONLY</span><br></pre></td></tr></table></figure>
-<p>这种分页方式被称为“seek method”，其中的id被称为“seek predicate”。典型的seek predicate还可以是日期。需要提醒的是，seek predicate上需要有index才有意义，而且它可以有多列！采用这种方式的分页可以避免上述分页的潜在危险：当页数达到一定量之后，分页速度会严重下降。</p>
-<p>关于seek method，还可以参考下面的文章：</p>
-<ul>
-<li><a href="https://blog.jooq.org/2013/10/26/faster-sql-paging-with-jooq-using-the-seek-method/" target="_blank" rel="external">https://blog.jooq.org/2013/10/26/faster-sql-paging-with-jooq-using-the-seek-method/</a></li>
-<li><a href="http://use-the-index-luke.com/sql/partial-results/fetch-next-page" target="_blank" rel="external">http://use-the-index-luke.com/sql/partial-results/fetch-next-page</a></li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://foxgem.github.io/2016/06/speed-up-pagination/" data-id="citfkgnt500169iqc3l34x1os" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/开发/">开发</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数据库/">数据库</a></li></ul>
 
     </footer>
   </div>
@@ -628,7 +625,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签云</h3>
     <div class="widget tagcloud">
-      <a href="/tags/The-Morning-Paper/" style="font-size: 14px;">The Morning Paper</a> <a href="/tags/安全/" style="font-size: 12px;">安全</a> <a href="/tags/开发/" style="font-size: 18px;">开发</a> <a href="/tags/微服务/" style="font-size: 12px;">微服务</a> <a href="/tags/数据库/" style="font-size: 16px;">数据库</a> <a href="/tags/数据科学/" style="font-size: 10px;">数据科学</a> <a href="/tags/阅读/" style="font-size: 20px;">阅读</a>
+      <a href="/tags/The-Morning-Paper/" style="font-size: 14px;">The Morning Paper</a> <a href="/tags/安全/" style="font-size: 14px;">安全</a> <a href="/tags/开发/" style="font-size: 18px;">开发</a> <a href="/tags/微服务/" style="font-size: 12px;">微服务</a> <a href="/tags/数据库/" style="font-size: 16px;">数据库</a> <a href="/tags/数据科学/" style="font-size: 10px;">数据科学</a> <a href="/tags/阅读/" style="font-size: 20px;">阅读</a>
     </div>
   </div>
 
@@ -650,6 +647,10 @@
       <ul>
         
           <li>
+            <a href="/2016/09/how-dropbox-saves-your-password/">Dropbox保存用户口令的安全之法</a>
+          </li>
+        
+          <li>
             <a href="/2016/09/whose-black-box-do-you-trust/">你相信谁的黑匣子？</a>
           </li>
         
@@ -663,10 +664,6 @@
         
           <li>
             <a href="/2016/09/four-burners-theory/">四炉膛理论（Four-Burners Theory）</a>
-          </li>
-        
-          <li>
-            <a href="/2016/07/design-thinking-for-job-learning/">利用Design Thinking促进岗位培训</a>
           </li>
         
       </ul>

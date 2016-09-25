@@ -3,27 +3,29 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Groovy老鸟的回顾 | 老胡随手记</title>
+  <title>Dropbox保存用户口令的安全之法 | 老胡随手记</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="今天在DZone上读到一名Groovy老鸟在即将转战其他语言之前写的自己对于Groovy的回顾总结。文章盛赞了Groovy的稳定和简洁，同时也提及了Java程序员转Groovy时需要注意的思维转变。余心有戚戚焉。
-关于类型这部分，我不能同意得更多：
+  <meta name="description" content="近日，Dropbox公布了它的用户口令保存安全之道，以应对日益猖獗的网络安全形势。这不，就在前几天，Yahoo就承认至少丢失了5亿用户数据。
+Dropbox的方法可以归结成两点：多重Hash并加密和关键数据单独保存。Dropbox用下图进行了展示：
 
-Again, in my opinion, typing is better - I still don’t buy that typing def">
+从下到上可以视为Password的处理过程，最外层加密用的全局密钥（Dropbox称之为pepper）单独存放，这样即使存放口令存放点被破，黑客依旧">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Groovy老鸟的回顾">
-<meta property="og:url" content="http://foxgem.github.io/2016/06/groovy-a-retrospective/index.html">
+<meta property="og:title" content="Dropbox保存用户口令的安全之法">
+<meta property="og:url" content="http://foxgem.github.io/2016/09/how-dropbox-saves-your-password/index.html">
 <meta property="og:site_name" content="老胡随手记">
-<meta property="og:description" content="今天在DZone上读到一名Groovy老鸟在即将转战其他语言之前写的自己对于Groovy的回顾总结。文章盛赞了Groovy的稳定和简洁，同时也提及了Java程序员转Groovy时需要注意的思维转变。余心有戚戚焉。
-关于类型这部分，我不能同意得更多：
+<meta property="og:description" content="近日，Dropbox公布了它的用户口令保存安全之道，以应对日益猖獗的网络安全形势。这不，就在前几天，Yahoo就承认至少丢失了5亿用户数据。
+Dropbox的方法可以归结成两点：多重Hash并加密和关键数据单独保存。Dropbox用下图进行了展示：
 
-Again, in my opinion, typing is better - I still don’t buy that typing def">
-<meta property="og:updated_time" content="2016-06-06T12:18:11.000Z">
+从下到上可以视为Password的处理过程，最外层加密用的全局密钥（Dropbox称之为pepper）单独存放，这样即使存放口令存放点被破，黑客依旧">
+<meta property="og:image" content="https://dropboxtechblog.files.wordpress.com/2016/09/layers.png">
+<meta property="og:updated_time" content="2016-09-25T13:49:04.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Groovy老鸟的回顾">
-<meta name="twitter:description" content="今天在DZone上读到一名Groovy老鸟在即将转战其他语言之前写的自己对于Groovy的回顾总结。文章盛赞了Groovy的稳定和简洁，同时也提及了Java程序员转Groovy时需要注意的思维转变。余心有戚戚焉。
-关于类型这部分，我不能同意得更多：
+<meta name="twitter:title" content="Dropbox保存用户口令的安全之法">
+<meta name="twitter:description" content="近日，Dropbox公布了它的用户口令保存安全之道，以应对日益猖獗的网络安全形势。这不，就在前几天，Yahoo就承认至少丢失了5亿用户数据。
+Dropbox的方法可以归结成两点：多重Hash并加密和关键数据单独保存。Dropbox用下图进行了展示：
 
-Again, in my opinion, typing is better - I still don’t buy that typing def">
+从下到上可以视为Password的处理过程，最外层加密用的全局密钥（Dropbox称之为pepper）单独存放，这样即使存放口令存放点被破，黑客依旧">
+<meta name="twitter:image" content="https://dropboxtechblog.files.wordpress.com/2016/09/layers.png">
   
     <link rel="alternate" href="/atom.xml" title="老胡随手记" type="application/atom+xml">
   
@@ -72,10 +74,10 @@ Again, in my opinion, typing is better - I still don’t buy that typing def">
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-2016/06/groovy-a-retrospective" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-2016/09/how-dropbox-saves-your-password" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2016/06/groovy-a-retrospective/" class="article-date">
-  <time datetime="2016-06-06T12:05:48.000Z" itemprop="datePublished">2016-06-06</time>
+    <a href="/2016/09/how-dropbox-saves-your-password/" class="article-date">
+  <time datetime="2016-09-25T13:10:13.000Z" itemprop="datePublished">2016-09-25</time>
 </a>
     
   </div>
@@ -86,7 +88,7 @@ Again, in my opinion, typing is better - I still don’t buy that typing def">
         
   
     <h1 class="article-title" itemprop="name">
-      Groovy老鸟的回顾
+      Dropbox保存用户口令的安全之法
     </h1>
   
 
@@ -94,20 +96,25 @@ Again, in my opinion, typing is better - I still don’t buy that typing def">
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>今天在DZone上读到<a href="https://dzone.com/articles/groovy-a-retrospective" target="_blank" rel="external">一名Groovy老鸟在即将转战其他语言之前写的自己对于Groovy的回顾总结</a>。文章盛赞了Groovy的稳定和简洁，同时也提及了Java程序员转Groovy时需要注意的思维转变。余心有戚戚焉。</p>
-<p>关于类型这部分，我不能同意得更多：</p>
-<blockquote>
-<p>Again, in my opinion, typing is better - I still don’t buy that typing def rather than the actual type is actually that much of a saving, and often ends up being a code-smell (even if it didn’t start out as one). The official Groovy recommendation is to type things, with the exception of local method scoped variables - but even in that case I cannot see the benefit: there is no real gain to the developer in typing those precious fewer characters and the future readability suffers as other developers have to track through the code more to be sure as to what a variable is doing.</p>
-</blockquote>
-<p>我记得在Burt寄给我的<a href="https://www.amazon.cn/Programming-Grails-Beckwith-Burt/dp/1449323936/ref=sr_1_1?ie=UTF8&amp;qid=1465215356&amp;sr=8-1&amp;keywords=Programming+grails" target="_blank" rel="external">“Programming Grails”</a>一书中也提到了类似关于在变量声明时是否明确声明变量类型的内容。我个人觉得宗旨就是：不要影响阅读性。而且，在使用@CompileStatic时，声明类型有助于减少修改编译错误的麻烦。此外，声明类型可以带来额外的好处：在像Idea这样的IDE中可以方便的查看对应类型的源代码（按住Ctrl，在相应类型上鼠标点击即可）。</p>
+        <p>近日，<a href="https://blogs.dropbox.com/tech/2016/09/how-dropbox-securely-stores-your-passwords" target="_blank" rel="external">Dropbox公布了它的用户口令保存安全之道</a>，以应对日益猖獗的网络安全形势。这不，就在前几天，<a href="https://yahoo.tumblr.com/post/150781911849/an-important-message-about-yahoo-user-security" target="_blank" rel="external">Yahoo就承认至少丢失了5亿用户数据</a>。</p>
+<p>Dropbox的方法可以归结成两点：多重Hash并加密和关键数据单独保存。Dropbox用下图进行了展示：</p>
+<p><img src="https://dropboxtechblog.files.wordpress.com/2016/09/layers.png" width="650" height="443"></p>
+<p>从下到上可以视为Password的处理过程，最外层加密用的全局密钥（Dropbox称之为pepper）单独存放，这样即使存放口令存放点被破，黑客依旧无法拿到pepper，无法就口令破解实施攻击。</p>
+<p>针对每一层的算法选择，Dropbox分别给出了理由：</p>
+<ul>
+<li>SHA512，将口令规范化成512 bit值，克服bcrypt的缺点。</li>
+<li>bcrypt，高强度hash，防止暴力破解。</li>
+<li>AES256，采用加密而非Hash是为了方便轮换（rotate，注：猜测是定期重新计算一次，故能解密就能方便的实现这一点。而单向加密，则无法做到）。按照文中的说法，Dropbox还有计划将这个全局密钥植入硬件。</li>
+</ul>
+<p>就这个方案来讲，应该是我目前所见为止最强的方案了！</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://foxgem.github.io/2016/06/groovy-a-retrospective/" data-id="citio8a3b000oswqc0x21uav8" class="article-share-link">Share</a>
+      <a data-url="http://foxgem.github.io/2016/09/how-dropbox-saves-your-password/" data-id="citio8a47001kswqcq03p1mj2" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/开发/">开发</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/安全/">安全</a></li></ul>
 
     </footer>
   </div>
@@ -115,19 +122,10 @@ Again, in my opinion, typing is better - I still don’t buy that typing def">
     
 <nav id="article-nav">
   
-    <a href="/2016/06/practice-makes-possible/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          勤能补拙
-        
-      </div>
-    </a>
   
-  
-    <a href="/2016/06/agile-dw-bi/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2016/09/whose-black-box-do-you-trust/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">数据仓库和BI的敏捷之道</div>
+      <div class="article-nav-title">你相信谁的黑匣子？</div>
     </a>
   
 </nav>

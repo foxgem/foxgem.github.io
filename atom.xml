@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://foxgem.github.io/"/>
-  <updated>2016-09-23T09:29:45.000Z</updated>
+  <updated>2016-09-25T13:49:04.000Z</updated>
   <id>http://foxgem.github.io/</id>
   
   <author>
@@ -14,6 +14,37 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Dropbox保存用户口令的安全之法</title>
+    <link href="http://foxgem.github.io/2016/09/how-dropbox-saves-your-password/"/>
+    <id>http://foxgem.github.io/2016/09/how-dropbox-saves-your-password/</id>
+    <published>2016-09-25T13:10:13.000Z</published>
+    <updated>2016-09-25T13:49:04.000Z</updated>
+    
+    <content type="html">&lt;p&gt;近日，&lt;a href=&quot;https://blogs.dropbox.com/tech/2016/09/how-dropbox-securely-stores-your-passwords&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Dropbox公布了它的用户口令保存安全之道&lt;/a&gt;，以应对日益猖獗的网络安全形势。这不，就在前几天，&lt;a href=&quot;https://yahoo.tumblr.com/post/150781911849/an-important-message-about-yahoo-user-security&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Yahoo就承认至少丢失了5亿用户数据&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;Dropbox的方法可以归结成两点：多重Hash并加密和关键数据单独保存。Dropbox用下图进行了展示：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://dropboxtechblog.files.wordpress.com/2016/09/layers.png&quot; width=&quot;650&quot; height=&quot;443&quot;&gt;&lt;/p&gt;
+&lt;p&gt;从下到上可以视为Password的处理过程，最外层加密用的全局密钥（Dropbox称之为pepper）单独存放，这样即使存放口令存放点被破，黑客依旧无法拿到pepper，无法就口令破解实施攻击。&lt;/p&gt;
+&lt;p&gt;针对每一层的算法选择，Dropbox分别给出了理由：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;SHA512，将口令规范化成512 bit值，克服bcrypt的缺点。&lt;/li&gt;
+&lt;li&gt;bcrypt，高强度hash，防止暴力破解。&lt;/li&gt;
+&lt;li&gt;AES256，采用加密而非Hash是为了方便轮换（rotate，注：猜测是定期重新计算一次，故能解密就能方便的实现这一点。而单向加密，则无法做到）。按照文中的说法，Dropbox还有计划将这个全局密钥植入硬件。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;就这个方案来讲，应该是我目前所见为止最强的方案了！&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;近日，&lt;a href=&quot;https://blogs.dropbox.com/tech/2016/09/how-dropbox-securely-stores-your-passwords&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Dropbox公布了它
+    
+    </summary>
+    
+    
+      <category term="安全" scheme="http://foxgem.github.io/tags/%E5%AE%89%E5%85%A8/"/>
+    
+  </entry>
   
   <entry>
     <title>你相信谁的黑匣子？</title>
@@ -372,9 +403,9 @@
     </summary>
     
     
-      <category term="数据库" scheme="http://foxgem.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
-    
       <category term="开发" scheme="http://foxgem.github.io/tags/%E5%BC%80%E5%8F%91/"/>
+    
+      <category term="数据库" scheme="http://foxgem.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
   </entry>
   
@@ -691,27 +722,6 @@
     
     
       <category term="阅读" scheme="http://foxgem.github.io/tags/%E9%98%85%E8%AF%BB/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>微服务的若干注意事项</title>
-    <link href="http://foxgem.github.io/2016/06/microservice-pitfall/"/>
-    <id>http://foxgem.github.io/2016/06/microservice-pitfall/</id>
-    <published>2016-06-03T13:13:20.000Z</published>
-    <updated>2016-06-03T13:21:58.000Z</updated>
-    
-    <content type="html">&lt;p&gt;&lt;a href=&quot;https://dzone.com/articles/walking-the-microservices-path-towards-loose-coupl&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;这篇文章&lt;/a&gt;列出了若干微服务开发中的注意事项，涉及：共享数据库、安全、服务组合和依赖，给出参考链接也很赞，值得参考，特记之。&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;a href=&quot;https://dzone.com/articles/walking-the-microservices-path-towards-loose-coupl&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;这篇文章&lt;/a&gt;列出了若干微服务开发
-    
-    </summary>
-    
-    
-      <category term="微服务" scheme="http://foxgem.github.io/tags/%E5%BE%AE%E6%9C%8D%E5%8A%A1/"/>
     
   </entry>
   
