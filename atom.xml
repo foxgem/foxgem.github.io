@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://foxgem.github.io/"/>
-  <updated>2016-10-04T12:20:38.000Z</updated>
+  <updated>2016-10-04T12:23:15.000Z</updated>
   <id>http://foxgem.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://foxgem.github.io/2016/10/netflixoss-and-spring-cloud/"/>
     <id>http://foxgem.github.io/2016/10/netflixoss-and-spring-cloud/</id>
     <published>2016-10-04T11:57:48.000Z</published>
-    <updated>2016-10-04T12:20:38.000Z</updated>
+    <updated>2016-10-04T12:23:15.000Z</updated>
     
     <content type="html">&lt;p&gt;微服务虽好，但其中的坑可不少。所幸，借助开源软件，可以大大降低实现的风险。&lt;/p&gt;
 &lt;p&gt;对于Java开发团队来讲，实现微服务怎么也不可能无视NetflixOSS，它提供了从服务发现到部署的一整套解决方案，堪称业界良心：&lt;/p&gt;
@@ -49,7 +49,7 @@
 &lt;li&gt;Spring Cloud Contract，服务契约&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;以上每个工具都有很详尽的文档，在此就不再赘述。本笔记的目的主要是给出涉及微服务开发不同方面的一个完整工具列表，这在其他地方甚少看到。&lt;/p&gt;
-&lt;p&gt;注：以上内容来自&lt;a href=&quot;http://info.pivotal.io/b0000CUNbIp0JAml020o14A&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Pivotal的这个链接&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;注：以上内容来自&lt;a href=&quot;https://pivotal.io/supercharging-your-microservices-with-netflixoss-and-spring-cloud&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Pivotal的这个链接&lt;/a&gt;。&lt;/p&gt;
 </content>
     
     <summary type="html">
