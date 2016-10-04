@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://foxgem.github.io/"/>
-  <updated>2016-09-25T13:49:04.000Z</updated>
+  <updated>2016-10-04T12:20:38.000Z</updated>
   <id>http://foxgem.github.io/</id>
   
   <author>
@@ -14,6 +14,57 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>用NetflixOSS和Spring Cloud构建微服务</title>
+    <link href="http://foxgem.github.io/2016/10/netflixoss-and-spring-cloud/"/>
+    <id>http://foxgem.github.io/2016/10/netflixoss-and-spring-cloud/</id>
+    <published>2016-10-04T11:57:48.000Z</published>
+    <updated>2016-10-04T12:20:38.000Z</updated>
+    
+    <content type="html">&lt;p&gt;微服务虽好，但其中的坑可不少。所幸，借助开源软件，可以大大降低实现的风险。&lt;/p&gt;
+&lt;p&gt;对于Java开发团队来讲，实现微服务怎么也不可能无视NetflixOSS，它提供了从服务发现到部署的一整套解决方案，堪称业界良心：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Eureka，服务注册表，并充当负载均衡中间件&lt;/li&gt;
+&lt;li&gt;Archaius，配置管理&lt;/li&gt;
+&lt;li&gt;Ribbon，客户端服务发现，在客户端实现负载均衡。可与Eureka配合使用。&lt;/li&gt;
+&lt;li&gt;Hystrix，断路器&lt;/li&gt;
+&lt;li&gt;Zuul，Api Gateway&lt;/li&gt;
+&lt;li&gt;Atlas，系统健康&lt;/li&gt;
+&lt;li&gt;Spinnaker，持续交付&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;长期以来，Spring一直以改善Java开发者的生活为己任，在当下这个微服务横行的时代，自然不会袖手旁观。Spring Cloud系列就是在这个背景下产生的：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Spring Cloud Netflix，含Eureka、Archaius、Ribbon、Hystrix、Zuul&lt;/li&gt;
+&lt;li&gt;Spring Cloud Config，基于Git的配置服务器&lt;/li&gt;
+&lt;li&gt;Spring Cloud Consul，基于Consul的服务发现&lt;/li&gt;
+&lt;li&gt;Spring Cloud Security，实现服务间OAuth2流程&lt;/li&gt;
+&lt;li&gt;Spring Cloud Sleuth，与Zipkin集成&lt;/li&gt;
+&lt;li&gt;Spring Cloud Stream，基于消息（ZeroMQ和Kafka）的解决方案&lt;/li&gt;
+&lt;li&gt;Spring Cloud Dataflow，数据处理pipeline&lt;/li&gt;
+&lt;li&gt;Spring Cloud Task，短期存活的单任务服务&lt;/li&gt;
+&lt;li&gt;Spring Cloud Zookeeper，与Zookeeper集成&lt;/li&gt;
+&lt;li&gt;Spring Cloud for AWS，与AWS集成&lt;/li&gt;
+&lt;li&gt;Spring Cloud Spinnaker，与Spinnaker集成&lt;/li&gt;
+&lt;li&gt;Spring Cloud Contract，服务契约&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;以上每个工具都有很详尽的文档，在此就不再赘述。本笔记的目的主要是给出涉及微服务开发不同方面的一个完整工具列表，这在其他地方甚少看到。&lt;/p&gt;
+&lt;p&gt;注：以上内容来自&lt;a href=&quot;http://info.pivotal.io/b0000CUNbIp0JAml020o14A&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Pivotal的这个链接&lt;/a&gt;。&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;微服务虽好，但其中的坑可不少。所幸，借助开源软件，可以大大降低实现的风险。&lt;/p&gt;
+&lt;p&gt;对于Java开发团队来讲，实现微服务怎么也不可能无视NetflixOSS，它提供了从服务发现到部署的一整套解决方案，堪称业界良心：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Eureka，服务注册表，
+    
+    </summary>
+    
+    
+      <category term="开发" scheme="http://foxgem.github.io/tags/%E5%BC%80%E5%8F%91/"/>
+    
+  </entry>
   
   <entry>
     <title>Dropbox保存用户口令的安全之法</title>
@@ -687,41 +738,6 @@
     
     
       <category term="数据库" scheme="http://foxgem.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>拒绝低价值的工作</title>
-    <link href="http://foxgem.github.io/2016/06/no-low-value-work/"/>
-    <id>http://foxgem.github.io/2016/06/no-low-value-work/</id>
-    <published>2016-06-04T11:42:09.000Z</published>
-    <updated>2016-06-04T12:54:35.000Z</updated>
-    
-    <content type="html">&lt;p&gt;如何来衡量工作的“价值”从而方便判断它的高低？我的理解是：影响深远的工作就是有价值的，反之则是无价值或是价值低的。比如，手动部署，就是低价值的；而部署自动化，则是价值高的。因为很明显可以看出后者对开发的影响：把工程师从那些费事费力且容易出错的工作中解放出来，以从事更符合他们&lt;strong&gt;身份&lt;/strong&gt;的工作，:)。显然，从效益上讲，我们应该尽可能的做有价值的工作。&lt;/p&gt;
-&lt;p&gt;无独有偶，&lt;a href=&quot;https://hbr.org/2016/06/stop-doing-low-value-work&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;这篇哈佛商业评论上的文章以“停止做低价值的工作”为题讨论了如何提高生产力&lt;/a&gt;。其中的有些观点有点意思：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;由于经济下滑，工作职位虽然减少了，但工作量却没有。这导致每人的工作量都上升了，于是尽量避免低价值的工作对于职业生涯至关重要。&lt;/li&gt;
-&lt;li&gt;当遇到组织重组时，人们会下意识的迎合他人，因为担心被解雇。但其实这是多余的，因为幸存下来的人对组织未来的成功至关重要。&lt;/li&gt;
-&lt;li&gt;当完成了众人叫好的工作，乘机要求公司帮忙减少自己低价值的工作。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;对于如何避免继续做低价值的工作，除了IT人都知道的自动化大法，本文还给出了其他有益的建议：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;把选择权交给他人来决定价值的高低&lt;/li&gt;
-&lt;li&gt;将自己的做事规则公开&lt;/li&gt;
-&lt;li&gt;每周自我总结&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;此外，我还想补充一些关于自动化方面的内容。一说起自动化，想当然的会误解只有自己手头重复的工作才值得自动化。但还有一类容易被忽视就是自助类工具。比如，开发人员总会遇到有人找你来看看是不是你负责的那部分代码有问题。若能将整个运行日志（如果有的话）以合适的方式，如ELK，收集和展示出来，相信找你的人会少很多。这种自助类工具带来的效果往往比起仅仅服务于个人的自动化工具更好，因为它节约的是整个组织的多个人的时间。&lt;/p&gt;
-&lt;p&gt;最后，作为结尾，我还想说：低价值的工作总得有人做，而且它本身对于人来讲也是相对的。一份工作，对于新人来说，可能是有价值的；但是对于老鸟，则可能不然。单纯地做低价值的工作是低价值的，但在不损伤结果的前提之下，消灭低价值工作，则是有价值的。&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;如何来衡量工作的“价值”从而方便判断它的高低？我的理解是：影响深远的工作就是有价值的，反之则是无价值或是价值低的。比如，手动部署，就是低价值的；而部署自动化，则是价值高的。因为很明显可以看出后者对开发的影响：把工程师从那些费事费力且容易出错的工作中解放出来，以从事更符合他们
-    
-    </summary>
-    
-    
-      <category term="阅读" scheme="http://foxgem.github.io/tags/%E9%98%85%E8%AF%BB/"/>
     
   </entry>
   

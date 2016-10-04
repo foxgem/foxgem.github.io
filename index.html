@@ -64,6 +64,72 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-2016/10/netflixoss-and-spring-cloud" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/10/netflixoss-and-spring-cloud/" class="article-date">
+  <time datetime="2016-10-04T11:57:48.000Z" itemprop="datePublished">2016-10-04</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/10/netflixoss-and-spring-cloud/">用NetflixOSS和Spring Cloud构建微服务</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>微服务虽好，但其中的坑可不少。所幸，借助开源软件，可以大大降低实现的风险。</p>
+<p>对于Java开发团队来讲，实现微服务怎么也不可能无视NetflixOSS，它提供了从服务发现到部署的一整套解决方案，堪称业界良心：</p>
+<ul>
+<li>Eureka，服务注册表，并充当负载均衡中间件</li>
+<li>Archaius，配置管理</li>
+<li>Ribbon，客户端服务发现，在客户端实现负载均衡。可与Eureka配合使用。</li>
+<li>Hystrix，断路器</li>
+<li>Zuul，Api Gateway</li>
+<li>Atlas，系统健康</li>
+<li>Spinnaker，持续交付</li>
+</ul>
+<p>长期以来，Spring一直以改善Java开发者的生活为己任，在当下这个微服务横行的时代，自然不会袖手旁观。Spring Cloud系列就是在这个背景下产生的：</p>
+<ul>
+<li>Spring Cloud Netflix，含Eureka、Archaius、Ribbon、Hystrix、Zuul</li>
+<li>Spring Cloud Config，基于Git的配置服务器</li>
+<li>Spring Cloud Consul，基于Consul的服务发现</li>
+<li>Spring Cloud Security，实现服务间OAuth2流程</li>
+<li>Spring Cloud Sleuth，与Zipkin集成</li>
+<li>Spring Cloud Stream，基于消息（ZeroMQ和Kafka）的解决方案</li>
+<li>Spring Cloud Dataflow，数据处理pipeline</li>
+<li>Spring Cloud Task，短期存活的单任务服务</li>
+<li>Spring Cloud Zookeeper，与Zookeeper集成</li>
+<li>Spring Cloud for AWS，与AWS集成</li>
+<li>Spring Cloud Spinnaker，与Spinnaker集成</li>
+<li>Spring Cloud Contract，服务契约</li>
+</ul>
+<p>以上每个工具都有很详尽的文档，在此就不再赘述。本笔记的目的主要是给出涉及微服务开发不同方面的一个完整工具列表，这在其他地方甚少看到。</p>
+<p>注：以上内容来自<a href="http://info.pivotal.io/b0000CUNbIp0JAml020o14A" target="_blank" rel="external">Pivotal的这个链接</a>。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://foxgem.github.io/2016/10/netflixoss-and-spring-cloud/" data-id="citvggbwy001w3mqcqqqpl92y" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/开发/">开发</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-2016/09/how-dropbox-saves-your-password" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/09/how-dropbox-saves-your-password/" class="article-date">
@@ -101,7 +167,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://foxgem.github.io/2016/09/how-dropbox-saves-your-password/" data-id="citio8a47001kswqcq03p1mj2" class="article-share-link">Share</a>
+      <a data-url="http://foxgem.github.io/2016/09/how-dropbox-saves-your-password/" data-id="citvggbww001u3mqc4ve20ou9" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/安全/">安全</a></li></ul>
@@ -154,7 +220,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://foxgem.github.io/2016/09/whose-black-box-do-you-trust/" data-id="citio8a4i001wswqcfce8u9ph" class="article-share-link">Share</a>
+      <a data-url="http://foxgem.github.io/2016/09/whose-black-box-do-you-trust/" data-id="citvggbx700213mqcogsupkyh" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/阅读/">阅读</a></li></ul>
@@ -205,7 +271,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://foxgem.github.io/2016/09/iots-killer-app-is-not-home-security/" data-id="citio8a4h001uswqcnns6vvjq" class="article-share-link">Share</a>
+      <a data-url="http://foxgem.github.io/2016/09/iots-killer-app-is-not-home-security/" data-id="citvggbx3001z3mqcbsh48oba" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/阅读/">阅读</a></li></ul>
@@ -259,7 +325,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://foxgem.github.io/2016/09/hbase-schema/" data-id="citio8a4d001pswqc0mwxr9l9" class="article-share-link">Share</a>
+      <a data-url="http://foxgem.github.io/2016/09/hbase-schema/" data-id="citvggbwr001r3mqceggvut49" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数据库/">数据库</a></li></ul>
@@ -316,7 +382,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://foxgem.github.io/2016/09/four-burners-theory/" data-id="citio8a4b001mswqcowgef95i" class="article-share-link">Share</a>
+      <a data-url="http://foxgem.github.io/2016/09/four-burners-theory/" data-id="citvggbwn001p3mqcu0g6eyl9" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/阅读/">阅读</a></li></ul>
@@ -369,7 +435,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://foxgem.github.io/2016/07/design-thinking-for-job-learning/" data-id="citio8a3w001cswqc67inho50" class="article-share-link">Share</a>
+      <a data-url="http://foxgem.github.io/2016/07/design-thinking-for-job-learning/" data-id="citvggbwi001k3mqcwcp99vub" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/阅读/">阅读</a></li></ul>
@@ -414,7 +480,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://foxgem.github.io/2016/07/vertx-circuit-breaker-example/" data-id="citio8a4f001rswqc6sf8cg6i" class="article-share-link">Share</a>
+      <a data-url="http://foxgem.github.io/2016/07/vertx-circuit-breaker-example/" data-id="citvggbwl001m3mqcc4jscl44" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/开发/">开发</a></li></ul>
@@ -477,7 +543,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://foxgem.github.io/2016/07/vertx-tcp-eventbus-bridge/" data-id="citio8a45001hswqck1vz008a" class="article-share-link">Share</a>
+      <a data-url="http://foxgem.github.io/2016/07/vertx-tcp-eventbus-bridge/" data-id="citvggbwg001h3mqc2ai7vxgj" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/开发/">开发</a></li></ul>
@@ -546,51 +612,10 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://foxgem.github.io/2016/07/being-data-scientist/" data-id="citio8a3v001aswqcjjfpckme" class="article-share-link">Share</a>
+      <a data-url="http://foxgem.github.io/2016/07/being-data-scientist/" data-id="citvggbw7001c3mqc9emu6w9e" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数据科学/">数据科学</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-2016/06/es-as-tsdb" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/06/es-as-tsdb/" class="article-date">
-  <time datetime="2016-06-30T08:06:28.000Z" itemprop="datePublished">2016-06-30</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/06/es-as-tsdb/">作为TSDB的Elasticsearch</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Elasticsearch可作为TSDB已经早有耳闻，而且自从v2版本之后，更是加了很多特性，使其更加适合作为TSDB使用。而<a href="https://www.elastic.co/blog/elasticsearch-as-a-time-series-data-store" target="_blank" rel="external">这一篇文章</a>给出了一个详细的例子，个人认为其最有价值的地方在于给出了一个参考的<a href="https://github.com/stagemonitor/stagemonitor/blob/influxdb/stagemonitor-core/src/main/resources/stagemonitor-elasticsearch-metrics-index-template.json" target="_blank" rel="external">schema mapping</a>。尤其是其中将”_all”和”_source”设为关闭，余心有戚戚焉。</p>
-<p>同时，对于长期存储的优化建议也不错，但终究赶不上上面提到的mapping更直接，:)</p>
-<p>附带说一句，文中提到的<a href="http://www.stagemonitor.org/" target="_blank" rel="external">stagemonitor</a>很让人惊艳，打算抽时间看看。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://foxgem.github.io/2016/06/es-as-tsdb/" data-id="citio8a38000lswqcmjvdnws3" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数据库/">数据库</a></li></ul>
 
     </footer>
   </div>
@@ -634,7 +659,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">九月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">七月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">六月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">五月 2016</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">十月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">九月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">七月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">六月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">五月 2016</a></li></ul>
     </div>
   </div>
 
@@ -645,6 +670,10 @@
     <h3 class="widget-title">最新文章</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2016/10/netflixoss-and-spring-cloud/">用NetflixOSS和Spring Cloud构建微服务</a>
+          </li>
         
           <li>
             <a href="/2016/09/how-dropbox-saves-your-password/">Dropbox保存用户口令的安全之法</a>
@@ -660,10 +689,6 @@
         
           <li>
             <a href="/2016/09/hbase-schema/">HBase模式设计指南</a>
-          </li>
-        
-          <li>
-            <a href="/2016/09/four-burners-theory/">四炉膛理论（Four-Burners Theory）</a>
           </li>
         
       </ul>
