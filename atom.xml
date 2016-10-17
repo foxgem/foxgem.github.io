@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://foxgem.github.io/"/>
-  <updated>2016-10-04T12:23:15.000Z</updated>
+  <updated>2016-10-17T11:52:15.000Z</updated>
   <id>http://foxgem.github.io/</id>
   
   <author>
@@ -16,11 +16,53 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Mesos和YARN辨析</title>
+    <link href="http://foxgem.github.io/2016/10/mesos-yarn/"/>
+    <id>http://foxgem.github.io/2016/10/mesos-yarn/</id>
+    <published>2016-10-17T11:15:00.000Z</published>
+    <updated>2016-10-17T11:52:15.000Z</updated>
+    
+    <content type="html">&lt;p&gt;早就听说了Mesos和YARN的名头，除了知道它们都适合作为分布式计算引擎之外，并不了解二者之间的区别。但因为之前没有合适的场景，所以也就止步于这种粗浅的认识。随着系统的扩展，分布式计算引擎的需求开始浮出水面，趁着这次机会开始收集和了解它们俩的一些资料。凑巧，&lt;a href=&quot;https://www.oreilly.com/ideas/a-tale-of-two-clusters-mesos-and-yarn&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;这篇文章&lt;/a&gt;以浅显的语言指出二者的区别。&lt;/p&gt;
+&lt;p&gt;首先，从功能性上来讲：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;YARN是Hadoop Only&lt;/li&gt;
+&lt;li&gt;Mesos适用场景则要广泛得多&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;其次，从调度机制上来说：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;YARN采用的是一级调度，即一种monolithic方式，只要资源满足要求，就运行任务。&lt;/li&gt;
+&lt;li&gt;Mesos采用的是二级调度，由Mesos和应用调度器共同决定任务是否可运行（见下）。这种实现方式让Mesos的调度算法是pluggable的，调度方式更加灵活。&lt;ol&gt;
+&lt;li&gt;Mesos判断资源是否可用，若可用，则决定权交给应用调度器。&lt;/li&gt;
+&lt;li&gt;应用调度器根据自身逻辑判断是否让任务运行。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;最后，从适合运行的任务来讲：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;YARN，显然是Hadoop任务，即传统的批处理任务（运行时间适中，多次，无状态）。但不适合：长时间存活的的服务（单次运行时间长）、短时间存活的交互服务，以及对实时性要求高的任务。&lt;/li&gt;
+&lt;li&gt;Mesos，由于其调度算法的灵活性，可用适用于广泛类型的任务。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;根据以上的描述，当你已经有Hadoop集群时，显然可无脑做出判断：YARN。但Mesos和YARN之间并非势不两立，相反，从Mesos的实现上来看，理论上Mesos可用以将YARN作为一个应用调度器。在这种情况下，简直就是一个完美的世界。&lt;/p&gt;
+&lt;p&gt;文中提到的&lt;a href=&quot;http://myriad.incubator.apache.org&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Myriad&lt;/a&gt;框架恰恰就是致力于此。&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;早就听说了Mesos和YARN的名头，除了知道它们都适合作为分布式计算引擎之外，并不了解二者之间的区别。但因为之前没有合适的场景，所以也就止步于这种粗浅的认识。随着系统的扩展，分布式计算引擎的需求开始浮出水面，趁着这次机会开始收集和了解它们俩的一些资料。凑巧，&lt;a href
+    
+    </summary>
+    
+    
+      <category term="开发" scheme="http://foxgem.github.io/tags/%E5%BC%80%E5%8F%91/"/>
+    
+  </entry>
+  
+  <entry>
     <title>用NetflixOSS和Spring Cloud构建微服务</title>
     <link href="http://foxgem.github.io/2016/10/netflixoss-and-spring-cloud/"/>
     <id>http://foxgem.github.io/2016/10/netflixoss-and-spring-cloud/</id>
     <published>2016-10-04T11:57:48.000Z</published>
-    <updated>2016-10-04T12:23:15.000Z</updated>
+    <updated>2016-10-06T01:35:49.000Z</updated>
     
     <content type="html">&lt;p&gt;微服务虽好，但其中的坑可不少。所幸，借助开源软件，可以大大降低实现的风险。&lt;/p&gt;
 &lt;p&gt;对于Java开发团队来讲，实现微服务怎么也不可能无视NetflixOSS，它提供了从服务发现到部署的一整套解决方案，堪称业界良心：&lt;/p&gt;
@@ -62,7 +104,7 @@
     </summary>
     
     
-      <category term="开发" scheme="http://foxgem.github.io/tags/%E5%BC%80%E5%8F%91/"/>
+      <category term="微服务" scheme="http://foxgem.github.io/tags/%E5%BE%AE%E6%9C%8D%E5%8A%A1/"/>
     
   </entry>
   
@@ -282,7 +324,7 @@
     <link href="http://foxgem.github.io/2016/07/vertx-circuit-breaker-example/"/>
     <id>http://foxgem.github.io/2016/07/vertx-circuit-breaker-example/</id>
     <published>2016-07-11T09:30:03.000Z</published>
-    <updated>2016-07-11T10:00:06.000Z</updated>
+    <updated>2016-10-06T01:36:16.000Z</updated>
     
     <content type="html">&lt;p&gt;Vert.x 3.3新增的&lt;a href=&quot;http://vertx.io/docs/vertx-circuit-breaker/java/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Circuit Breaker&lt;/a&gt;深得我心，使用简单，而且文档齐全。今天照着文档写了&lt;a href=&quot;https://github.com/shifudao/how-to/tree/master/circuitbreaker&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;一个探索性的例子&lt;/a&gt;，为接下来的项目做技术性预研。&lt;/p&gt;
 &lt;p&gt;整个过程非常顺利，但有几点有必要说明一下：&lt;/p&gt;
@@ -300,7 +342,7 @@
     </summary>
     
     
-      <category term="开发" scheme="http://foxgem.github.io/tags/%E5%BC%80%E5%8F%91/"/>
+      <category term="微服务" scheme="http://foxgem.github.io/tags/%E5%BE%AE%E6%9C%8D%E5%8A%A1/"/>
     
   </entry>
   
@@ -454,9 +496,9 @@
     </summary>
     
     
-      <category term="开发" scheme="http://foxgem.github.io/tags/%E5%BC%80%E5%8F%91/"/>
-    
       <category term="数据库" scheme="http://foxgem.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+      <category term="开发" scheme="http://foxgem.github.io/tags/%E5%BC%80%E5%8F%91/"/>
     
   </entry>
   
@@ -710,34 +752,6 @@
     
     
       <category term="开发" scheme="http://foxgem.github.io/tags/%E5%BC%80%E5%8F%91/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>数据仓库和BI的敏捷之道</title>
-    <link href="http://foxgem.github.io/2016/06/agile-dw-bi/"/>
-    <id>http://foxgem.github.io/2016/06/agile-dw-bi/</id>
-    <published>2016-06-05T09:54:13.000Z</published>
-    <updated>2016-06-05T10:24:18.000Z</updated>
-    
-    <content type="html">&lt;p&gt;相比十年前，如今敏捷已是路人皆知。然而，就数据仓库和BI项目来说，却鲜有相关文章涉及。今天&lt;a href=&quot;https://www.thoughtworks.com/insights/blog/agile-data-warehousing-and-business-intelligence-action&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;从Twitter看到的这篇发布在TW网站上的文章&lt;/a&gt;恰好可以补充我这方面的知识盲点。&lt;/p&gt;
-&lt;p&gt;下面是我觉得一些有趣的地方（那份仿“敏捷宣言”的“DW/BI系统开发宣言”就算了，:)）：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;难度和频率象限，重点关注那些处于“更频繁、难度更高”的用户故事&lt;/li&gt;
-&lt;li&gt;项目的推荐目录结构，方便将相关产出纳入版本控制&lt;/li&gt;
-&lt;li&gt;通过用户故事推动维度模型的演变&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;总得来讲，这篇文章是一份简要的数据仓库和BI项目敏捷实施指南。对于新手可以快速建立起全局观，对于老手则能带来一些新思路，读读还是不错的。&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;相比十年前，如今敏捷已是路人皆知。然而，就数据仓库和BI项目来说，却鲜有相关文章涉及。今天&lt;a href=&quot;https://www.thoughtworks.com/insights/blog/agile-data-warehousing-and-business-inte
-    
-    </summary>
-    
-    
-      <category term="数据库" scheme="http://foxgem.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
   </entry>
   
