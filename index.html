@@ -64,6 +64,90 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-2016/11/hexo-basic" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/11/hexo-basic/" class="article-date">
+  <time datetime="2016-11-11T03:35:18.000Z" itemprop="datePublished">2016-11-11</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/11/hexo-basic/">Hexo基础</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>以下为这半年来玩Hexo的总结，希望对各位玩家有帮助，;)</p>
+<hr>
+<h2 id="入门"><a href="#入门" class="headerlink" title="入门"></a>入门</h2><ul>
+<li>npm install hexo-cli -g</li>
+<li>hexo init blog</li>
+<li>cd blog</li>
+<li>npm install</li>
+<li>hexo server</li>
+</ul>
+<h2 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h2><ul>
+<li>hexo generate</li>
+<li>hexo deploy</li>
+</ul>
+<p>对于部署到github，配置：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: https://github.com/foxgem/foxgem.github.io.git</span><br></pre></td></tr></table></figure>
+<h2 id="文章"><a href="#文章" class="headerlink" title="文章"></a>文章</h2><ul>
+<li>若因为墙的问题要换jquery的cdn地址：themes/landscape/layout/_partial/after-footer.ejs</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=&quot;//code.jquery.com/jquery-2.0.3.min.js&quot;&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>多标签（YAML语法）</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: 那些恶意的相似域名（Domain Name Typosquatting）</span><br><span class="line">date: 2016-05-22 17:19:17</span><br><span class="line">tags:</span><br><span class="line">- 安全</span><br><span class="line">- The Morning Paper</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+<p>用Atom时，Disable Markdown Formatter插件</p>
+<h2 id="RSS和Sitemap"><a href="#RSS和Sitemap" class="headerlink" title="RSS和Sitemap"></a>RSS和Sitemap</h2><p>添加以下两个插件之后，重新生成就能看到atom.xml和sitemap.xml了：</p>
+<ul>
+<li>npm install hexo-generator-feed –save</li>
+<li>npm install hexo-generator-sitemap –save</li>
+</ul>
+<h2 id="目录整理"><a href="#目录整理" class="headerlink" title="目录整理"></a>目录整理</h2><p>按自己意愿创建目录（_posts下），然后在_config.yml中改permalink（见下面的示例）：</p>
+<ul>
+<li>permalink: :title/</li>
+</ul>
+<p>然后手动移到自己的目录中，原谅我这么懒，没有写一个工具。</p>
+<h2 id="个人域名"><a href="#个人域名" class="headerlink" title="个人域名"></a>个人域名</h2><ul>
+<li>购买域名，在域名提供商那里添加解析规则<ul>
+<li>记录类型：CNAME</li>
+<li>主机记录：www</li>
+<li>记录值：你的github个人主页地址</li>
+</ul>
+</li>
+<li>进入personal page的settings，修改【Custom domain】</li>
+<li>个人域名目前不支持HTTPS</li>
+</ul>
+<h2 id="搜索引擎"><a href="#搜索引擎" class="headerlink" title="搜索引擎"></a>搜索引擎</h2><p>GitHub禁止了百度搜索引擎，通常做法都是利用“虚拟空间+定时任务（git pull + FTP上传）+个人域名”方式进行。详细内容以及其他方案可参考：<a href="http://www.zhihu.com/question/30898326。" target="_blank" rel="external">http://www.zhihu.com/question/30898326。</a></p>
+<p>此外，放在国内空间上，个人域名需要备案。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://foxgem.github.io/2016/11/hexo-basic/" data-id="civd8sjsv001y03qc6su9c9as" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/写作/">写作</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-2016/10/mesos-yarn" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/10/mesos-yarn/" class="article-date">
@@ -112,7 +196,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://foxgem.github.io/2016/10/mesos-yarn/" data-id="ciue05sit0020ruqc3tx5osjl" class="article-share-link">Share</a>
+      <a data-url="http://foxgem.github.io/2016/10/mesos-yarn/" data-id="civd8sjt3002303qcuk43uzdo" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/开发/">开发</a></li></ul>
@@ -178,7 +262,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://foxgem.github.io/2016/10/netflixoss-and-spring-cloud/" data-id="ciue05siv0022ruqcj47xd6af" class="article-share-link">Share</a>
+      <a data-url="http://foxgem.github.io/2016/10/netflixoss-and-spring-cloud/" data-id="civd8sjt7002503qch2f4ktin" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/微服务/">微服务</a></li></ul>
@@ -227,7 +311,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://foxgem.github.io/2016/09/how-dropbox-saves-your-password/" data-id="ciue05sic001uruqc9xlgqtq7" class="article-share-link">Share</a>
+      <a data-url="http://foxgem.github.io/2016/09/how-dropbox-saves-your-password/" data-id="civd8sjsj001s03qcai0z8l1m" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/安全/">安全</a></li></ul>
@@ -280,7 +364,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://foxgem.github.io/2016/09/whose-black-box-do-you-trust/" data-id="ciue05sil001yruqcntayu1nf" class="article-share-link">Share</a>
+      <a data-url="http://foxgem.github.io/2016/09/whose-black-box-do-you-trust/" data-id="civd8sjt1002003qczdugue4c" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/阅读/">阅读</a></li></ul>
@@ -331,7 +415,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://foxgem.github.io/2016/09/iots-killer-app-is-not-home-security/" data-id="ciue05sid001wruqcwqg5hz1y" class="article-share-link">Share</a>
+      <a data-url="http://foxgem.github.io/2016/09/iots-killer-app-is-not-home-security/" data-id="civd8sjsq001w03qcb17hu70f" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/阅读/">阅读</a></li></ul>
@@ -385,7 +469,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://foxgem.github.io/2016/09/hbase-schema/" data-id="ciue05si8001rruqclokrmiuv" class="article-share-link">Share</a>
+      <a data-url="http://foxgem.github.io/2016/09/hbase-schema/" data-id="civd8sjsm001u03qcui445dg5" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数据库/">数据库</a></li></ul>
@@ -442,7 +526,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://foxgem.github.io/2016/09/four-burners-theory/" data-id="ciue05si6001pruqcz23uo86q" class="article-share-link">Share</a>
+      <a data-url="http://foxgem.github.io/2016/09/four-burners-theory/" data-id="civd8sjsb001n03qch6kfdh4w" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/阅读/">阅读</a></li></ul>
@@ -495,7 +579,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://foxgem.github.io/2016/07/design-thinking-for-job-learning/" data-id="ciue05shw001kruqcnk80hjfz" class="article-share-link">Share</a>
+      <a data-url="http://foxgem.github.io/2016/07/design-thinking-for-job-learning/" data-id="civd8sjs9001l03qc74jaxnus" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/阅读/">阅读</a></li></ul>
@@ -540,73 +624,10 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://foxgem.github.io/2016/07/vertx-circuit-breaker-example/" data-id="ciue05shk001fruqcf62l0hmm" class="article-share-link">Share</a>
+      <a data-url="http://foxgem.github.io/2016/07/vertx-circuit-breaker-example/" data-id="civd8sjs0001g03qc5azuau4y" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/微服务/">微服务</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-2016/07/vertx-tcp-eventbus-bridge" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/07/vertx-tcp-eventbus-bridge/" class="article-date">
-  <time datetime="2016-07-05T12:27:19.000Z" itemprop="datePublished">2016-07-05</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/07/vertx-tcp-eventbus-bridge/">Vert.x TCP EventBus Bridge补遗</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>如果没有记错的话，Vert.x从3.2就开始支持<a href="http://vertx.io/docs/vertx-tcp-eventbus-bridge/java/" target="_blank" rel="external">TCP Eventbus Bridge</a>了，它使得Client可以直接通过socket跟Vert.x EventBus进行通信。可遗憾的是，整个文档就像半成品，并没有把很多事情说清楚。</p>
-<p>为了搞清楚这个特性，今天抽空完成了一个TCP Eventbus Bridge的例子，源码见<a href="https://github.com/shifudao/how-to/tree/master/vertx-tcp-eventbridge" target="_blank" rel="external">这里</a>。</p>
-<p>按理，都已经用TCP了，Client和Server之间干嘛还需要多此一举地采用所谓的Eventbus Bridge？我认为：</p>
-<ul>
-<li>Server和Client之间采用这种方式进行通信可以让Server端的代码更加清晰明了</li>
-<li>Client和Server之间的交互模式也更简单一些：<ul>
-<li>对于request-response，server简单地message.reply即可</li>
-<li>对于某些广播消息，client向多个server实例广播，或者是server向多个client广播，又或某些client也想接收另外的client向server的广播都非常简单和直观。</li>
-<li>通过注册地址，client也可以收到感兴趣的消息，不论是server发的，还是client发的</li>
-</ul>
-</li>
-</ul>
-<p>这两点可参考例子源码详细了解。整个例子很简单，实现了：</p>
-<ul>
-<li>client向多个bridge send，则只有一个bridge可以收到</li>
-<li>client向多个bridge publish，则都能收到</li>
-<li>server和client之间的request-response</li>
-<li>client注册要接受某地址的消息</li>
-</ul>
-<p>关于API的使用，有以下几点需要注意：</p>
-<ul>
-<li>bridge在server端建立，client只需要使用普通socket去连接即可</li>
-<li>client要接收某地址的消息，仍然是使用socket来接收。因为client并不一定是Vert.x应用，并没有eventbus可用！这一点是引起我误解，同时文档没有讲清楚的地方。</li>
-<li>对于Java语言，使用io.vertx.ext.eventbus.bridge.tcp.impl.protocol.FrameHelper和io.vertx.ext.eventbus.bridge.tcp.impl.protocol.FrameParser可以简化数据帧的发送和解析。可遗憾的是，没有提供其他语言，如Groovy的对应工具类，弄得我只好采用一种变通的方式去用【还是看代码去了解】。因此，对于Vert.x开发，建议还是首选Java语言来做，可以省掉一些不必要的麻烦。</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://foxgem.github.io/2016/07/vertx-tcp-eventbus-bridge/" data-id="ciue05si0001mruqc6r1geo03" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/开发/">开发</a></li></ul>
 
     </footer>
   </div>
@@ -631,7 +652,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/The-Morning-Paper/">The Morning Paper</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/安全/">安全</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/开发/">开发</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/微服务/">微服务</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据库/">数据库</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据科学/">数据科学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/阅读/">阅读</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/The-Morning-Paper/">The Morning Paper</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/写作/">写作</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/安全/">安全</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/开发/">开发</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/微服务/">微服务</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据库/">数据库</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据科学/">数据科学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/阅读/">阅读</a></li></ul>
     </div>
   </div>
 
@@ -641,7 +662,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签云</h3>
     <div class="widget tagcloud">
-      <a href="/tags/The-Morning-Paper/" style="font-size: 12px;">The Morning Paper</a> <a href="/tags/安全/" style="font-size: 12px;">安全</a> <a href="/tags/开发/" style="font-size: 18px;">开发</a> <a href="/tags/微服务/" style="font-size: 14px;">微服务</a> <a href="/tags/数据库/" style="font-size: 16px;">数据库</a> <a href="/tags/数据科学/" style="font-size: 10px;">数据科学</a> <a href="/tags/阅读/" style="font-size: 20px;">阅读</a>
+      <a href="/tags/The-Morning-Paper/" style="font-size: 12px;">The Morning Paper</a> <a href="/tags/写作/" style="font-size: 10px;">写作</a> <a href="/tags/安全/" style="font-size: 12px;">安全</a> <a href="/tags/开发/" style="font-size: 18px;">开发</a> <a href="/tags/微服务/" style="font-size: 14px;">微服务</a> <a href="/tags/数据库/" style="font-size: 16px;">数据库</a> <a href="/tags/数据科学/" style="font-size: 10px;">数据科学</a> <a href="/tags/阅读/" style="font-size: 20px;">阅读</a>
     </div>
   </div>
 
@@ -650,7 +671,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">十月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">九月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">七月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">六月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">五月 2016</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">十一月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">十月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">九月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">七月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">六月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">五月 2016</a></li></ul>
     </div>
   </div>
 
@@ -661,6 +682,10 @@
     <h3 class="widget-title">最新文章</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2016/11/hexo-basic/">Hexo基础</a>
+          </li>
         
           <li>
             <a href="/2016/10/mesos-yarn/">Mesos和YARN辨析</a>
@@ -676,10 +701,6 @@
         
           <li>
             <a href="/2016/09/whose-black-box-do-you-trust/">你相信谁的黑匣子？</a>
-          </li>
-        
-          <li>
-            <a href="/2016/09/iots-killer-app-is-not-home-security/">物联网的杀手级应用并非家庭安全</a>
           </li>
         
       </ul>

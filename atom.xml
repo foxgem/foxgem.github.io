@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://foxgem.github.io/"/>
-  <updated>2016-10-17T11:52:15.000Z</updated>
+  <updated>2016-11-11T03:52:38.000Z</updated>
   <id>http://foxgem.github.io/</id>
   
   <author>
@@ -14,6 +14,75 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Hexo基础</title>
+    <link href="http://foxgem.github.io/2016/11/hexo-basic/"/>
+    <id>http://foxgem.github.io/2016/11/hexo-basic/</id>
+    <published>2016-11-11T03:35:18.000Z</published>
+    <updated>2016-11-11T03:52:38.000Z</updated>
+    
+    <content type="html">&lt;p&gt;以下为这半年来玩Hexo的总结，希望对各位玩家有帮助，;)&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&quot;入门&quot;&gt;&lt;a href=&quot;#入门&quot; class=&quot;headerlink&quot; title=&quot;入门&quot;&gt;&lt;/a&gt;入门&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;npm install hexo-cli -g&lt;/li&gt;
+&lt;li&gt;hexo init blog&lt;/li&gt;
+&lt;li&gt;cd blog&lt;/li&gt;
+&lt;li&gt;npm install&lt;/li&gt;
+&lt;li&gt;hexo server&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;部署&quot;&gt;&lt;a href=&quot;#部署&quot; class=&quot;headerlink&quot; title=&quot;部署&quot;&gt;&lt;/a&gt;部署&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;hexo generate&lt;/li&gt;
+&lt;li&gt;hexo deploy&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;对于部署到github，配置：&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;deploy:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  type: git&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  repo: https://github.com/foxgem/foxgem.github.io.git&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2 id=&quot;文章&quot;&gt;&lt;a href=&quot;#文章&quot; class=&quot;headerlink&quot; title=&quot;文章&quot;&gt;&lt;/a&gt;文章&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;若因为墙的问题要换jquery的cdn地址：themes/landscape/layout/_partial/after-footer.ejs&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;script src=&amp;quot;//code.jquery.com/jquery-2.0.3.min.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;ul&gt;
+&lt;li&gt;多标签（YAML语法）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;---&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;title: 那些恶意的相似域名（Domain Name Typosquatting）&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;date: 2016-05-22 17:19:17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;tags:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;- 安全&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;- The Morning Paper&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;---&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;用Atom时，Disable Markdown Formatter插件&lt;/p&gt;
+&lt;h2 id=&quot;RSS和Sitemap&quot;&gt;&lt;a href=&quot;#RSS和Sitemap&quot; class=&quot;headerlink&quot; title=&quot;RSS和Sitemap&quot;&gt;&lt;/a&gt;RSS和Sitemap&lt;/h2&gt;&lt;p&gt;添加以下两个插件之后，重新生成就能看到atom.xml和sitemap.xml了：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;npm install hexo-generator-feed –save&lt;/li&gt;
+&lt;li&gt;npm install hexo-generator-sitemap –save&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;目录整理&quot;&gt;&lt;a href=&quot;#目录整理&quot; class=&quot;headerlink&quot; title=&quot;目录整理&quot;&gt;&lt;/a&gt;目录整理&lt;/h2&gt;&lt;p&gt;按自己意愿创建目录（_posts下），然后在_config.yml中改permalink（见下面的示例）：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;permalink: :title/&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;然后手动移到自己的目录中，原谅我这么懒，没有写一个工具。&lt;/p&gt;
+&lt;h2 id=&quot;个人域名&quot;&gt;&lt;a href=&quot;#个人域名&quot; class=&quot;headerlink&quot; title=&quot;个人域名&quot;&gt;&lt;/a&gt;个人域名&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;购买域名，在域名提供商那里添加解析规则&lt;ul&gt;
+&lt;li&gt;记录类型：CNAME&lt;/li&gt;
+&lt;li&gt;主机记录：www&lt;/li&gt;
+&lt;li&gt;记录值：你的github个人主页地址&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;进入personal page的settings，修改【Custom domain】&lt;/li&gt;
+&lt;li&gt;个人域名目前不支持HTTPS&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;搜索引擎&quot;&gt;&lt;a href=&quot;#搜索引擎&quot; class=&quot;headerlink&quot; title=&quot;搜索引擎&quot;&gt;&lt;/a&gt;搜索引擎&lt;/h2&gt;&lt;p&gt;GitHub禁止了百度搜索引擎，通常做法都是利用“虚拟空间+定时任务（git pull + FTP上传）+个人域名”方式进行。详细内容以及其他方案可参考：&lt;a href=&quot;http://www.zhihu.com/question/30898326。&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://www.zhihu.com/question/30898326。&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;此外，放在国内空间上，个人域名需要备案。&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;以下为这半年来玩Hexo的总结，希望对各位玩家有帮助，;)&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&quot;入门&quot;&gt;&lt;a href=&quot;#入门&quot; class=&quot;headerlink&quot; title=&quot;入门&quot;&gt;&lt;/a&gt;入门&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;npm install hexo-cli -
+    
+    </summary>
+    
+    
+      <category term="写作" scheme="http://foxgem.github.io/tags/%E5%86%99%E4%BD%9C/"/>
+    
+  </entry>
   
   <entry>
     <title>Mesos和YARN辨析</title>
@@ -496,9 +565,9 @@
     </summary>
     
     
-      <category term="数据库" scheme="http://foxgem.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
-    
       <category term="开发" scheme="http://foxgem.github.io/tags/%E5%BC%80%E5%8F%91/"/>
+    
+      <category term="数据库" scheme="http://foxgem.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
   </entry>
   
@@ -726,32 +795,6 @@
     
     
       <category term="阅读" scheme="http://foxgem.github.io/tags/%E9%98%85%E8%AF%BB/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Groovy老鸟的回顾</title>
-    <link href="http://foxgem.github.io/2016/06/groovy-a-retrospective/"/>
-    <id>http://foxgem.github.io/2016/06/groovy-a-retrospective/</id>
-    <published>2016-06-06T12:05:48.000Z</published>
-    <updated>2016-06-06T12:18:11.000Z</updated>
-    
-    <content type="html">&lt;p&gt;今天在DZone上读到&lt;a href=&quot;https://dzone.com/articles/groovy-a-retrospective&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;一名Groovy老鸟在即将转战其他语言之前写的自己对于Groovy的回顾总结&lt;/a&gt;。文章盛赞了Groovy的稳定和简洁，同时也提及了Java程序员转Groovy时需要注意的思维转变。余心有戚戚焉。&lt;/p&gt;
-&lt;p&gt;关于类型这部分，我不能同意得更多：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Again, in my opinion, typing is better - I still don’t buy that typing def rather than the actual type is actually that much of a saving, and often ends up being a code-smell (even if it didn’t start out as one). The official Groovy recommendation is to type things, with the exception of local method scoped variables - but even in that case I cannot see the benefit: there is no real gain to the developer in typing those precious fewer characters and the future readability suffers as other developers have to track through the code more to be sure as to what a variable is doing.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;我记得在Burt寄给我的&lt;a href=&quot;https://www.amazon.cn/Programming-Grails-Beckwith-Burt/dp/1449323936/ref=sr_1_1?ie=UTF8&amp;amp;qid=1465215356&amp;amp;sr=8-1&amp;amp;keywords=Programming+grails&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;“Programming Grails”&lt;/a&gt;一书中也提到了类似关于在变量声明时是否明确声明变量类型的内容。我个人觉得宗旨就是：不要影响阅读性。而且，在使用@CompileStatic时，声明类型有助于减少修改编译错误的麻烦。此外，声明类型可以带来额外的好处：在像Idea这样的IDE中可以方便的查看对应类型的源代码（按住Ctrl，在相应类型上鼠标点击即可）。&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;今天在DZone上读到&lt;a href=&quot;https://dzone.com/articles/groovy-a-retrospective&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;一名Groovy老鸟在即将转战其他语言之前写的自己对于Groovy的回
-    
-    </summary>
-    
-    
-      <category term="开发" scheme="http://foxgem.github.io/tags/%E5%BC%80%E5%8F%91/"/>
     
   </entry>
   
