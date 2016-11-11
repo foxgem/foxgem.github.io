@@ -39,7 +39,7 @@ hexo deploy
 
 对于部署到github，配置：
 123deploy:  type: git  repo: https://github.com/">
-<meta property="og:updated_time" content="2016-11-11T04:03:10.000Z">
+<meta property="og:updated_time" content="2016-11-11T04:16:08.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo基础">
 <meta name="twitter:description" content="以下为这半年来玩Hexo的总结，希望对各位玩家有帮助，;)
@@ -172,7 +172,10 @@ hexo deploy
 <li>记录值：你的github个人主页地址</li>
 </ul>
 </li>
-<li>进入personal page的settings，修改【Custom domain】</li>
+<li>进入personal page的settings，修改【Custom domain】。<ul>
+<li>这一步会生成在仓库中生成一个CNAME文件，将这个文件放到personal-page工程的source目录下。</li>
+</ul>
+</li>
 <li>个人域名目前不支持HTTPS</li>
 </ul>
 <h2 id="搜索引擎"><a href="#搜索引擎" class="headerlink" title="搜索引擎"></a>搜索引擎</h2><p>GitHub禁止了百度搜索引擎，通常做法都是利用“虚拟空间+定时任务（git pull + FTP上传）+个人域名”方式进行。详细内容以及其他方案可参考：<a href="http://www.zhihu.com/question/30898326。" target="_blank" rel="external">http://www.zhihu.com/question/30898326。</a></p>
