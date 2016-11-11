@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.jianhu.pub/"/>
-  <updated>2016-11-11T03:52:38.000Z</updated>
+  <updated>2016-11-11T04:03:10.000Z</updated>
   <id>http://www.jianhu.pub/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://www.jianhu.pub/2016/11/hexo-basic/"/>
     <id>http://www.jianhu.pub/2016/11/hexo-basic/</id>
     <published>2016-11-11T03:35:18.000Z</published>
-    <updated>2016-11-11T03:52:38.000Z</updated>
+    <updated>2016-11-11T04:03:10.000Z</updated>
     
     <content type="html">&lt;p&gt;以下为这半年来玩Hexo的总结，希望对各位玩家有帮助，;)&lt;/p&gt;
 &lt;hr&gt;
@@ -38,6 +38,10 @@
 &lt;p&gt;对于部署到github，配置：&lt;/p&gt;
 &lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;deploy:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  type: git&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  repo: https://github.com/foxgem/foxgem.github.io.git&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;h2 id=&quot;文章&quot;&gt;&lt;a href=&quot;#文章&quot; class=&quot;headerlink&quot; title=&quot;文章&quot;&gt;&lt;/a&gt;文章&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;对于中文需更改语言，否则有问题：_config.yml&lt;ul&gt;
+&lt;li&gt;language: zh-CN&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
 &lt;li&gt;若因为墙的问题要换jquery的cdn地址：themes/landscape/layout/_partial/after-footer.ejs&lt;/li&gt;
 &lt;/ul&gt;
 &lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;script src=&amp;quot;//code.jquery.com/jquery-2.0.3.min.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
