@@ -4,9 +4,9 @@
   
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://foxgem.github.io/"/>
-  <updated>2016-11-11T04:16:08.000Z</updated>
-  <id>http://foxgem.github.io/</id>
+  <link href="http://www.jianhu.pub/"/>
+  <updated>2016-11-22T14:30:04.000Z</updated>
+  <id>http://www.jianhu.pub/</id>
   
   <author>
     <name>胡键（jianhgreat@hotmail.com）</name>
@@ -16,9 +16,43 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>管理JWT的生命周期</title>
+    <link href="http://www.jianhu.pub/2016/11/jwt-lifecycle-management/"/>
+    <id>http://www.jianhu.pub/2016/11/jwt-lifecycle-management/</id>
+    <published>2016-11-22T13:47:43.000Z</published>
+    <updated>2016-11-22T14:30:04.000Z</updated>
+    
+    <content type="html">&lt;p&gt;在使用JWT时，一个让人纠结的问题就是“Token的时限多长才合适？”。对此，&lt;a href=&quot;https://stormpath.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Stormpath&lt;/a&gt;的&lt;a href=&quot;https://stormpath.com/blog/manage-authentication-lifecycle-mobile&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;这篇文章&lt;/a&gt;给出了一个可供参考的建议：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;面对极度敏感的信息，如钱或银行数据，那就根本不要在本地存放Token，只存放在内存中。这样，随着App关闭，Token也就没有了。&lt;/li&gt;
+&lt;li&gt;此外，将Token的时限设置成较短的时间（如1小时）。&lt;/li&gt;
+&lt;li&gt;对于那些虽然敏感但跟钱没关系，如健身App的进度，这个时间可以设置得长一点，如1个月。&lt;/li&gt;
+&lt;li&gt;对于像游戏或社交类App，时间可以更长些，半年或1年。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;并且，文章还建议增加一个“Token吊销”过程来应对Token被盗的情形，类似于当发现银行卡或电话卡丢失，用户主动挂失的过程。&lt;/p&gt;
+&lt;p&gt;关于“Token吊销”的实现，文章建议个方式如下：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;在DB中记录用户对应的Token&lt;/li&gt;
+&lt;li&gt;实现一个Api Endpoint，负责将指定用户的Token从DB中删除&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;原文值得一读，并且在读之前，建议先读它的&lt;a href=&quot;https://stormpath.com/blog/the-ultimate-guide-to-mobile-api-security&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;前篇&lt;/a&gt;。&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在使用JWT时，一个让人纠结的问题就是“Token的时限多长才合适？”。对此，&lt;a href=&quot;https://stormpath.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Stormpath&lt;/a&gt;的&lt;a href=&quot;https://sto
+    
+    </summary>
+    
+    
+      <category term="安全" scheme="http://www.jianhu.pub/tags/%E5%AE%89%E5%85%A8/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Hexo基础</title>
-    <link href="http://foxgem.github.io/2016/11/hexo-basic/"/>
-    <id>http://foxgem.github.io/2016/11/hexo-basic/</id>
+    <link href="http://www.jianhu.pub/2016/11/hexo-basic/"/>
+    <id>http://www.jianhu.pub/2016/11/hexo-basic/</id>
     <published>2016-11-11T03:35:18.000Z</published>
     <updated>2016-11-11T04:16:08.000Z</updated>
     
@@ -87,14 +121,14 @@
     </summary>
     
     
-      <category term="写作" scheme="http://foxgem.github.io/tags/%E5%86%99%E4%BD%9C/"/>
+      <category term="写作" scheme="http://www.jianhu.pub/tags/%E5%86%99%E4%BD%9C/"/>
     
   </entry>
   
   <entry>
     <title>Mesos和YARN辨析</title>
-    <link href="http://foxgem.github.io/2016/10/mesos-yarn/"/>
-    <id>http://foxgem.github.io/2016/10/mesos-yarn/</id>
+    <link href="http://www.jianhu.pub/2016/10/mesos-yarn/"/>
+    <id>http://www.jianhu.pub/2016/10/mesos-yarn/</id>
     <published>2016-10-17T11:15:00.000Z</published>
     <updated>2016-10-17T11:52:15.000Z</updated>
     
@@ -129,14 +163,14 @@
     </summary>
     
     
-      <category term="开发" scheme="http://foxgem.github.io/tags/%E5%BC%80%E5%8F%91/"/>
+      <category term="开发" scheme="http://www.jianhu.pub/tags/%E5%BC%80%E5%8F%91/"/>
     
   </entry>
   
   <entry>
     <title>用NetflixOSS和Spring Cloud构建微服务</title>
-    <link href="http://foxgem.github.io/2016/10/netflixoss-and-spring-cloud/"/>
-    <id>http://foxgem.github.io/2016/10/netflixoss-and-spring-cloud/</id>
+    <link href="http://www.jianhu.pub/2016/10/netflixoss-and-spring-cloud/"/>
+    <id>http://www.jianhu.pub/2016/10/netflixoss-and-spring-cloud/</id>
     <published>2016-10-04T11:57:48.000Z</published>
     <updated>2016-10-06T01:35:49.000Z</updated>
     
@@ -180,14 +214,14 @@
     </summary>
     
     
-      <category term="微服务" scheme="http://foxgem.github.io/tags/%E5%BE%AE%E6%9C%8D%E5%8A%A1/"/>
+      <category term="微服务" scheme="http://www.jianhu.pub/tags/%E5%BE%AE%E6%9C%8D%E5%8A%A1/"/>
     
   </entry>
   
   <entry>
     <title>Dropbox保存用户口令的安全之法</title>
-    <link href="http://foxgem.github.io/2016/09/how-dropbox-saves-your-password/"/>
-    <id>http://foxgem.github.io/2016/09/how-dropbox-saves-your-password/</id>
+    <link href="http://www.jianhu.pub/2016/09/how-dropbox-saves-your-password/"/>
+    <id>http://www.jianhu.pub/2016/09/how-dropbox-saves-your-password/</id>
     <published>2016-09-25T13:10:13.000Z</published>
     <updated>2016-09-25T13:49:04.000Z</updated>
     
@@ -211,14 +245,14 @@
     </summary>
     
     
-      <category term="安全" scheme="http://foxgem.github.io/tags/%E5%AE%89%E5%85%A8/"/>
+      <category term="安全" scheme="http://www.jianhu.pub/tags/%E5%AE%89%E5%85%A8/"/>
     
   </entry>
   
   <entry>
     <title>你相信谁的黑匣子？</title>
-    <link href="http://foxgem.github.io/2016/09/whose-black-box-do-you-trust/"/>
-    <id>http://foxgem.github.io/2016/09/whose-black-box-do-you-trust/</id>
+    <link href="http://www.jianhu.pub/2016/09/whose-black-box-do-you-trust/"/>
+    <id>http://www.jianhu.pub/2016/09/whose-black-box-do-you-trust/</id>
     <published>2016-09-23T09:02:26.000Z</published>
     <updated>2016-09-23T09:29:45.000Z</updated>
     
@@ -246,14 +280,14 @@
     </summary>
     
     
-      <category term="阅读" scheme="http://foxgem.github.io/tags/%E9%98%85%E8%AF%BB/"/>
+      <category term="阅读" scheme="http://www.jianhu.pub/tags/%E9%98%85%E8%AF%BB/"/>
     
   </entry>
   
   <entry>
     <title>物联网的杀手级应用并非家庭安全</title>
-    <link href="http://foxgem.github.io/2016/09/iots-killer-app-is-not-home-security/"/>
-    <id>http://foxgem.github.io/2016/09/iots-killer-app-is-not-home-security/</id>
+    <link href="http://www.jianhu.pub/2016/09/iots-killer-app-is-not-home-security/"/>
+    <id>http://www.jianhu.pub/2016/09/iots-killer-app-is-not-home-security/</id>
     <published>2016-09-07T12:39:43.000Z</published>
     <updated>2016-09-07T13:21:49.000Z</updated>
     
@@ -279,14 +313,14 @@
     </summary>
     
     
-      <category term="阅读" scheme="http://foxgem.github.io/tags/%E9%98%85%E8%AF%BB/"/>
+      <category term="阅读" scheme="http://www.jianhu.pub/tags/%E9%98%85%E8%AF%BB/"/>
     
   </entry>
   
   <entry>
     <title>HBase模式设计指南</title>
-    <link href="http://foxgem.github.io/2016/09/hbase-schema/"/>
-    <id>http://foxgem.github.io/2016/09/hbase-schema/</id>
+    <link href="http://www.jianhu.pub/2016/09/hbase-schema/"/>
+    <id>http://www.jianhu.pub/2016/09/hbase-schema/</id>
     <published>2016-09-05T03:06:23.000Z</published>
     <updated>2016-09-05T03:23:57.000Z</updated>
     
@@ -315,14 +349,14 @@
     </summary>
     
     
-      <category term="数据库" scheme="http://foxgem.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+      <category term="数据库" scheme="http://www.jianhu.pub/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
   </entry>
   
   <entry>
     <title>四炉膛理论（Four-Burners Theory）</title>
-    <link href="http://foxgem.github.io/2016/09/four-burners-theory/"/>
-    <id>http://foxgem.github.io/2016/09/four-burners-theory/</id>
+    <link href="http://www.jianhu.pub/2016/09/four-burners-theory/"/>
+    <id>http://www.jianhu.pub/2016/09/four-burners-theory/</id>
     <published>2016-09-04T03:02:56.000Z</published>
     <updated>2016-09-04T03:54:36.000Z</updated>
     
@@ -356,14 +390,14 @@
     </summary>
     
     
-      <category term="阅读" scheme="http://foxgem.github.io/tags/%E9%98%85%E8%AF%BB/"/>
+      <category term="阅读" scheme="http://www.jianhu.pub/tags/%E9%98%85%E8%AF%BB/"/>
     
   </entry>
   
   <entry>
     <title>利用Design Thinking促进岗位培训</title>
-    <link href="http://foxgem.github.io/2016/07/design-thinking-for-job-learning/"/>
-    <id>http://foxgem.github.io/2016/07/design-thinking-for-job-learning/</id>
+    <link href="http://www.jianhu.pub/2016/07/design-thinking-for-job-learning/"/>
+    <id>http://www.jianhu.pub/2016/07/design-thinking-for-job-learning/</id>
     <published>2016-07-28T01:38:29.000Z</published>
     <updated>2016-07-28T02:23:31.000Z</updated>
     
@@ -391,14 +425,14 @@
     </summary>
     
     
-      <category term="阅读" scheme="http://foxgem.github.io/tags/%E9%98%85%E8%AF%BB/"/>
+      <category term="阅读" scheme="http://www.jianhu.pub/tags/%E9%98%85%E8%AF%BB/"/>
     
   </entry>
   
   <entry>
     <title>Vert.x Circuit Breaker须知</title>
-    <link href="http://foxgem.github.io/2016/07/vertx-circuit-breaker-example/"/>
-    <id>http://foxgem.github.io/2016/07/vertx-circuit-breaker-example/</id>
+    <link href="http://www.jianhu.pub/2016/07/vertx-circuit-breaker-example/"/>
+    <id>http://www.jianhu.pub/2016/07/vertx-circuit-breaker-example/</id>
     <published>2016-07-11T09:30:03.000Z</published>
     <updated>2016-10-06T01:36:16.000Z</updated>
     
@@ -418,14 +452,14 @@
     </summary>
     
     
-      <category term="微服务" scheme="http://foxgem.github.io/tags/%E5%BE%AE%E6%9C%8D%E5%8A%A1/"/>
+      <category term="微服务" scheme="http://www.jianhu.pub/tags/%E5%BE%AE%E6%9C%8D%E5%8A%A1/"/>
     
   </entry>
   
   <entry>
     <title>Vert.x TCP EventBus Bridge补遗</title>
-    <link href="http://foxgem.github.io/2016/07/vertx-tcp-eventbus-bridge/"/>
-    <id>http://foxgem.github.io/2016/07/vertx-tcp-eventbus-bridge/</id>
+    <link href="http://www.jianhu.pub/2016/07/vertx-tcp-eventbus-bridge/"/>
+    <id>http://www.jianhu.pub/2016/07/vertx-tcp-eventbus-bridge/</id>
     <published>2016-07-05T12:27:19.000Z</published>
     <updated>2016-07-05T13:08:25.000Z</updated>
     
@@ -463,14 +497,14 @@
     </summary>
     
     
-      <category term="开发" scheme="http://foxgem.github.io/tags/%E5%BC%80%E5%8F%91/"/>
+      <category term="开发" scheme="http://www.jianhu.pub/tags/%E5%BC%80%E5%8F%91/"/>
     
   </entry>
   
   <entry>
     <title>数据科学家养成之道</title>
-    <link href="http://foxgem.github.io/2016/07/being-data-scientist/"/>
-    <id>http://foxgem.github.io/2016/07/being-data-scientist/</id>
+    <link href="http://www.jianhu.pub/2016/07/being-data-scientist/"/>
+    <id>http://www.jianhu.pub/2016/07/being-data-scientist/</id>
     <published>2016-07-03T11:44:06.000Z</published>
     <updated>2016-07-03T12:18:25.000Z</updated>
     
@@ -515,14 +549,14 @@
     </summary>
     
     
-      <category term="数据科学" scheme="http://foxgem.github.io/tags/%E6%95%B0%E6%8D%AE%E7%A7%91%E5%AD%A6/"/>
+      <category term="数据科学" scheme="http://www.jianhu.pub/tags/%E6%95%B0%E6%8D%AE%E7%A7%91%E5%AD%A6/"/>
     
   </entry>
   
   <entry>
     <title>作为TSDB的Elasticsearch</title>
-    <link href="http://foxgem.github.io/2016/06/es-as-tsdb/"/>
-    <id>http://foxgem.github.io/2016/06/es-as-tsdb/</id>
+    <link href="http://www.jianhu.pub/2016/06/es-as-tsdb/"/>
+    <id>http://www.jianhu.pub/2016/06/es-as-tsdb/</id>
     <published>2016-06-30T08:06:28.000Z</published>
     <updated>2016-06-30T08:21:11.000Z</updated>
     
@@ -538,14 +572,14 @@
     </summary>
     
     
-      <category term="数据库" scheme="http://foxgem.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+      <category term="数据库" scheme="http://www.jianhu.pub/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
   </entry>
   
   <entry>
     <title>采用Seek Method加速分页</title>
-    <link href="http://foxgem.github.io/2016/06/speed-up-pagination/"/>
-    <id>http://foxgem.github.io/2016/06/speed-up-pagination/</id>
+    <link href="http://www.jianhu.pub/2016/06/speed-up-pagination/"/>
+    <id>http://www.jianhu.pub/2016/06/speed-up-pagination/</id>
     <published>2016-06-13T11:41:15.000Z</published>
     <updated>2016-06-13T12:21:58.000Z</updated>
     
@@ -572,16 +606,16 @@
     </summary>
     
     
-      <category term="开发" scheme="http://foxgem.github.io/tags/%E5%BC%80%E5%8F%91/"/>
+      <category term="开发" scheme="http://www.jianhu.pub/tags/%E5%BC%80%E5%8F%91/"/>
     
-      <category term="数据库" scheme="http://foxgem.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+      <category term="数据库" scheme="http://www.jianhu.pub/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
   </entry>
   
   <entry>
     <title>趣文三则</title>
-    <link href="http://foxgem.github.io/2016/06/interesting-3/"/>
-    <id>http://foxgem.github.io/2016/06/interesting-3/</id>
+    <link href="http://www.jianhu.pub/2016/06/interesting-3/"/>
+    <id>http://www.jianhu.pub/2016/06/interesting-3/</id>
     <published>2016-06-12T11:06:01.000Z</published>
     <updated>2016-06-12T11:58:28.000Z</updated>
     
@@ -618,14 +652,14 @@
     </summary>
     
     
-      <category term="阅读" scheme="http://foxgem.github.io/tags/%E9%98%85%E8%AF%BB/"/>
+      <category term="阅读" scheme="http://www.jianhu.pub/tags/%E9%98%85%E8%AF%BB/"/>
     
   </entry>
   
   <entry>
     <title>SMART帮助提高大脑的注意力和思考力</title>
-    <link href="http://foxgem.github.io/2016/06/training-brain-to-focus/"/>
-    <id>http://foxgem.github.io/2016/06/training-brain-to-focus/</id>
+    <link href="http://www.jianhu.pub/2016/06/training-brain-to-focus/"/>
+    <id>http://www.jianhu.pub/2016/06/training-brain-to-focus/</id>
     <published>2016-06-11T10:40:35.000Z</published>
     <updated>2016-06-11T11:15:34.000Z</updated>
     
@@ -671,14 +705,14 @@
     </summary>
     
     
-      <category term="阅读" scheme="http://foxgem.github.io/tags/%E9%98%85%E8%AF%BB/"/>
+      <category term="阅读" scheme="http://www.jianhu.pub/tags/%E9%98%85%E8%AF%BB/"/>
     
   </entry>
   
   <entry>
     <title>意识的进化史</title>
-    <link href="http://foxgem.github.io/2016/06/theory-on-conscious-evolution/"/>
-    <id>http://foxgem.github.io/2016/06/theory-on-conscious-evolution/</id>
+    <link href="http://www.jianhu.pub/2016/06/theory-on-conscious-evolution/"/>
+    <id>http://www.jianhu.pub/2016/06/theory-on-conscious-evolution/</id>
     <published>2016-06-10T13:57:43.000Z</published>
     <updated>2016-06-10T14:30:49.000Z</updated>
     
@@ -698,14 +732,14 @@
     </summary>
     
     
-      <category term="阅读" scheme="http://foxgem.github.io/tags/%E9%98%85%E8%AF%BB/"/>
+      <category term="阅读" scheme="http://www.jianhu.pub/tags/%E9%98%85%E8%AF%BB/"/>
     
   </entry>
   
   <entry>
     <title>为什么复杂的密码不能让你的账号更安全？</title>
-    <link href="http://foxgem.github.io/2016/06/password-complexity/"/>
-    <id>http://foxgem.github.io/2016/06/password-complexity/</id>
+    <link href="http://www.jianhu.pub/2016/06/password-complexity/"/>
+    <id>http://www.jianhu.pub/2016/06/password-complexity/</id>
     <published>2016-06-09T12:36:07.000Z</published>
     <updated>2016-06-09T13:12:03.000Z</updated>
     
@@ -735,14 +769,14 @@
     </summary>
     
     
-      <category term="安全" scheme="http://foxgem.github.io/tags/%E5%AE%89%E5%85%A8/"/>
+      <category term="安全" scheme="http://www.jianhu.pub/tags/%E5%AE%89%E5%85%A8/"/>
     
   </entry>
   
   <entry>
     <title>拒绝“无条件的爱自己”</title>
-    <link href="http://foxgem.github.io/2016/06/not-loving-yourself-just-as-you-are/"/>
-    <id>http://foxgem.github.io/2016/06/not-loving-yourself-just-as-you-are/</id>
+    <link href="http://www.jianhu.pub/2016/06/not-loving-yourself-just-as-you-are/"/>
+    <id>http://www.jianhu.pub/2016/06/not-loving-yourself-just-as-you-are/</id>
     <published>2016-06-08T11:04:54.000Z</published>
     <updated>2016-06-08T14:09:27.000Z</updated>
     
@@ -768,40 +802,7 @@
     </summary>
     
     
-      <category term="阅读" scheme="http://foxgem.github.io/tags/%E9%98%85%E8%AF%BB/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>勤能补拙</title>
-    <link href="http://foxgem.github.io/2016/06/practice-makes-possible/"/>
-    <id>http://foxgem.github.io/2016/06/practice-makes-possible/</id>
-    <published>2016-06-07T14:32:55.000Z</published>
-    <updated>2016-06-07T15:19:04.000Z</updated>
-    
-    <content type="html">&lt;p&gt;这是&lt;a href=&quot;http://www.npr.org/sections/ed/2016/06/01/479335421/practice-makes-possible-what-we-learn-by-studying-amazing-kids&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;一篇发表于NPR的一篇访谈&lt;/a&gt;，对象是“Peak: Secrets From The New Science Of Expertise”一书的作者。作者花费了大量的时间研究发现：大量有针对性的实践是天才成功的秘密。同时，他也不主张过多的强调天赋：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;he argues that “talent” is often a story we tell ourselves to justify our own failure or to protect children from the possibility of failure.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;在作者看来，实践是成功必要的保证，这一点与“眨眼之间”中提到的1万小时定律不谋而合。但若简单地把作者的观点归纳为：勤能补拙，未免有点太草率。其中有些细节之处值得注意：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;实践固然重要，但必需是要有针对性的、能帮助你成长的实践，否则就是在同一个级别不断重复而已。还记得那些号称入行5、6年，但看代码和做事，充其量只值2、3年的人吗？&lt;/li&gt;
-&lt;li&gt;好老师能够放大实践的效果。这一点在无数武侠小说中已经得到论证，在主人公练就绝世武功，迎娶白富美，走向人生巅峰的过程中，哪一个少得了世外高人的指导？&lt;/li&gt;
-&lt;li&gt;成功的实践必然是那些能获得自我满足的实践，这样才有足够的驱动力让实践者坚持下去，否则，吉凶难测……&lt;/li&gt;
-&lt;li&gt;尽可能地将学到的知识应用到自己的生活之中，这样才能真正有动力去学习，学习的效果也更好。作者举得一个例子就是通过看历史小说学历史，而不是通过死记硬背。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;不出意料，这种文章放出来就引来了大批的评论，也顺便给网站带来了大量的流量。评论的焦点主要表现为读者对于作者忽略“天赋”的作用而表示愤慨，当然也有站在作者一方的。&lt;/p&gt;
-&lt;p&gt;其实，我也承认天赋的重要性，否则的话，很难解释为何有的人就能轻而易举地解开你一辈子也解不开的难题。确实有些人就是为这而生的。然而，承认天才的存在并不是为了贬低实践的重要性。最起码，你只有做了，才知道自己是不是适合做这个，是不是在这行有天赋吧。&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;这是&lt;a href=&quot;http://www.npr.org/sections/ed/2016/06/01/479335421/practice-makes-possible-what-we-learn-by-studying-amazing-kids&quot; target=&quot;_b
-    
-    </summary>
-    
-    
-      <category term="阅读" scheme="http://foxgem.github.io/tags/%E9%98%85%E8%AF%BB/"/>
+      <category term="阅读" scheme="http://www.jianhu.pub/tags/%E9%98%85%E8%AF%BB/"/>
     
   </entry>
   

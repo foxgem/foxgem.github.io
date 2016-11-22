@@ -8,7 +8,7 @@
   <meta name="description">
 <meta property="og:type" content="website">
 <meta property="og:title" content="老胡随手记">
-<meta property="og:url" content="http://foxgem.github.io/page/2/index.html">
+<meta property="og:url" content="http://www.jianhu.pub/page/2/index.html">
 <meta property="og:site_name" content="老胡随手记">
 <meta property="og:description">
 <meta name="twitter:card" content="summary">
@@ -56,13 +56,58 @@
         <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
       </nav>
       <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://foxgem.github.io"></form>
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://www.jianhu.pub"></form>
       </div>
     </div>
   </div>
 </header>
       <div class="outer">
         <section id="main">
+  
+    <article id="post-2016/07/vertx-circuit-breaker-example" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/07/vertx-circuit-breaker-example/" class="article-date">
+  <time datetime="2016-07-11T09:30:03.000Z" itemprop="datePublished">2016-07-11</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/07/vertx-circuit-breaker-example/">Vert.x Circuit Breaker须知</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Vert.x 3.3新增的<a href="http://vertx.io/docs/vertx-circuit-breaker/java/" target="_blank" rel="external">Circuit Breaker</a>深得我心，使用简单，而且文档齐全。今天照着文档写了<a href="https://github.com/shifudao/how-to/tree/master/circuitbreaker" target="_blank" rel="external">一个探索性的例子</a>，为接下来的项目做技术性预研。</p>
+<p>整个过程非常顺利，但有几点有必要说明一下：</p>
+<ul>
+<li>future.complete()必须被调用，无论有无返回值，否则这次执行不会被认为是结束，进而导致超时。</li>
+<li>为了让CircuitBreaker检查到超时，在CircuitBreaker.execute()外部套了一层vertx.executeBlocking()，否则即便CircuitBreaker.execute()内的操作的执行时间超过了外部设置的时间长度，CircuitBreaker也不会检查到。</li>
+</ul>
+<p>总得来说，还是不错。只不过需要注意该版本还只是技术预览版，不排除以后有接口变动的可能。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://www.jianhu.pub/2016/07/vertx-circuit-breaker-example/" data-id="civtlm0ef001zd7qckshp0bw3" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/微服务/">微服务</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
   
     <article id="post-2016/07/vertx-tcp-eventbus-bridge" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
@@ -115,7 +160,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://foxgem.github.io/2016/07/vertx-tcp-eventbus-bridge/" data-id="civd8sjsg001q03qcv2jx7z8q" class="article-share-link">Share</a>
+      <a data-url="http://www.jianhu.pub/2016/07/vertx-tcp-eventbus-bridge/" data-id="civtlm0e6001ud7qc5q1jgxvk" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/开发/">开发</a></li></ul>
@@ -184,7 +229,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://foxgem.github.io/2016/07/being-data-scientist/" data-id="civd8sjs7001i03qc7sep4xlm" class="article-share-link">Share</a>
+      <a data-url="http://www.jianhu.pub/2016/07/being-data-scientist/" data-id="civtlm0e1001rd7qckhuryzf1" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数据科学/">数据科学</a></li></ul>
@@ -225,7 +270,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://foxgem.github.io/2016/06/es-as-tsdb/" data-id="civd8sjr7000p03qceq85k49x" class="article-share-link">Share</a>
+      <a data-url="http://www.jianhu.pub/2016/06/es-as-tsdb/" data-id="civtlm0cv000qd7qczii0ocsi" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数据库/">数据库</a></li></ul>
@@ -277,7 +322,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://foxgem.github.io/2016/06/speed-up-pagination/" data-id="civd8sjrn001603qcf6urzkns" class="article-share-link">Share</a>
+      <a data-url="http://www.jianhu.pub/2016/06/speed-up-pagination/" data-id="civtlm0da0012d7qc6f9ibcyi" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/开发/">开发</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数据库/">数据库</a></li></ul>
@@ -338,7 +383,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://foxgem.github.io/2016/06/interesting-3/" data-id="civd8sjr9000r03qcaoykgj7p" class="article-share-link">Share</a>
+      <a data-url="http://www.jianhu.pub/2016/06/interesting-3/" data-id="civtlm0d0000td7qcz67fmr19" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/阅读/">阅读</a></li></ul>
@@ -409,7 +454,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://foxgem.github.io/2016/06/training-brain-to-focus/" data-id="civd8sjrw001d03qck7khv839" class="article-share-link">Share</a>
+      <a data-url="http://www.jianhu.pub/2016/06/training-brain-to-focus/" data-id="civtlm0dk001fd7qcv13ax5ni" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/阅读/">阅读</a></li></ul>
@@ -453,7 +498,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://foxgem.github.io/2016/06/theory-on-conscious-evolution/" data-id="civd8sjrp001803qcc9ss8rh1" class="article-share-link">Share</a>
+      <a data-url="http://www.jianhu.pub/2016/06/theory-on-conscious-evolution/" data-id="civtlm0dg001ad7qcvbc4rsot" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/阅读/">阅读</a></li></ul>
@@ -508,7 +553,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://foxgem.github.io/2016/06/password-complexity/" data-id="civd8sjrj001103qchcin8u90" class="article-share-link">Share</a>
+      <a data-url="http://www.jianhu.pub/2016/06/password-complexity/" data-id="civtlm0de0017d7qcwhhh11l7" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/安全/">安全</a></li></ul>
@@ -558,58 +603,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://foxgem.github.io/2016/06/not-loving-yourself-just-as-you-are/" data-id="civd8sjrl001303qca35q91m6" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/阅读/">阅读</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-2016/06/practice-makes-possible" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/06/practice-makes-possible/" class="article-date">
-  <time datetime="2016-06-07T14:32:55.000Z" itemprop="datePublished">2016-06-07</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/06/practice-makes-possible/">勤能补拙</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>这是<a href="http://www.npr.org/sections/ed/2016/06/01/479335421/practice-makes-possible-what-we-learn-by-studying-amazing-kids" target="_blank" rel="external">一篇发表于NPR的一篇访谈</a>，对象是“Peak: Secrets From The New Science Of Expertise”一书的作者。作者花费了大量的时间研究发现：大量有针对性的实践是天才成功的秘密。同时，他也不主张过多的强调天赋：</p>
-<blockquote>
-<p>he argues that “talent” is often a story we tell ourselves to justify our own failure or to protect children from the possibility of failure.</p>
-</blockquote>
-<p>在作者看来，实践是成功必要的保证，这一点与“眨眼之间”中提到的1万小时定律不谋而合。但若简单地把作者的观点归纳为：勤能补拙，未免有点太草率。其中有些细节之处值得注意：</p>
-<ul>
-<li>实践固然重要，但必需是要有针对性的、能帮助你成长的实践，否则就是在同一个级别不断重复而已。还记得那些号称入行5、6年，但看代码和做事，充其量只值2、3年的人吗？</li>
-<li>好老师能够放大实践的效果。这一点在无数武侠小说中已经得到论证，在主人公练就绝世武功，迎娶白富美，走向人生巅峰的过程中，哪一个少得了世外高人的指导？</li>
-<li>成功的实践必然是那些能获得自我满足的实践，这样才有足够的驱动力让实践者坚持下去，否则，吉凶难测……</li>
-<li>尽可能地将学到的知识应用到自己的生活之中，这样才能真正有动力去学习，学习的效果也更好。作者举得一个例子就是通过看历史小说学历史，而不是通过死记硬背。</li>
-</ul>
-<p>不出意料，这种文章放出来就引来了大批的评论，也顺便给网站带来了大量的流量。评论的焦点主要表现为读者对于作者忽略“天赋”的作用而表示愤慨，当然也有站在作者一方的。</p>
-<p>其实，我也承认天赋的重要性，否则的话，很难解释为何有的人就能轻而易举地解开你一辈子也解不开的难题。确实有些人就是为这而生的。然而，承认天才的存在并不是为了贬低实践的重要性。最起码，你只有做了，才知道自己是不是适合做这个，是不是在这行有天赋吧。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://foxgem.github.io/2016/06/practice-makes-possible/" data-id="civd8sjrt001b03qc01g14rcs" class="article-share-link">Share</a>
+      <a data-url="http://www.jianhu.pub/2016/06/not-loving-yourself-just-as-you-are/" data-id="civtlm0d9000yd7qclrcexrqu" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/阅读/">阅读</a></li></ul>
@@ -647,7 +641,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签云</h3>
     <div class="widget tagcloud">
-      <a href="/tags/The-Morning-Paper/" style="font-size: 12px;">The Morning Paper</a> <a href="/tags/写作/" style="font-size: 10px;">写作</a> <a href="/tags/安全/" style="font-size: 12px;">安全</a> <a href="/tags/开发/" style="font-size: 18px;">开发</a> <a href="/tags/微服务/" style="font-size: 14px;">微服务</a> <a href="/tags/数据库/" style="font-size: 16px;">数据库</a> <a href="/tags/数据科学/" style="font-size: 10px;">数据科学</a> <a href="/tags/阅读/" style="font-size: 20px;">阅读</a>
+      <a href="/tags/The-Morning-Paper/" style="font-size: 12px;">The Morning Paper</a> <a href="/tags/写作/" style="font-size: 10px;">写作</a> <a href="/tags/安全/" style="font-size: 14px;">安全</a> <a href="/tags/开发/" style="font-size: 18px;">开发</a> <a href="/tags/微服务/" style="font-size: 14px;">微服务</a> <a href="/tags/数据库/" style="font-size: 16px;">数据库</a> <a href="/tags/数据科学/" style="font-size: 10px;">数据科学</a> <a href="/tags/阅读/" style="font-size: 20px;">阅读</a>
     </div>
   </div>
 
@@ -669,6 +663,10 @@
       <ul>
         
           <li>
+            <a href="/2016/11/jwt-lifecycle-management/">管理JWT的生命周期</a>
+          </li>
+        
+          <li>
             <a href="/2016/11/hexo-basic/">Hexo基础</a>
           </li>
         
@@ -682,10 +680,6 @@
         
           <li>
             <a href="/2016/09/how-dropbox-saves-your-password/">Dropbox保存用户口令的安全之法</a>
-          </li>
-        
-          <li>
-            <a href="/2016/09/whose-black-box-do-you-trust/">你相信谁的黑匣子？</a>
           </li>
         
       </ul>

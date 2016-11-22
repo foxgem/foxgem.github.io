@@ -8,7 +8,7 @@
   <meta name="description">
 <meta property="og:type" content="website">
 <meta property="og:title" content="老胡随手记">
-<meta property="og:url" content="http://foxgem.github.io/index.html">
+<meta property="og:url" content="http://www.jianhu.pub/index.html">
 <meta property="og:site_name" content="老胡随手记">
 <meta property="og:description">
 <meta name="twitter:card" content="summary">
@@ -56,13 +56,65 @@
         <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
       </nav>
       <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://foxgem.github.io"></form>
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://www.jianhu.pub"></form>
       </div>
     </div>
   </div>
 </header>
       <div class="outer">
         <section id="main">
+  
+    <article id="post-2016/11/jwt-lifecycle-management" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/11/jwt-lifecycle-management/" class="article-date">
+  <time datetime="2016-11-22T13:47:43.000Z" itemprop="datePublished">2016-11-22</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/11/jwt-lifecycle-management/">管理JWT的生命周期</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>在使用JWT时，一个让人纠结的问题就是“Token的时限多长才合适？”。对此，<a href="https://stormpath.com/" target="_blank" rel="external">Stormpath</a>的<a href="https://stormpath.com/blog/manage-authentication-lifecycle-mobile" target="_blank" rel="external">这篇文章</a>给出了一个可供参考的建议：</p>
+<ul>
+<li>面对极度敏感的信息，如钱或银行数据，那就根本不要在本地存放Token，只存放在内存中。这样，随着App关闭，Token也就没有了。</li>
+<li>此外，将Token的时限设置成较短的时间（如1小时）。</li>
+<li>对于那些虽然敏感但跟钱没关系，如健身App的进度，这个时间可以设置得长一点，如1个月。</li>
+<li>对于像游戏或社交类App，时间可以更长些，半年或1年。</li>
+</ul>
+<p>并且，文章还建议增加一个“Token吊销”过程来应对Token被盗的情形，类似于当发现银行卡或电话卡丢失，用户主动挂失的过程。</p>
+<p>关于“Token吊销”的实现，文章建议个方式如下：</p>
+<ul>
+<li>在DB中记录用户对应的Token</li>
+<li>实现一个Api Endpoint，负责将指定用户的Token从DB中删除</li>
+</ul>
+<p>原文值得一读，并且在读之前，建议先读它的<a href="https://stormpath.com/blog/the-ultimate-guide-to-mobile-api-security" target="_blank" rel="external">前篇</a>。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://www.jianhu.pub/2016/11/jwt-lifecycle-management/" data-id="civtlm0er0029d7qcvrflmg15" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/安全/">安全</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
   
     <article id="post-2016/11/hexo-basic" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
@@ -143,7 +195,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://foxgem.github.io/2016/11/hexo-basic/" data-id="civd8sjsv001y03qc6su9c9as" class="article-share-link">Share</a>
+      <a data-url="http://www.jianhu.pub/2016/11/hexo-basic/" data-id="civtlm0em0024d7qcow3yqu0m" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/写作/">写作</a></li></ul>
@@ -203,7 +255,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://foxgem.github.io/2016/10/mesos-yarn/" data-id="civd8sjt3002303qcuk43uzdo" class="article-share-link">Share</a>
+      <a data-url="http://www.jianhu.pub/2016/10/mesos-yarn/" data-id="civtlm0ep0026d7qcbi7cg11f" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/开发/">开发</a></li></ul>
@@ -269,7 +321,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://foxgem.github.io/2016/10/netflixoss-and-spring-cloud/" data-id="civd8sjt7002503qch2f4ktin" class="article-share-link">Share</a>
+      <a data-url="http://www.jianhu.pub/2016/10/netflixoss-and-spring-cloud/" data-id="civtlm0ei0021d7qcn160imor" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/微服务/">微服务</a></li></ul>
@@ -318,7 +370,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://foxgem.github.io/2016/09/how-dropbox-saves-your-password/" data-id="civd8sjsj001s03qcai0z8l1m" class="article-share-link">Share</a>
+      <a data-url="http://www.jianhu.pub/2016/09/how-dropbox-saves-your-password/" data-id="civtlm0ds001kd7qc9hd10txe" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/安全/">安全</a></li></ul>
@@ -371,7 +423,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://foxgem.github.io/2016/09/whose-black-box-do-you-trust/" data-id="civd8sjt1002003qczdugue4c" class="article-share-link">Share</a>
+      <a data-url="http://www.jianhu.pub/2016/09/whose-black-box-do-you-trust/" data-id="civtlm0du001md7qclxbx227b" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/阅读/">阅读</a></li></ul>
@@ -422,7 +474,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://foxgem.github.io/2016/09/iots-killer-app-is-not-home-security/" data-id="civd8sjsq001w03qcb17hu70f" class="article-share-link">Share</a>
+      <a data-url="http://www.jianhu.pub/2016/09/iots-killer-app-is-not-home-security/" data-id="civtlm0dw001pd7qcw7blk3o8" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/阅读/">阅读</a></li></ul>
@@ -476,7 +528,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://foxgem.github.io/2016/09/hbase-schema/" data-id="civd8sjsm001u03qcui445dg5" class="article-share-link">Share</a>
+      <a data-url="http://www.jianhu.pub/2016/09/hbase-schema/" data-id="civtlm0di001cd7qcmhujl3ef" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数据库/">数据库</a></li></ul>
@@ -533,7 +585,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://foxgem.github.io/2016/09/four-burners-theory/" data-id="civd8sjsb001n03qch6kfdh4w" class="article-share-link">Share</a>
+      <a data-url="http://www.jianhu.pub/2016/09/four-burners-theory/" data-id="civtlm0dp001hd7qchdx1qk40" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/阅读/">阅读</a></li></ul>
@@ -586,55 +638,10 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://foxgem.github.io/2016/07/design-thinking-for-job-learning/" data-id="civd8sjs9001l03qc74jaxnus" class="article-share-link">Share</a>
+      <a data-url="http://www.jianhu.pub/2016/07/design-thinking-for-job-learning/" data-id="civtlm0e9001wd7qccr2bdhx7" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/阅读/">阅读</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-2016/07/vertx-circuit-breaker-example" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/07/vertx-circuit-breaker-example/" class="article-date">
-  <time datetime="2016-07-11T09:30:03.000Z" itemprop="datePublished">2016-07-11</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/07/vertx-circuit-breaker-example/">Vert.x Circuit Breaker须知</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Vert.x 3.3新增的<a href="http://vertx.io/docs/vertx-circuit-breaker/java/" target="_blank" rel="external">Circuit Breaker</a>深得我心，使用简单，而且文档齐全。今天照着文档写了<a href="https://github.com/shifudao/how-to/tree/master/circuitbreaker" target="_blank" rel="external">一个探索性的例子</a>，为接下来的项目做技术性预研。</p>
-<p>整个过程非常顺利，但有几点有必要说明一下：</p>
-<ul>
-<li>future.complete()必须被调用，无论有无返回值，否则这次执行不会被认为是结束，进而导致超时。</li>
-<li>为了让CircuitBreaker检查到超时，在CircuitBreaker.execute()外部套了一层vertx.executeBlocking()，否则即便CircuitBreaker.execute()内的操作的执行时间超过了外部设置的时间长度，CircuitBreaker也不会检查到。</li>
-</ul>
-<p>总得来说，还是不错。只不过需要注意该版本还只是技术预览版，不排除以后有接口变动的可能。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://foxgem.github.io/2016/07/vertx-circuit-breaker-example/" data-id="civd8sjs0001g03qc5azuau4y" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/微服务/">微服务</a></li></ul>
 
     </footer>
   </div>
@@ -669,7 +676,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签云</h3>
     <div class="widget tagcloud">
-      <a href="/tags/The-Morning-Paper/" style="font-size: 12px;">The Morning Paper</a> <a href="/tags/写作/" style="font-size: 10px;">写作</a> <a href="/tags/安全/" style="font-size: 12px;">安全</a> <a href="/tags/开发/" style="font-size: 18px;">开发</a> <a href="/tags/微服务/" style="font-size: 14px;">微服务</a> <a href="/tags/数据库/" style="font-size: 16px;">数据库</a> <a href="/tags/数据科学/" style="font-size: 10px;">数据科学</a> <a href="/tags/阅读/" style="font-size: 20px;">阅读</a>
+      <a href="/tags/The-Morning-Paper/" style="font-size: 12px;">The Morning Paper</a> <a href="/tags/写作/" style="font-size: 10px;">写作</a> <a href="/tags/安全/" style="font-size: 14px;">安全</a> <a href="/tags/开发/" style="font-size: 18px;">开发</a> <a href="/tags/微服务/" style="font-size: 14px;">微服务</a> <a href="/tags/数据库/" style="font-size: 16px;">数据库</a> <a href="/tags/数据科学/" style="font-size: 10px;">数据科学</a> <a href="/tags/阅读/" style="font-size: 20px;">阅读</a>
     </div>
   </div>
 
@@ -691,6 +698,10 @@
       <ul>
         
           <li>
+            <a href="/2016/11/jwt-lifecycle-management/">管理JWT的生命周期</a>
+          </li>
+        
+          <li>
             <a href="/2016/11/hexo-basic/">Hexo基础</a>
           </li>
         
@@ -704,10 +715,6 @@
         
           <li>
             <a href="/2016/09/how-dropbox-saves-your-password/">Dropbox保存用户口令的安全之法</a>
-          </li>
-        
-          <li>
-            <a href="/2016/09/whose-black-box-do-you-trust/">你相信谁的黑匣子？</a>
           </li>
         
       </ul>

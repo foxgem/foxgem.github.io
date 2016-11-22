@@ -3,24 +3,30 @@
 <head>
   <meta charset="utf-8">
   
-  <title>勤能补拙 | 老胡随手记</title>
+  <title>管理JWT的生命周期 | 老胡随手记</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="这是一篇发表于NPR的一篇访谈，对象是“Peak: Secrets From The New Science Of Expertise”一书的作者。作者花费了大量的时间研究发现：大量有针对性的实践是天才成功的秘密。同时，他也不主张过多的强调天赋：
+  <meta name="description" content="在使用JWT时，一个让人纠结的问题就是“Token的时限多长才合适？”。对此，Stormpath的这篇文章给出了一个可供参考的建议：
 
-he argues that “talent” is often a story we tell ourselves to justify our o">
+面对极度敏感的信息，如钱或银行数据，那就根本不要在本地存放Token，只存放在内存中。这样，随着App关闭，Token也就没有了。
+此外，将Token的时限设置成较短的时间（如1小时）。
+对于那些虽然敏感但跟钱没关系，如健身App的进度，这个时间可以设置得长一点，">
 <meta property="og:type" content="article">
-<meta property="og:title" content="勤能补拙">
-<meta property="og:url" content="http://www.jianhu.pub/2016/06/practice-makes-possible/index.html">
+<meta property="og:title" content="管理JWT的生命周期">
+<meta property="og:url" content="http://www.jianhu.pub/2016/11/jwt-lifecycle-management/index.html">
 <meta property="og:site_name" content="老胡随手记">
-<meta property="og:description" content="这是一篇发表于NPR的一篇访谈，对象是“Peak: Secrets From The New Science Of Expertise”一书的作者。作者花费了大量的时间研究发现：大量有针对性的实践是天才成功的秘密。同时，他也不主张过多的强调天赋：
+<meta property="og:description" content="在使用JWT时，一个让人纠结的问题就是“Token的时限多长才合适？”。对此，Stormpath的这篇文章给出了一个可供参考的建议：
 
-he argues that “talent” is often a story we tell ourselves to justify our o">
-<meta property="og:updated_time" content="2016-06-07T15:19:04.000Z">
+面对极度敏感的信息，如钱或银行数据，那就根本不要在本地存放Token，只存放在内存中。这样，随着App关闭，Token也就没有了。
+此外，将Token的时限设置成较短的时间（如1小时）。
+对于那些虽然敏感但跟钱没关系，如健身App的进度，这个时间可以设置得长一点，">
+<meta property="og:updated_time" content="2016-11-22T14:30:04.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="勤能补拙">
-<meta name="twitter:description" content="这是一篇发表于NPR的一篇访谈，对象是“Peak: Secrets From The New Science Of Expertise”一书的作者。作者花费了大量的时间研究发现：大量有针对性的实践是天才成功的秘密。同时，他也不主张过多的强调天赋：
+<meta name="twitter:title" content="管理JWT的生命周期">
+<meta name="twitter:description" content="在使用JWT时，一个让人纠结的问题就是“Token的时限多长才合适？”。对此，Stormpath的这篇文章给出了一个可供参考的建议：
 
-he argues that “talent” is often a story we tell ourselves to justify our o">
+面对极度敏感的信息，如钱或银行数据，那就根本不要在本地存放Token，只存放在内存中。这样，随着App关闭，Token也就没有了。
+此外，将Token的时限设置成较短的时间（如1小时）。
+对于那些虽然敏感但跟钱没关系，如健身App的进度，这个时间可以设置得长一点，">
   
     <link rel="alternate" href="/atom.xml" title="老胡随手记" type="application/atom+xml">
   
@@ -69,10 +75,10 @@ he argues that “talent” is often a story we tell ourselves to justify our o"
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-2016/06/practice-makes-possible" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-2016/11/jwt-lifecycle-management" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2016/06/practice-makes-possible/" class="article-date">
-  <time datetime="2016-06-07T14:32:55.000Z" itemprop="datePublished">2016-06-07</time>
+    <a href="/2016/11/jwt-lifecycle-management/" class="article-date">
+  <time datetime="2016-11-22T13:47:43.000Z" itemprop="datePublished">2016-11-22</time>
 </a>
     
   </div>
@@ -83,7 +89,7 @@ he argues that “talent” is often a story we tell ourselves to justify our o"
         
   
     <h1 class="article-title" itemprop="name">
-      勤能补拙
+      管理JWT的生命周期
     </h1>
   
 
@@ -91,27 +97,28 @@ he argues that “talent” is often a story we tell ourselves to justify our o"
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>这是<a href="http://www.npr.org/sections/ed/2016/06/01/479335421/practice-makes-possible-what-we-learn-by-studying-amazing-kids" target="_blank" rel="external">一篇发表于NPR的一篇访谈</a>，对象是“Peak: Secrets From The New Science Of Expertise”一书的作者。作者花费了大量的时间研究发现：大量有针对性的实践是天才成功的秘密。同时，他也不主张过多的强调天赋：</p>
-<blockquote>
-<p>he argues that “talent” is often a story we tell ourselves to justify our own failure or to protect children from the possibility of failure.</p>
-</blockquote>
-<p>在作者看来，实践是成功必要的保证，这一点与“眨眼之间”中提到的1万小时定律不谋而合。但若简单地把作者的观点归纳为：勤能补拙，未免有点太草率。其中有些细节之处值得注意：</p>
+        <p>在使用JWT时，一个让人纠结的问题就是“Token的时限多长才合适？”。对此，<a href="https://stormpath.com/" target="_blank" rel="external">Stormpath</a>的<a href="https://stormpath.com/blog/manage-authentication-lifecycle-mobile" target="_blank" rel="external">这篇文章</a>给出了一个可供参考的建议：</p>
 <ul>
-<li>实践固然重要，但必需是要有针对性的、能帮助你成长的实践，否则就是在同一个级别不断重复而已。还记得那些号称入行5、6年，但看代码和做事，充其量只值2、3年的人吗？</li>
-<li>好老师能够放大实践的效果。这一点在无数武侠小说中已经得到论证，在主人公练就绝世武功，迎娶白富美，走向人生巅峰的过程中，哪一个少得了世外高人的指导？</li>
-<li>成功的实践必然是那些能获得自我满足的实践，这样才有足够的驱动力让实践者坚持下去，否则，吉凶难测……</li>
-<li>尽可能地将学到的知识应用到自己的生活之中，这样才能真正有动力去学习，学习的效果也更好。作者举得一个例子就是通过看历史小说学历史，而不是通过死记硬背。</li>
+<li>面对极度敏感的信息，如钱或银行数据，那就根本不要在本地存放Token，只存放在内存中。这样，随着App关闭，Token也就没有了。</li>
+<li>此外，将Token的时限设置成较短的时间（如1小时）。</li>
+<li>对于那些虽然敏感但跟钱没关系，如健身App的进度，这个时间可以设置得长一点，如1个月。</li>
+<li>对于像游戏或社交类App，时间可以更长些，半年或1年。</li>
 </ul>
-<p>不出意料，这种文章放出来就引来了大批的评论，也顺便给网站带来了大量的流量。评论的焦点主要表现为读者对于作者忽略“天赋”的作用而表示愤慨，当然也有站在作者一方的。</p>
-<p>其实，我也承认天赋的重要性，否则的话，很难解释为何有的人就能轻而易举地解开你一辈子也解不开的难题。确实有些人就是为这而生的。然而，承认天才的存在并不是为了贬低实践的重要性。最起码，你只有做了，才知道自己是不是适合做这个，是不是在这行有天赋吧。</p>
+<p>并且，文章还建议增加一个“Token吊销”过程来应对Token被盗的情形，类似于当发现银行卡或电话卡丢失，用户主动挂失的过程。</p>
+<p>关于“Token吊销”的实现，文章建议个方式如下：</p>
+<ul>
+<li>在DB中记录用户对应的Token</li>
+<li>实现一个Api Endpoint，负责将指定用户的Token从DB中删除</li>
+</ul>
+<p>原文值得一读，并且在读之前，建议先读它的<a href="https://stormpath.com/blog/the-ultimate-guide-to-mobile-api-security" target="_blank" rel="external">前篇</a>。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.jianhu.pub/2016/06/practice-makes-possible/" data-id="civtlm0dc0015d7qcs8i1och9" class="article-share-link">Share</a>
+      <a data-url="http://www.jianhu.pub/2016/11/jwt-lifecycle-management/" data-id="civtlm0er0029d7qcvrflmg15" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/阅读/">阅读</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/安全/">安全</a></li></ul>
 
     </footer>
   </div>
@@ -119,19 +126,10 @@ he argues that “talent” is often a story we tell ourselves to justify our o"
     
 <nav id="article-nav">
   
-    <a href="/2016/06/not-loving-yourself-just-as-you-are/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          拒绝“无条件的爱自己”
-        
-      </div>
-    </a>
   
-  
-    <a href="/2016/06/groovy-a-retrospective/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2016/11/hexo-basic/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Groovy老鸟的回顾</div>
+      <div class="article-nav-title">Hexo基础</div>
     </a>
   
 </nav>
