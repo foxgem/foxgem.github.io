@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.jianhu.pub/"/>
-  <updated>2016-11-22T14:30:04.000Z</updated>
+  <updated>2016-12-18T09:40:34.000Z</updated>
   <id>http://www.jianhu.pub/</id>
   
   <author>
@@ -14,6 +14,43 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>GraphQL简说</title>
+    <link href="http://www.jianhu.pub/2016/12/what-is-graphql/"/>
+    <id>http://www.jianhu.pub/2016/12/what-is-graphql/</id>
+    <published>2016-12-18T09:03:47.000Z</published>
+    <updated>2016-12-18T09:40:34.000Z</updated>
+    
+    <content type="html">&lt;p&gt;之前看到Facebook开源GraphQL的新闻时还以为它是为图数据库提供的查询语言，但&lt;a href=&quot;https://medium.com/chute-engineering/graphql-in-the-age-of-rest-apis-b10f2bf09bba#.1nzvweus8&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;这篇文章&lt;/a&gt;及时纠正了我的错误认识。&lt;/p&gt;
+&lt;p&gt;简单的说：GraphQL是一种API，它的出现是为了改进使用REST时面临的缺陷。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;GraphQL’s power comes from a simple idea — instead of defining the structure of responses on the server, the flexibility is given to the client. Each request specifies what fields and relationships it wants to get back, and GraphQL will construct a response tailored for this particular request. The benefit: only one round-trip is needed to fetch all the complex data that might otherwise span multiple REST endpoints, and at the same time only return the data that are actually needed and nothing more.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;文中提到了另一个REST不具备的优势：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Another advantage that I see in GraphQL is that it has a built-in type introspection. That means you can describe the entire API programmatically, and we can build tools that drastically improve development. &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;由此看来，GraphQL是作为REST的一个替代品出现的，那么这是否意味着REST的好日子到头了呢？作者并非这么想：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;业界在REST上已投入不少资源&lt;/li&gt;
+&lt;li&gt;GraphQL目前只有Facebook一家在产品环境下使用 【注：文章的写作时间是是去年7月份】&lt;/li&gt;
+&lt;li&gt;转变需要至少10年时间&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;因此，最有可能的结果是：两者并存。&lt;/p&gt;
+&lt;p&gt;文后，作者给出了若干GraphQL的例子，读者可自行查阅。除此之外，有兴趣的读者还可以看看&lt;a href=&quot;https://compose.com/articles/postgraphql-postgresql-meets-graphql&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;这篇介绍PostGraphQL的短文&lt;/a&gt;，通过它，你可以用GraphQL来查询后端的PostgreSQL数据库。&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;之前看到Facebook开源GraphQL的新闻时还以为它是为图数据库提供的查询语言，但&lt;a href=&quot;https://medium.com/chute-engineering/graphql-in-the-age-of-rest-apis-b10f2bf09bba#.1
+    
+    </summary>
+    
+    
+      <category term="开发" scheme="http://www.jianhu.pub/tags/%E5%BC%80%E5%8F%91/"/>
+    
+  </entry>
   
   <entry>
     <title>管理JWT的生命周期</title>
@@ -770,39 +807,6 @@
     
     
       <category term="安全" scheme="http://www.jianhu.pub/tags/%E5%AE%89%E5%85%A8/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>拒绝“无条件的爱自己”</title>
-    <link href="http://www.jianhu.pub/2016/06/not-loving-yourself-just-as-you-are/"/>
-    <id>http://www.jianhu.pub/2016/06/not-loving-yourself-just-as-you-are/</id>
-    <published>2016-06-08T11:04:54.000Z</published>
-    <updated>2016-06-08T14:09:27.000Z</updated>
-    
-    <content type="html">&lt;p&gt;“我们采用的是敏捷，所以没有文档”，类似这样的话是不是有点耳熟？人就是这样的动物，同样一句话，总是倾向于从对自己有利的方面去解释。对待软件开发实践的态度尚且如此，怎么能指望对于自身的改进能比它更好呢？&lt;/p&gt;
-&lt;p&gt;接纳不完美的自己，在鸡汤文满天飞的今天，类似的话不绝于耳。既然不完美，干脆就这样吧……然而，&lt;a href=&quot;http://qz.com/699741/a-harvard-philosophers-argument-for-not-loving-yourself-just-as-you-are/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;这位哈佛的哲学家却不这样认为&lt;/a&gt;。他不仅不认同这样的观点，而且还认为中国先秦思想可以帮助我们获得更好的生活。有趣，在我们自己不断批判老祖宗的时候，一位老外说起了它的好话。&lt;/p&gt;
-&lt;p&gt;这位哲学家认为，爱自己并且成为那个理想的真我的前提是得有那么一个“自我”存在。而在他看来，这未必正确。他援引中国思想家对于“自我”的观点：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;much of the Chinese philosophical tradition derived from Confucius envisions “the self” as more of a messy product of habit than a clearly-defined inner essence. “From a very young age, we’ll form patterns of responding to the world. Those patterns will harden and become what we mistakenly call a personality,” adds Puett.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;这两种观点有什么区别？在我看来，前者有一个可见的终点，而后者则有一种无限的可能。既是习惯的产物，那隐含的意思就是有机会改变，而改变的多寡只取决于你自己。于是，我们才有机会读到“吾日三省吾身”、“老骥伏枥志在千里”、“朝闻道夕死可矣”等等这样颇为励志的警句。&lt;/p&gt;
-&lt;p&gt;有趣的是，心理学最近的一些发现为两千多年前老祖宗的观点提供了证据：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Though much of this writing is more than two thousand years old, recent findings in psychology have supported the notion that we are indeed creatures of habit. Puett points to Daniel Kahneman’s work, ‘Thinking, Fast and Slow,” which focuses in part on the persistent power of cognitive shortcuts, as an example of modern psychology that fits with ancient Chinese thinking.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;无独有偶，古希腊哲学家亚里士多德也曾说：卓越的人之所以卓越，是因为有卓越的习惯！说得好，那就让我们先从习惯做起！&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;“我们采用的是敏捷，所以没有文档”，类似这样的话是不是有点耳熟？人就是这样的动物，同样一句话，总是倾向于从对自己有利的方面去解释。对待软件开发实践的态度尚且如此，怎么能指望对于自身的改进能比它更好呢？&lt;/p&gt;
-&lt;p&gt;接纳不完美的自己，在鸡汤文满天飞的今天，类似的话不绝于耳。
-    
-    </summary>
-    
-    
-      <category term="阅读" scheme="http://www.jianhu.pub/tags/%E9%98%85%E8%AF%BB/"/>
     
   </entry>
   

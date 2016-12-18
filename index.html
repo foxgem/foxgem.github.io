@@ -64,6 +64,61 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-2016/12/what-is-graphql" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/12/what-is-graphql/" class="article-date">
+  <time datetime="2016-12-18T09:03:47.000Z" itemprop="datePublished">2016-12-18</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/12/what-is-graphql/">GraphQL简说</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>之前看到Facebook开源GraphQL的新闻时还以为它是为图数据库提供的查询语言，但<a href="https://medium.com/chute-engineering/graphql-in-the-age-of-rest-apis-b10f2bf09bba#.1nzvweus8" target="_blank" rel="external">这篇文章</a>及时纠正了我的错误认识。</p>
+<p>简单的说：GraphQL是一种API，它的出现是为了改进使用REST时面临的缺陷。</p>
+<blockquote>
+<p>GraphQL’s power comes from a simple idea — instead of defining the structure of responses on the server, the flexibility is given to the client. Each request specifies what fields and relationships it wants to get back, and GraphQL will construct a response tailored for this particular request. The benefit: only one round-trip is needed to fetch all the complex data that might otherwise span multiple REST endpoints, and at the same time only return the data that are actually needed and nothing more.</p>
+</blockquote>
+<p>文中提到了另一个REST不具备的优势：</p>
+<blockquote>
+<p>Another advantage that I see in GraphQL is that it has a built-in type introspection. That means you can describe the entire API programmatically, and we can build tools that drastically improve development. </p>
+</blockquote>
+<p>由此看来，GraphQL是作为REST的一个替代品出现的，那么这是否意味着REST的好日子到头了呢？作者并非这么想：</p>
+<ul>
+<li>业界在REST上已投入不少资源</li>
+<li>GraphQL目前只有Facebook一家在产品环境下使用 【注：文章的写作时间是是去年7月份】</li>
+<li>转变需要至少10年时间</li>
+</ul>
+<p>因此，最有可能的结果是：两者并存。</p>
+<p>文后，作者给出了若干GraphQL的例子，读者可自行查阅。除此之外，有兴趣的读者还可以看看<a href="https://compose.com/articles/postgraphql-postgresql-meets-graphql" target="_blank" rel="external">这篇介绍PostGraphQL的短文</a>，通过它，你可以用GraphQL来查询后端的PostgreSQL数据库。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://www.jianhu.pub/2016/12/what-is-graphql/" data-id="ciwugqrzc0029xrqco5wrzxzh" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/开发/">开发</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-2016/11/jwt-lifecycle-management" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/11/jwt-lifecycle-management/" class="article-date">
@@ -104,7 +159,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.jianhu.pub/2016/11/jwt-lifecycle-management/" data-id="civtlm0er0029d7qcvrflmg15" class="article-share-link">Share</a>
+      <a data-url="http://www.jianhu.pub/2016/11/jwt-lifecycle-management/" data-id="ciwugqrza0026xrqcjgi4dqfv" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/安全/">安全</a></li></ul>
@@ -195,7 +250,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.jianhu.pub/2016/11/hexo-basic/" data-id="civtlm0em0024d7qcow3yqu0m" class="article-share-link">Share</a>
+      <a data-url="http://www.jianhu.pub/2016/11/hexo-basic/" data-id="ciwugqrz60021xrqcyenqphup" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/写作/">写作</a></li></ul>
@@ -255,7 +310,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.jianhu.pub/2016/10/mesos-yarn/" data-id="civtlm0ep0026d7qcbi7cg11f" class="article-share-link">Share</a>
+      <a data-url="http://www.jianhu.pub/2016/10/mesos-yarn/" data-id="ciwugqryq001uxrqcze81e9lw" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/开发/">开发</a></li></ul>
@@ -321,7 +376,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.jianhu.pub/2016/10/netflixoss-and-spring-cloud/" data-id="civtlm0ei0021d7qcn160imor" class="article-share-link">Share</a>
+      <a data-url="http://www.jianhu.pub/2016/10/netflixoss-and-spring-cloud/" data-id="ciwugqryv001wxrqcw8xgqr7s" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/微服务/">微服务</a></li></ul>
@@ -370,7 +425,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.jianhu.pub/2016/09/how-dropbox-saves-your-password/" data-id="civtlm0ds001kd7qc9hd10txe" class="article-share-link">Share</a>
+      <a data-url="http://www.jianhu.pub/2016/09/how-dropbox-saves-your-password/" data-id="ciwugqrz70024xrqcg16wxein" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/安全/">安全</a></li></ul>
@@ -423,7 +478,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.jianhu.pub/2016/09/whose-black-box-do-you-trust/" data-id="civtlm0du001md7qclxbx227b" class="article-share-link">Share</a>
+      <a data-url="http://www.jianhu.pub/2016/09/whose-black-box-do-you-trust/" data-id="ciwugqrze002bxrqc04xdo0qa" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/阅读/">阅读</a></li></ul>
@@ -474,7 +529,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.jianhu.pub/2016/09/iots-killer-app-is-not-home-security/" data-id="civtlm0dw001pd7qcw7blk3o8" class="article-share-link">Share</a>
+      <a data-url="http://www.jianhu.pub/2016/09/iots-killer-app-is-not-home-security/" data-id="ciwugqrym001rxrqc9jd8pjvo" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/阅读/">阅读</a></li></ul>
@@ -528,7 +583,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.jianhu.pub/2016/09/hbase-schema/" data-id="civtlm0di001cd7qcmhujl3ef" class="article-share-link">Share</a>
+      <a data-url="http://www.jianhu.pub/2016/09/hbase-schema/" data-id="ciwugqrz2001zxrqcu5gcx74v" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数据库/">数据库</a></li></ul>
@@ -585,60 +640,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.jianhu.pub/2016/09/four-burners-theory/" data-id="civtlm0dp001hd7qchdx1qk40" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/阅读/">阅读</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-2016/07/design-thinking-for-job-learning" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/07/design-thinking-for-job-learning/" class="article-date">
-  <time datetime="2016-07-28T01:38:29.000Z" itemprop="datePublished">2016-07-28</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/07/design-thinking-for-job-learning/">利用Design Thinking促进岗位培训</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>稍微正规点的公司基本都有岗位培训，至于效果，那就是“如人饮水，冷暖自知”了。就我来说的话，我是不太满意的。因为发现这实在是一个投入产出比太不对称的事情，不论培训时如何投入，待到培训结束后，时间稍微久一点，不少人就会忘掉大部分的培训内容。这不能怪其他人，因为这就是被动接收知识的效果。</p>
-<p>在我发现这个问题之后，我也做过其他尝试，如变被动为主动，试着让参加培训的同事的参与感更强，更多的采用问答方式。最近，又尝试将社区活动中学到的“闪电演讲”方式引入课堂。即：在15分钟内讲完一个主题。这种方式的目的更多的是帮助大家开拓视野，发现各自的兴趣点。若感觉有意思，便在课后自行投入时间；反之，也就15分钟而已，就当见见世面。</p>
-<p>如今，Design Thinking逐渐走红，就连岗位培训中都有人进行了尝试。<a href="https://hbr.org/2016/07/using-design-thinking-to-embed-learning-in-our-jobs" target="_blank" rel="external">这篇文章</a>里介绍了将其应用到岗位培训中的做法，甚觉有趣：</p>
-<blockquote>
-<p>Rather than inject “training” into employees, it studied the job of a retail sales agent over the first nine months and developed a “journey map” showing what people need to know the first day, the first week, the first month, and then over the first few quarters.</p>
-</blockquote>
-<p>这种方式最大的特点便是目的性极强，循序渐进地将一个员工所需掌握的知识以地图的形式表现出来。既指出了未来的终点，同时兼顾了眼前急需的技能，不至于一开始就抛出大量的内容让新人觉得负担过重。话说哥最近整理的公司技术部的“技能图谱”也与此方式相互呼应，要是能跟级别在挂上钩就更完美了。</p>
-<p>除了整理出“journey map”，这家公司还为培训制作了专门的APP：</p>
-<blockquote>
-<p>Rather than try to cram all this into a set of formal or informal learning programs, the company built an app, which looks more like a game than a learning system. It is designed to give people the basic information they need before they even come to work, then later add social connections, coaching sessions, and videos that help them on the job, and even encourage them to share what they’ve learned online.</p>
-</blockquote>
-<p>正如文章中指出的：这种由“教学设计”到“体验设计”的转变非常重要，因为：</p>
-<blockquote>
-<p>In today’s always-on, distracting work environment, people simply don’t take the time to learn unless it feels relevant and it’s embedded in the work.</p>
-</blockquote>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://www.jianhu.pub/2016/07/design-thinking-for-job-learning/" data-id="civtlm0e9001wd7qccr2bdhx7" class="article-share-link">Share</a>
+      <a data-url="http://www.jianhu.pub/2016/09/four-burners-theory/" data-id="ciwugqryj001pxrqcwwgidwp1" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/阅读/">阅读</a></li></ul>
@@ -685,7 +687,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">十一月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">十月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">九月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">七月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">六月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">五月 2016</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">十二月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">十一月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">十月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">九月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">七月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">六月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">五月 2016</a></li></ul>
     </div>
   </div>
 
@@ -696,6 +698,10 @@
     <h3 class="widget-title">最新文章</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2016/12/what-is-graphql/">GraphQL简说</a>
+          </li>
         
           <li>
             <a href="/2016/11/jwt-lifecycle-management/">管理JWT的生命周期</a>
@@ -711,10 +717,6 @@
         
           <li>
             <a href="/2016/10/netflixoss-and-spring-cloud/">用NetflixOSS和Spring Cloud构建微服务</a>
-          </li>
-        
-          <li>
-            <a href="/2016/09/how-dropbox-saves-your-password/">Dropbox保存用户口令的安全之法</a>
           </li>
         
       </ul>

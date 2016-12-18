@@ -3,60 +3,27 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Hexo基础 | 老胡随手记</title>
+  <title>GraphQL简说 | 老胡随手记</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="以下为这半年来玩Hexo的总结，希望对各位玩家有帮助，;)
+  <meta name="description" content="之前看到Facebook开源GraphQL的新闻时还以为它是为图数据库提供的查询语言，但这篇文章及时纠正了我的错误认识。
+简单的说：GraphQL是一种API，它的出现是为了改进使用REST时面临的缺陷。
 
-入门
-npm install hexo-cli -g
-hexo init blog
-cd blog
-npm install
-hexo server
-
-部署
-hexo generate
-hexo deploy
-
-对于部署到github，配置：
-123deploy:  type: git  repo: https://github.com/">
+GraphQL’s power comes from a simple idea — instead of defining the structure of responses on the">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo基础">
-<meta property="og:url" content="http://www.jianhu.pub/2016/11/hexo-basic/index.html">
+<meta property="og:title" content="GraphQL简说">
+<meta property="og:url" content="http://www.jianhu.pub/2016/12/what-is-graphql/index.html">
 <meta property="og:site_name" content="老胡随手记">
-<meta property="og:description" content="以下为这半年来玩Hexo的总结，希望对各位玩家有帮助，;)
+<meta property="og:description" content="之前看到Facebook开源GraphQL的新闻时还以为它是为图数据库提供的查询语言，但这篇文章及时纠正了我的错误认识。
+简单的说：GraphQL是一种API，它的出现是为了改进使用REST时面临的缺陷。
 
-入门
-npm install hexo-cli -g
-hexo init blog
-cd blog
-npm install
-hexo server
-
-部署
-hexo generate
-hexo deploy
-
-对于部署到github，配置：
-123deploy:  type: git  repo: https://github.com/">
-<meta property="og:updated_time" content="2016-11-11T04:16:08.000Z">
+GraphQL’s power comes from a simple idea — instead of defining the structure of responses on the">
+<meta property="og:updated_time" content="2016-12-18T09:40:34.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo基础">
-<meta name="twitter:description" content="以下为这半年来玩Hexo的总结，希望对各位玩家有帮助，;)
+<meta name="twitter:title" content="GraphQL简说">
+<meta name="twitter:description" content="之前看到Facebook开源GraphQL的新闻时还以为它是为图数据库提供的查询语言，但这篇文章及时纠正了我的错误认识。
+简单的说：GraphQL是一种API，它的出现是为了改进使用REST时面临的缺陷。
 
-入门
-npm install hexo-cli -g
-hexo init blog
-cd blog
-npm install
-hexo server
-
-部署
-hexo generate
-hexo deploy
-
-对于部署到github，配置：
-123deploy:  type: git  repo: https://github.com/">
+GraphQL’s power comes from a simple idea — instead of defining the structure of responses on the">
   
     <link rel="alternate" href="/atom.xml" title="老胡随手记" type="application/atom+xml">
   
@@ -105,10 +72,10 @@ hexo deploy
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-2016/11/hexo-basic" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-2016/12/what-is-graphql" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2016/11/hexo-basic/" class="article-date">
-  <time datetime="2016-11-11T03:35:18.000Z" itemprop="datePublished">2016-11-11</time>
+    <a href="/2016/12/what-is-graphql/" class="article-date">
+  <time datetime="2016-12-18T09:03:47.000Z" itemprop="datePublished">2016-12-18</time>
 </a>
     
   </div>
@@ -119,7 +86,7 @@ hexo deploy
         
   
     <h1 class="article-title" itemprop="name">
-      Hexo基础
+      GraphQL简说
     </h1>
   
 
@@ -127,67 +94,31 @@ hexo deploy
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>以下为这半年来玩Hexo的总结，希望对各位玩家有帮助，;)</p>
-<hr>
-<h2 id="入门"><a href="#入门" class="headerlink" title="入门"></a>入门</h2><ul>
-<li>npm install hexo-cli -g</li>
-<li>hexo init blog</li>
-<li>cd blog</li>
-<li>npm install</li>
-<li>hexo server</li>
-</ul>
-<h2 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h2><ul>
-<li>hexo generate</li>
-<li>hexo deploy</li>
-</ul>
-<p>对于部署到github，配置：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: https://github.com/foxgem/foxgem.github.io.git</span><br></pre></td></tr></table></figure>
-<h2 id="文章"><a href="#文章" class="headerlink" title="文章"></a>文章</h2><ul>
-<li>对于中文需更改语言，否则有问题：_config.yml<ul>
-<li>language: zh-CN</li>
-</ul>
-</li>
-<li>若因为墙的问题要换jquery的cdn地址：themes/landscape/layout/_partial/after-footer.ejs</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=&quot;//code.jquery.com/jquery-2.0.3.min.js&quot;&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+        <p>之前看到Facebook开源GraphQL的新闻时还以为它是为图数据库提供的查询语言，但<a href="https://medium.com/chute-engineering/graphql-in-the-age-of-rest-apis-b10f2bf09bba#.1nzvweus8" target="_blank" rel="external">这篇文章</a>及时纠正了我的错误认识。</p>
+<p>简单的说：GraphQL是一种API，它的出现是为了改进使用REST时面临的缺陷。</p>
+<blockquote>
+<p>GraphQL’s power comes from a simple idea — instead of defining the structure of responses on the server, the flexibility is given to the client. Each request specifies what fields and relationships it wants to get back, and GraphQL will construct a response tailored for this particular request. The benefit: only one round-trip is needed to fetch all the complex data that might otherwise span multiple REST endpoints, and at the same time only return the data that are actually needed and nothing more.</p>
+</blockquote>
+<p>文中提到了另一个REST不具备的优势：</p>
+<blockquote>
+<p>Another advantage that I see in GraphQL is that it has a built-in type introspection. That means you can describe the entire API programmatically, and we can build tools that drastically improve development. </p>
+</blockquote>
+<p>由此看来，GraphQL是作为REST的一个替代品出现的，那么这是否意味着REST的好日子到头了呢？作者并非这么想：</p>
 <ul>
-<li>多标签（YAML语法）</li>
+<li>业界在REST上已投入不少资源</li>
+<li>GraphQL目前只有Facebook一家在产品环境下使用 【注：文章的写作时间是是去年7月份】</li>
+<li>转变需要至少10年时间</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: 那些恶意的相似域名（Domain Name Typosquatting）</span><br><span class="line">date: 2016-05-22 17:19:17</span><br><span class="line">tags:</span><br><span class="line">- 安全</span><br><span class="line">- The Morning Paper</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
-<p>用Atom时，Disable Markdown Formatter插件</p>
-<h2 id="RSS和Sitemap"><a href="#RSS和Sitemap" class="headerlink" title="RSS和Sitemap"></a>RSS和Sitemap</h2><p>添加以下两个插件之后，重新生成就能看到atom.xml和sitemap.xml了：</p>
-<ul>
-<li>npm install hexo-generator-feed –save</li>
-<li>npm install hexo-generator-sitemap –save</li>
-</ul>
-<h2 id="目录整理"><a href="#目录整理" class="headerlink" title="目录整理"></a>目录整理</h2><p>按自己意愿创建目录（_posts下），然后在_config.yml中改permalink（见下面的示例）：</p>
-<ul>
-<li>permalink: :title/</li>
-</ul>
-<p>然后手动移到自己的目录中，原谅我这么懒，没有写一个工具。</p>
-<h2 id="个人域名"><a href="#个人域名" class="headerlink" title="个人域名"></a>个人域名</h2><ul>
-<li>购买域名，在域名提供商那里添加解析规则<ul>
-<li>记录类型：CNAME</li>
-<li>主机记录：www</li>
-<li>记录值：你的github个人主页地址</li>
-</ul>
-</li>
-<li>进入personal page的settings，修改【Custom domain】。<ul>
-<li>这一步会生成在仓库中生成一个CNAME文件，将这个文件放到personal-page工程的source目录下。</li>
-</ul>
-</li>
-<li>个人域名目前不支持HTTPS</li>
-</ul>
-<h2 id="搜索引擎"><a href="#搜索引擎" class="headerlink" title="搜索引擎"></a>搜索引擎</h2><p>GitHub禁止了百度搜索引擎，通常做法都是利用“虚拟空间+定时任务（git pull + FTP上传）+个人域名”方式进行。详细内容以及其他方案可参考：<a href="http://www.zhihu.com/question/30898326。" target="_blank" rel="external">http://www.zhihu.com/question/30898326。</a></p>
-<p>此外，放在国内空间上，个人域名需要备案。</p>
+<p>因此，最有可能的结果是：两者并存。</p>
+<p>文后，作者给出了若干GraphQL的例子，读者可自行查阅。除此之外，有兴趣的读者还可以看看<a href="https://compose.com/articles/postgraphql-postgresql-meets-graphql" target="_blank" rel="external">这篇介绍PostGraphQL的短文</a>，通过它，你可以用GraphQL来查询后端的PostgreSQL数据库。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.jianhu.pub/2016/11/hexo-basic/" data-id="ciwugqrz60021xrqcyenqphup" class="article-share-link">Share</a>
+      <a data-url="http://www.jianhu.pub/2016/12/what-is-graphql/" data-id="ciwugqrzc0029xrqco5wrzxzh" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/写作/">写作</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/开发/">开发</a></li></ul>
 
     </footer>
   </div>
@@ -195,19 +126,10 @@ hexo deploy
     
 <nav id="article-nav">
   
-    <a href="/2016/11/jwt-lifecycle-management/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          管理JWT的生命周期
-        
-      </div>
-    </a>
   
-  
-    <a href="/2016/10/mesos-yarn/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2016/11/jwt-lifecycle-management/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Mesos和YARN辨析</div>
+      <div class="article-nav-title">管理JWT的生命周期</div>
     </a>
   
 </nav>
